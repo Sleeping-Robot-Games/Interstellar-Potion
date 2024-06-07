@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var color = 'blue'
+var color: String
 
 var sprite_dict = {
 	'blue': ['res://assets/arcane_rune.png'],
