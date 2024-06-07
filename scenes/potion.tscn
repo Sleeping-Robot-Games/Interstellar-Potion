@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b078erutahxlu"]
+
+[ext_resource type="SpriteFrames" uid="uid://csojh4biijp0c" path="res://resources/green_potion_frames.tres" id="1_dpclg"]
+[ext_resource type="Script" path="res://scripts/potion.gd" id="2_aynsk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jah83"]
+size = Vector2(36, 47)
+
+[node name="Potion" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_dpclg")
+frame_progress = 0.347
+script = ExtResource("2_aynsk")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, 9.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_jah83")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

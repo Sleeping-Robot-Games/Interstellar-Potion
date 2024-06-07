@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=6 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="PackedScene" uid="uid://ypyuf6v1221x" path="res://scenes/rubric_row.tscn" id="1_jpkwy"]
 [ext_resource type="Texture2D" uid="uid://cau643n4iiahd" path="res://icon.svg" id="2_s6gcc"]
-[ext_resource type="SpriteFrames" uid="uid://csojh4biijp0c" path="res://scenes/green_potion_frames.tres" id="3_dtnli"]
-[ext_resource type="SpriteFrames" uid="uid://cl03nu4b6iebx" path="res://scenes/red_potion_frames.tres" id="4_7hnsg"]
-[ext_resource type="SpriteFrames" uid="uid://b53b51ygji71u" path="res://scenes/blue_potion_frames.tres" id="5_gfljd"]
-[ext_resource type="SpriteFrames" uid="uid://bjce6qw7wur3e" path="res://scenes/brown_potion_frames.tres" id="6_wkrgh"]
+[ext_resource type="PackedScene" uid="uid://b078erutahxlu" path="res://scenes/potion.tscn" id="4_lu131"]
 [ext_resource type="PackedScene" uid="uid://cwsgtumnbrxfi" path="res://scenes/ingredient.tscn" id="8_nmp50"]
 
 [node name="Game" type="Node2D"]
@@ -32,11 +29,11 @@ combination = ["red", "green", "test"]
 
 [node name="Row2" parent="Rubric/Container" instance=ExtResource("1_jpkwy")]
 layout_mode = 2
-combination = ["blue", "green", "test"]
+combination = ["blue", "green", "shrink"]
 
 [node name="Row3" parent="Rubric/Container" instance=ExtResource("1_jpkwy")]
 layout_mode = 2
-combination = ["blue", "blue", "test"]
+combination = ["blue", "blue", "sparkle"]
 
 [node name="Label" type="Label" parent="Rubric"]
 layout_mode = 0
@@ -52,15 +49,19 @@ position = Vector2(976, 34)
 
 [node name="Label2" type="Label" parent="DoorPlaceholder"]
 offset_left = -44.0
-offset_top = 155.0
+offset_top = 144.0
 offset_right = -4.0
-offset_bottom = 178.0
+offset_bottom = 167.0
 scale = Vector2(3.24804, 4.11691)
 text = "Door"
 metadata/_edit_use_anchors_ = true
 
 [node name="Requirements" type="Control" parent="DoorPlaceholder/Label2"]
-anchors_preset = 0
+layout_mode = 1
+anchor_left = -0.0212422
+anchor_top = 0.56385
+anchor_right = -0.0212422
+anchor_bottom = 0.56385
 offset_left = -5.0
 offset_top = -29.0
 offset_right = 45.0
@@ -112,8 +113,12 @@ offset_bottom = 13.896
 color = Color(0, 0, 1, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="DoorPlaceholder"]
+position = Vector2(13, 334)
+texture = ExtResource("2_s6gcc")
+
 [node name="CauldronPlaceholder" type="Node2D" parent="."]
-position = Vector2(598, 482)
+position = Vector2(565, 482)
 
 [node name="Label" type="Label" parent="CauldronPlaceholder"]
 offset_left = -73.0
@@ -128,8 +133,15 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(1, -17)
 texture = ExtResource("2_s6gcc")
 
+[node name="Button" type="Button" parent="CauldronPlaceholder"]
+offset_left = 89.0
+offset_top = -23.0
+offset_right = 137.0
+offset_bottom = 8.0
+text = "Brew"
+
 [node name="DistillerPlaceholder" type="Node2D" parent="."]
-position = Vector2(222, 523)
+position = Vector2(169, 527)
 
 [node name="Label" type="Label" parent="DistillerPlaceholder"]
 offset_left = -2.0
@@ -154,29 +166,18 @@ offset_right = 86.0
 offset_bottom = 22.0
 text = "Potion Shelf"
 
-[node name="Potion" type="AnimatedSprite2D" parent="PotionShelfPlaceholder"]
-position = Vector2(125, -9)
-sprite_frames = ExtResource("3_dtnli")
-autoplay = "default"
-frame_progress = 0.347
+[node name="Potion" parent="PotionShelfPlaceholder" instance=ExtResource("4_lu131")]
+position = Vector2(137, -8)
 
-[node name="Potion2" type="AnimatedSprite2D" parent="PotionShelfPlaceholder"]
-position = Vector2(259, -9)
-sprite_frames = ExtResource("4_7hnsg")
-autoplay = "default"
-frame_progress = 0.00157197
+[node name="Potion2" parent="PotionShelfPlaceholder" instance=ExtResource("4_lu131")]
+position = Vector2(199, -8)
 
-[node name="Potion3" type="AnimatedSprite2D" parent="PotionShelfPlaceholder"]
-position = Vector2(185, -9)
-sprite_frames = ExtResource("5_gfljd")
-autoplay = "default"
-frame_progress = 0.235081
+[node name="Potion3" parent="PotionShelfPlaceholder" instance=ExtResource("4_lu131")]
+position = Vector2(266, -8)
 
-[node name="Potion4" type="AnimatedSprite2D" parent="PotionShelfPlaceholder"]
-position = Vector2(323, -8)
-sprite_frames = ExtResource("6_wkrgh")
-autoplay = "default"
-frame_progress = 0.104535
+[node name="Potion4" parent="PotionShelfPlaceholder" instance=ExtResource("4_lu131")]
+position = Vector2(334, -6)
+ingredients = ["green", "blue"]
 
 [node name="IngredientShelfPlaceholder" type="Node2D" parent="."]
 position = Vector2(299, 132)
@@ -189,16 +190,32 @@ offset_bottom = 24.0
 text = "Ingredient Shelf"
 
 [node name="Ingredient" parent="IngredientShelfPlaceholder" instance=ExtResource("8_nmp50")]
-position = Vector2(304, 9)
+position = Vector2(308, 5)
 
 [node name="Ingredient2" parent="IngredientShelfPlaceholder" instance=ExtResource("8_nmp50")]
-position = Vector2(235, 10)
+position = Vector2(239, 5)
 color = "green"
 
 [node name="Ingredient3" parent="IngredientShelfPlaceholder" instance=ExtResource("8_nmp50")]
-position = Vector2(165, 10)
+visible = false
+position = Vector2(164, 7)
 color = "green"
 
 [node name="Ingredient4" parent="IngredientShelfPlaceholder" instance=ExtResource("8_nmp50")]
-position = Vector2(91, 10)
+visible = false
+position = Vector2(98, 7)
 color = "red"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 836.0
+offset_top = 499.0
+offset_right = 931.0
+offset_bottom = 530.0
+text = "Test Potion"
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 47.0
+offset_right = 65.0
+offset_bottom = 70.0

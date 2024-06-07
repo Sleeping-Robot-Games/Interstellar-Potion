@@ -2,10 +2,9 @@ extends Sprite2D
 
 @export var color = 'blue'
 
-
 var sprite_dict = {
 	'blue': ['res://assets/arcane_rune.png'],
-	'green': ['res://assets/ice_rune.png', 'res://assets/fire_rune.png'],
+	'green': ['res://assets/ice_rune.png'],
 	'red': ['res://assets/earth_rune.png'],
 }
 
