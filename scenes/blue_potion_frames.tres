@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://b53b51ygji71u"]
+
+[ext_resource type="Texture2D" uid="uid://nkmv1e542kss" path="res://assets/ice.png" id="1_li5gb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61sas"]
+atlas = ExtResource("1_li5gb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty7cv"]
+atlas = ExtResource("1_li5gb")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg63w"]
+atlas = ExtResource("1_li5gb")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yplit"]
+atlas = ExtResource("1_li5gb")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61sas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty7cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg63w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yplit")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

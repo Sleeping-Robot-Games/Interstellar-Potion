@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://ypyuf6v1221x"]
+
+[ext_resource type="Script" path="res://scripts/rubric_row.gd" id="1_hklmu"]
+[ext_resource type="Texture2D" uid="uid://cau643n4iiahd" path="res://icon.svg" id="1_vo2tm"]
+
+[node name="Row" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hklmu")
+
+[node name="Element0" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 17.0
+color = Color(1, 0, 0, 1)
+
+[node name="Element1" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_right = 53.0
+offset_bottom = 17.0
+color = Color(0, 0, 1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = -1.0
+offset_right = 102.0
+offset_bottom = 18.0
+texture = ExtResource("1_vo2tm")
+expand_mode = 1

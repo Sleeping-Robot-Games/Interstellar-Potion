@@ -1,3 +1,204 @@
-[gd_scene format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=9 format=3 uid="uid://c40o4d6evlptt"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
+[ext_resource type="PackedScene" uid="uid://ypyuf6v1221x" path="res://scenes/rubric_row.tscn" id="1_jpkwy"]
+[ext_resource type="Texture2D" uid="uid://cau643n4iiahd" path="res://icon.svg" id="2_s6gcc"]
+[ext_resource type="SpriteFrames" uid="uid://csojh4biijp0c" path="res://scenes/green_potion_frames.tres" id="3_dtnli"]
+[ext_resource type="SpriteFrames" uid="uid://cl03nu4b6iebx" path="res://scenes/red_potion_frames.tres" id="4_7hnsg"]
+[ext_resource type="SpriteFrames" uid="uid://b53b51ygji71u" path="res://scenes/blue_potion_frames.tres" id="5_gfljd"]
+[ext_resource type="SpriteFrames" uid="uid://bjce6qw7wur3e" path="res://scenes/brown_potion_frames.tres" id="6_wkrgh"]
+[ext_resource type="PackedScene" uid="uid://cwsgtumnbrxfi" path="res://scenes/ingredient.tscn" id="8_nmp50"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_5uhqb")
+
+[node name="Rubric" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container" type="VBoxContainer" parent="Rubric"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 95.0
+offset_right = 139.0
+offset_bottom = 290.0
+theme_override_constants/separation = 30
+
+[node name="Row" parent="Rubric/Container" instance=ExtResource("1_jpkwy")]
+layout_mode = 2
+combination = ["red", "green", "test"]
+
+[node name="Row2" parent="Rubric/Container" instance=ExtResource("1_jpkwy")]
+layout_mode = 2
+combination = ["blue", "green", "test"]
+
+[node name="Row3" parent="Rubric/Container" instance=ExtResource("1_jpkwy")]
+layout_mode = 2
+combination = ["blue", "blue", "test"]
+
+[node name="Label" type="Label" parent="Rubric"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 25.0
+offset_right = 83.0
+offset_bottom = 48.0
+scale = Vector2(2.03786, 2.36778)
+text = "Rubric"
+
+[node name="DoorPlaceholder" type="Node2D" parent="."]
+position = Vector2(976, 34)
+
+[node name="Label2" type="Label" parent="DoorPlaceholder"]
+offset_left = -44.0
+offset_top = 155.0
+offset_right = -4.0
+offset_bottom = 178.0
+scale = Vector2(3.24804, 4.11691)
+text = "Door"
+metadata/_edit_use_anchors_ = true
+
+[node name="Requirements" type="Control" parent="DoorPlaceholder/Label2"]
+anchors_preset = 0
+offset_left = -5.0
+offset_top = -29.0
+offset_right = 45.0
+offset_bottom = -13.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="DoorPlaceholder/Label2/Requirements"]
+layout_mode = 0
+offset_left = -16.5515
+offset_top = 5.92442
+offset_right = -6.55147
+offset_bottom = 12.9244
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="DoorPlaceholder/Label2/Requirements"]
+layout_mode = 0
+offset_left = -1.15757
+offset_top = -3.54871
+offset_right = 8.84243
+offset_bottom = 3.45129
+color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="DoorPlaceholder/Label2/Requirements"]
+layout_mode = 0
+offset_left = 17.623
+offset_top = -3.79161
+offset_right = 27.623
+offset_bottom = 3.20839
+color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="DoorPlaceholder/Label2/Requirements"]
+layout_mode = 0
+offset_left = 37.6351
+offset_top = -2.57711
+offset_right = 47.6351
+offset_bottom = 4.42289
+color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="DoorPlaceholder/Label2/Requirements"]
+layout_mode = 0
+offset_left = 51.7975
+offset_top = 6.89602
+offset_right = 61.7975
+offset_bottom = 13.896
+color = Color(0, 0, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CauldronPlaceholder" type="Node2D" parent="."]
+position = Vector2(598, 482)
+
+[node name="Label" type="Label" parent="CauldronPlaceholder"]
+offset_left = -73.0
+offset_top = 36.0
+offset_right = -2.0
+offset_bottom = 59.0
+scale = Vector2(2.24079, 3.72554)
+text = "Cauldron"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CauldronPlaceholder"]
+position = Vector2(1, -17)
+texture = ExtResource("2_s6gcc")
+
+[node name="DistillerPlaceholder" type="Node2D" parent="."]
+position = Vector2(222, 523)
+
+[node name="Label" type="Label" parent="DistillerPlaceholder"]
+offset_left = -2.0
+offset_top = 16.0
+offset_right = 58.0
+offset_bottom = 39.0
+scale = Vector2(2.19549, 2.69023)
+text = "Distiller"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="DistillerPlaceholder"]
+position = Vector2(69, -56)
+texture = ExtResource("2_s6gcc")
+
+[node name="PotionShelfPlaceholder" type="Node2D" parent="."]
+position = Vector2(303, 273)
+
+[node name="Label" type="Label" parent="PotionShelfPlaceholder"]
+offset_left = -7.0
+offset_top = -1.0
+offset_right = 86.0
+offset_bottom = 22.0
+text = "Potion Shelf"
+
+[node name="Potion" type="AnimatedSprite2D" parent="PotionShelfPlaceholder"]
+position = Vector2(125, -9)
+sprite_frames = ExtResource("3_dtnli")
+autoplay = "default"
+frame_progress = 0.347
+
+[node name="Potion2" type="AnimatedSprite2D" parent="PotionShelfPlaceholder"]
+position = Vector2(259, -9)
+sprite_frames = ExtResource("4_7hnsg")
+autoplay = "default"
+frame_progress = 0.00157197
+
+[node name="Potion3" type="AnimatedSprite2D" parent="PotionShelfPlaceholder"]
+position = Vector2(185, -9)
+sprite_frames = ExtResource("5_gfljd")
+autoplay = "default"
+frame_progress = 0.235081
+
+[node name="Potion4" type="AnimatedSprite2D" parent="PotionShelfPlaceholder"]
+position = Vector2(323, -8)
+sprite_frames = ExtResource("6_wkrgh")
+autoplay = "default"
+frame_progress = 0.104535
+
+[node name="IngredientShelfPlaceholder" type="Node2D" parent="."]
+position = Vector2(299, 132)
+
+[node name="Label" type="Label" parent="IngredientShelfPlaceholder"]
+offset_left = -73.0
+offset_top = 1.0
+offset_right = 50.0
+offset_bottom = 24.0
+text = "Ingredient Shelf"
+
+[node name="Ingredient" parent="IngredientShelfPlaceholder" instance=ExtResource("8_nmp50")]
+position = Vector2(304, 9)
+
+[node name="Ingredient2" parent="IngredientShelfPlaceholder" instance=ExtResource("8_nmp50")]
+position = Vector2(235, 10)
+color = "green"
+
+[node name="Ingredient3" parent="IngredientShelfPlaceholder" instance=ExtResource("8_nmp50")]
+position = Vector2(165, 10)
+color = "green"
+
+[node name="Ingredient4" parent="IngredientShelfPlaceholder" instance=ExtResource("8_nmp50")]
+position = Vector2(91, 10)
+color = "red"
