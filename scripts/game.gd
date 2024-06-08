@@ -45,7 +45,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("Escape"):
 		get_tree().quit()
-
+		
 
 func fill_potion_shelf():
 	# Fill shelf until there's no more room
@@ -130,3 +130,4 @@ func _on_Cauldron_button_up():
 
 func _on_PotionRefill_button_up():
 	fill_potion_shelf()
+

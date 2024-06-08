@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=18 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG.png" id="2_3bwar"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ccra6yup1hjp4" path="res://assets/FilterMachine.png" id="8_fibk1"]
 [ext_resource type="Texture2D" uid="uid://braqca824437o" path="res://assets/Shelf1.png" id="9_8s0cu"]
 [ext_resource type="Texture2D" uid="uid://cm1br1fg0qk46" path="res://assets/Potion.png" id="11_irsb1"]
+[ext_resource type="Script" path="res://scripts/drawing_board.gd" id="11_kygup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iehke"]
 size = Vector2(312, 507.75)
@@ -34,6 +35,9 @@ size = Vector2(277, 547)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d7w"]
 size = Vector2(80, 89)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cynv4"]
+size = Vector2(224, 656.5)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5uhqb")
 
@@ -48,26 +52,17 @@ position = Vector2(353, 511)
 [node name="Sprite2D" type="Sprite2D" parent="EnterDoor"]
 texture = ExtResource("3_6lcuj")
 
-[node name="Rubric" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Rubric" type="Node2D" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="Rubric"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 38.0
-offset_right = 323.0
-offset_bottom = 1062.0
+[node name="ScrollSprite" type="Sprite2D" parent="Rubric"]
+position = Vector2(171, 544)
 texture = ExtResource("4_x211b")
 
 [node name="Container" type="VBoxContainer" parent="Rubric"]
-layout_mode = 0
 offset_left = 48.0
 offset_top = 161.0
 offset_right = 246.0
-offset_bottom = 562.0
+offset_bottom = 328.0
 theme_override_constants/separation = 30
 
 [node name="Door" type="Node2D" parent="."]
@@ -329,7 +324,26 @@ shape = SubResource("RectangleShape2D_h4d7w")
 [node name="Dragables" type="Node2D" parent="."]
 position = Vector2(0, -155)
 
+[node name="DrawingBoard" type="Node2D" parent="."]
+script = ExtResource("11_kygup")
+
+[node name="Area2D" type="Area2D" parent="DrawingBoard"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DrawingBoard/Area2D"]
+position = Vector2(146, 666.75)
+shape = SubResource("RectangleShape2D_cynv4")
+
+[node name="Button" type="Button" parent="DrawingBoard"]
+offset_left = 282.0
+offset_top = 336.0
+offset_right = 387.0
+offset_bottom = 379.0
+text = "Clear Board"
+
 [connection signal="button_up" from="Cauldron/Button" to="." method="_on_Cauldron_button_up"]
 [connection signal="button_up" from="Distiller/Button" to="." method="_on_Distill_button_up"]
 [connection signal="button_up" from="PotionShelf/Button" to="." method="_on_PotionRefill_button_up"]
 [connection signal="button_up" from="TestPotion/Button" to="." method="_on_TestPotion_button_up"]
+[connection signal="mouse_entered" from="DrawingBoard/Area2D" to="DrawingBoard" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="DrawingBoard/Area2D" to="DrawingBoard" method="_on_area_2d_mouse_exited"]
+[connection signal="button_up" from="DrawingBoard/Button" to="DrawingBoard" method="_on_button_button_up"]
