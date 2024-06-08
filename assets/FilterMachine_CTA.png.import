@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btmbk4rhgn5mm"
-path="res://.godot/imported/Door_Entrance.png-72b5891cf0038279ffc8c62939c1922f.ctex"
+uid="uid://bfnh7pkl7rfss"
+path="res://.godot/imported/FilterMachine_CTA.png-64d87423d8f82e89ecbe0a07fdf4888e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Door_Entrance.png"
-dest_files=["res://.godot/imported/Door_Entrance.png-72b5891cf0038279ffc8c62939c1922f.ctex"]
+source_file="res://assets/FilterMachine_CTA.png"
+dest_files=["res://.godot/imported/FilterMachine_CTA.png-64d87423d8f82e89ecbe0a07fdf4888e.ctex"]
 
 [params]
 

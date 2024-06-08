@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4gpnf4biwfps"
-path="res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"
+uid="uid://ddsyw86o47g8n"
+path="res://.godot/imported/earth_rune.png-5607d0f5262eca9b69b13fed969f2b3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FilterMachine.png"
-dest_files=["res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"]
+source_file="res://assets/Draggables/earth_rune.png"
+dest_files=["res://.godot/imported/earth_rune.png-5607d0f5262eca9b69b13fed969f2b3f.ctex"]
 
 [params]
 

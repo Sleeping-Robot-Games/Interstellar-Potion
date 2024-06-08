@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b078erutahxlu"]
 
 [ext_resource type="Script" path="res://scripts/potion.gd" id="2_aynsk"]
-[ext_resource type="Texture2D" uid="uid://y6hr4bkglui3" path="res://assets/Potion_Fill.png" id="2_bktky"]
-[ext_resource type="Texture2D" uid="uid://cm1br1fg0qk46" path="res://assets/Potion.png" id="3_55n7v"]
+[ext_resource type="Texture2D" uid="uid://y6hr4bkglui3" path="res://assets/Draggables/Potion_Fill.png" id="2_bktky"]
+[ext_resource type="Texture2D" uid="uid://cm1br1fg0qk46" path="res://assets/Draggables/Potion.png" id="3_55n7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jah83"]
 size = Vector2(60, 63)

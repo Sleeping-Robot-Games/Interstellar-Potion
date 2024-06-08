@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2eryalrlru7v"
-path="res://.godot/imported/ice_rune.png-72f89b899b60e85819211ee688b664d2.ctex"
+uid="uid://wtmr3pjhny0c"
+path="res://.godot/imported/Key_2.png-00bd2e0d3270933212cfffe6e9f3841b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ice_rune.png"
-dest_files=["res://.godot/imported/ice_rune.png-72f89b899b60e85819211ee688b664d2.ctex"]
+source_file="res://assets/BG/Key_2.png"
+dest_files=["res://.godot/imported/Key_2.png-00bd2e0d3270933212cfffe6e9f3841b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4gpnf4biwfps"
-path="res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"
+uid="uid://ccra6yup1hjp4"
+path="res://.godot/imported/FilterMachine.png-3833b3df9a520743c29aef840098faaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FilterMachine.png"
-dest_files=["res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"]
+source_file="res://assets/Draggables/FilterMachine.png"
+dest_files=["res://.godot/imported/FilterMachine.png-3833b3df9a520743c29aef840098faaf.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4gpnf4biwfps"
-path="res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"
+uid="uid://oqydmr0sghv0"
+path="res://.godot/imported/Dial_FG.png-ac3cf03446288d8f6eee892fe62389be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FilterMachine.png"
-dest_files=["res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"]
+source_file="res://assets/BG/Dial_FG.png"
+dest_files=["res://.godot/imported/Dial_FG.png-ac3cf03446288d8f6eee892fe62389be.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4gpnf4biwfps"
-path="res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"
+uid="uid://dau7si2q7axk1"
+path="res://.godot/imported/Ingredient_Bowl.png-cb9de5f2de0115689a3321a9a1f0b22c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FilterMachine.png"
-dest_files=["res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"]
+source_file="res://assets/Draggables/Ingredient_Bowl.png"
+dest_files=["res://.godot/imported/Ingredient_Bowl.png-cb9de5f2de0115689a3321a9a1f0b22c.ctex"]
 
 [params]
 

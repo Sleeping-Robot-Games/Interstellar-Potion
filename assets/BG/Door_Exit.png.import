@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8nr7wn3uwcdf"
-path="res://.godot/imported/Ingredient_Sack.png-72d3611884e081a2ae77d02f73f57760.ctex"
+uid="uid://x1byl7v74bce"
+path="res://.godot/imported/Door_Exit.png-dec2218f7e4bc003cac9ca05cfa5bfaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ingredient_Sack.png"
-dest_files=["res://.godot/imported/Ingredient_Sack.png-72d3611884e081a2ae77d02f73f57760.ctex"]
+source_file="res://assets/BG/Door_Exit.png"
+dest_files=["res://.godot/imported/Door_Exit.png-dec2218f7e4bc003cac9ca05cfa5bfaa.ctex"]
 
 [params]
 

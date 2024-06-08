@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4gpnf4biwfps"
-path="res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"
+uid="uid://y6hr4bkglui3"
+path="res://.godot/imported/Potion_Fill.png-33379757f607e882ca49afa46c891ad0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FilterMachine.png"
-dest_files=["res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"]
+source_file="res://assets/Draggables/Potion_Fill.png"
+dest_files=["res://.godot/imported/Potion_Fill.png-33379757f607e882ca49afa46c891ad0.ctex"]
 
 [params]
 

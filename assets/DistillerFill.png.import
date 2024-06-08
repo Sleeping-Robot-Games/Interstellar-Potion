@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1b35v1bp45gj"
-path="res://.godot/imported/Shelf2.png-8571884e3e162c4888760875a9da36bc.ctex"
+uid="uid://bevjk547g77sy"
+path="res://.godot/imported/DistillerFill.png-7444eb5a379e6b9f5b9b4acf4512f8c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Shelf2.png"
-dest_files=["res://.godot/imported/Shelf2.png-8571884e3e162c4888760875a9da36bc.ctex"]
+source_file="res://assets/DistillerFill.png"
+dest_files=["res://.godot/imported/DistillerFill.png-7444eb5a379e6b9f5b9b4acf4512f8c8.ctex"]
 
 [params]
 

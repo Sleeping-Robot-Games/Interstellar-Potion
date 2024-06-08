@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4gpnf4biwfps"
-path="res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"
+uid="uid://iu87sxwubo3p"
+path="res://.godot/imported/fire_rune.png-3c6e54350c455da904b4ae24e16a3dae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FilterMachine.png"
-dest_files=["res://.godot/imported/FilterMachine.png-1432b21fd49562263ae15991f126eec8.ctex"]
+source_file="res://assets/Draggables/fire_rune.png"
+dest_files=["res://.godot/imported/fire_rune.png-3c6e54350c455da904b4ae24e16a3dae.ctex"]
 
 [params]
 

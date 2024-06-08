@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dau7si2q7axk1"
-path="res://.godot/imported/Ingredient_Bowl.png-e098e112bcdbc36ec39f5a79a9654b69.ctex"
+uid="uid://c7dihbwhilqps"
+path="res://.godot/imported/earth.png-6ccf3d105c1f2048f6422cf8e2489d99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ingredient_Bowl.png"
-dest_files=["res://.godot/imported/Ingredient_Bowl.png-e098e112bcdbc36ec39f5a79a9654b69.ctex"]
+source_file="res://assets/Draggables/earth.png"
+dest_files=["res://.godot/imported/earth.png-6ccf3d105c1f2048f6422cf8e2489d99.ctex"]
 
 [params]
 

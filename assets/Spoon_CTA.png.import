@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4phagolubr0o"
-path="res://.godot/imported/arcane_rune.png-d22ca350cc094f9c77d56707b060fb4a.ctex"
+uid="uid://5yx0hhew4w4a"
+path="res://.godot/imported/Spoon_CTA.png-22f5ad4615db2ff64708d3fbdea2dfb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/arcane_rune.png"
-dest_files=["res://.godot/imported/arcane_rune.png-d22ca350cc094f9c77d56707b060fb4a.ctex"]
+source_file="res://assets/Spoon_CTA.png"
+dest_files=["res://.godot/imported/Spoon_CTA.png-22f5ad4615db2ff64708d3fbdea2dfb1.ctex"]
 
 [params]
 

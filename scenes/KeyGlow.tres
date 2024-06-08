@@ -1,0 +1,32 @@
+[gd_resource type="VisualShader" load_steps=2 format=3 uid="uid://bfs0yr7thjlxm"]
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_i64ef"]
+default_input_values = [0, 25.165, 1, 8.605, 2, 0.0]
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+
+
+
+void fragment() {
+// VectorCompose:2
+	float n_in2p0 = 25.16500;
+	float n_in2p1 = 8.60500;
+	float n_in2p2 = 0.00000;
+	vec3 n_out2p0 = vec3(n_in2p0, n_in2p1, n_in2p2);
+
+
+// Output:0
+	COLOR.rgb = n_out2p0;
+
+
+}
+"
+graph_offset = Vector2(-437, -1.5)
+mode = 1
+flags/light_only = false
+nodes/fragment/2/node = SubResource("VisualShaderNodeVectorCompose_i64ef")
+nodes/fragment/2/position = Vector2(-260, 180)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0)
