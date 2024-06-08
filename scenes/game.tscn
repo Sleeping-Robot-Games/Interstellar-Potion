@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=32 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://5yx0hhew4w4a" path="res://assets/Spoon_CTA.png" id="16_cs3hm"]
 [ext_resource type="Texture2D" uid="uid://bfnh7pkl7rfss" path="res://assets/FilterMachine_CTA.png" id="16_i5p58"]
 [ext_resource type="Texture2D" uid="uid://byqkcor4mowas" path="res://assets/Spoon.png" id="17_ly7y0"]
+[ext_resource type="Texture2D" uid="uid://bevjk547g77sy" path="res://assets/DistillerFill.png" id="22_d1m1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iehke"]
 size = Vector2(312, 507.75)
@@ -295,6 +296,10 @@ texture = ExtResource("16_i5p58")
 
 [node name="Sprite2D" type="Sprite2D" parent="Distiller"]
 texture = ExtResource("8_fibk1")
+
+[node name="DistillerFill" type="Sprite2D" parent="Distiller"]
+position = Vector2(-18, -121)
+texture = ExtResource("22_d1m1y")
 
 [node name="PotionDropMarker" type="Marker2D" parent="Distiller"]
 position = Vector2(-80, -236)
