@@ -230,45 +230,45 @@ position = Vector2(12, 87)
 shape = SubResource("RectangleShape2D_j6oc5")
 
 [node name="Button" type="Button" parent="Distiller"]
-offset_left = 144.0
-offset_top = -64.0
-offset_right = 196.0
-offset_bottom = -33.0
+offset_left = 72.0
+offset_top = 15.0
+offset_right = 124.0
+offset_bottom = 46.0
 text = "Distill"
+
+[node name="ShelfSprite" type="Sprite2D" parent="."]
+position = Vector2(968, 615)
+texture = ExtResource("9_8s0cu")
+
+[node name="ShelfSprite2" type="Sprite2D" parent="."]
+position = Vector2(968, 503)
+texture = ExtResource("10_qok7e")
+
+[node name="ShelfSprite3" type="Sprite2D" parent="."]
+position = Vector2(968, 385)
+texture = ExtResource("10_qok7e")
+
+[node name="ShelfSprite4" type="Sprite2D" parent="."]
+position = Vector2(968, 262)
+texture = ExtResource("10_qok7e")
 
 [node name="PotionShelf" type="Node2D" parent="."]
 position = Vector2(968, 273)
 
-[node name="Sprite2D" type="Sprite2D" parent="PotionShelf"]
-position = Vector2(0, 342)
-texture = ExtResource("9_8s0cu")
-
-[node name="Sprite2D2" type="Sprite2D" parent="PotionShelf"]
-position = Vector2(0, 230)
-texture = ExtResource("10_qok7e")
-
-[node name="Sprite2D3" type="Sprite2D" parent="PotionShelf"]
-position = Vector2(0, 112)
-texture = ExtResource("10_qok7e")
-
-[node name="Sprite2D4" type="Sprite2D" parent="PotionShelf"]
-position = Vector2(0, -11)
-texture = ExtResource("10_qok7e")
-
 [node name="Pos1" type="Marker2D" parent="PotionShelf"]
-position = Vector2(-110, 281)
+position = Vector2(-113, 271)
 
 [node name="Pos2" type="Marker2D" parent="PotionShelf"]
-position = Vector2(-59, 281)
+position = Vector2(-63, 271)
 
 [node name="Pos3" type="Marker2D" parent="PotionShelf"]
-position = Vector2(-6, 281)
+position = Vector2(-10, 271)
 
 [node name="Pos4" type="Marker2D" parent="PotionShelf"]
-position = Vector2(48, 281)
+position = Vector2(43, 271)
 
 [node name="Pos5" type="Marker2D" parent="PotionShelf"]
-position = Vector2(101, 281)
+position = Vector2(97, 271)
 
 [node name="IngredientShelf" type="Node2D" parent="."]
 position = Vector2(936, 378)
@@ -281,31 +281,31 @@ offset_bottom = 21.0
 text = "Ingredient Shelf"
 
 [node name="Pos1" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(-100, 64)
+position = Vector2(-141, 66)
 
 [node name="Pos2" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(-53, 64)
+position = Vector2(-73, 65)
 
 [node name="Pos3" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(-4, 64)
+position = Vector2(5, 63)
 
 [node name="Pos4" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(44, 64)
+position = Vector2(74, 64)
 
 [node name="Pos5" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(96, 64)
+position = Vector2(138, 62)
 
 [node name="Pos6" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(147, 64)
+position = Vector2(211, 61)
 
 [node name="TestPotion" type="Node2D" parent="."]
-position = Vector2(795, 371)
+position = Vector2(753, 372)
 
 [node name="Label" type="Label" parent="TestPotion"]
-offset_left = 25.0
-offset_top = 47.0
-offset_right = 65.0
-offset_bottom = 70.0
+offset_left = 110.0
+offset_top = -61.0
+offset_right = 150.0
+offset_bottom = -38.0
 
 [node name="Sprite2D" type="Sprite2D" parent="TestPotion"]
 position = Vector2(46, -58)
@@ -320,6 +320,7 @@ offset_bottom = 8.0
 text = "Test Potion"
 
 [node name="Area2D" type="Area2D" parent="TestPotion"]
+position = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestPotion/Area2D"]
 position = Vector2(46.125, -60.25)
@@ -345,7 +346,7 @@ effect = "shrink"
 shelf_index = 4
 
 [node name="Potion5" parent="Dragables" instance=ExtResource("4_lu131")]
-position = Vector2(1063, 544)
+position = Vector2(1064, 543)
 effect = "shrink"
 shelf_index = 5
 

@@ -35,7 +35,8 @@ func _ready():
 
 
 func _process(delta):
-	pass
+	if Input.is_action_pressed("Escape"):
+		get_tree().quit()
 
 func clear_test_potion_text():
 	$TestPotion/Label.text = ''

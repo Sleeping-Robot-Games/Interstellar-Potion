@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Node2D
 
 @onready var game = get_tree().root.get_node('Game')
 @onready var potion_shelf = game.get_node('PotionShelf')
@@ -35,12 +35,12 @@ func _input(event):
 					tween.tween_property(self, 'global_position', drop_location, .2)
 
 func _on_area_2d_mouse_entered():
-	play()
+	#play()
 	mouse_over = true
 
 func _on_area_2d_mouse_exited():
-	if drop_location == potion_shelf_position: 
-		stop()
+	#if drop_location == potion_shelf_position: 
+		#stop()
 	mouse_over = false
 
 func _on_area_2d_area_entered(area):

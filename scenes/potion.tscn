@@ -1,22 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://b078erutahxlu"]
+[gd_scene load_steps=5 format=3 uid="uid://b078erutahxlu"]
 
-[ext_resource type="SpriteFrames" uid="uid://csojh4biijp0c" path="res://resources/green_potion_frames.tres" id="1_dpclg"]
 [ext_resource type="Script" path="res://scripts/potion.gd" id="2_aynsk"]
+[ext_resource type="Texture2D" uid="uid://y6hr4bkglui3" path="res://assets/Potion_Fill.png" id="2_bktky"]
+[ext_resource type="Texture2D" uid="uid://cm1br1fg0qk46" path="res://assets/Potion.png" id="3_55n7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jah83"]
-size = Vector2(36, 47)
+size = Vector2(60, 63)
 
-[node name="Potion" type="AnimatedSprite2D"]
+[node name="Potion" type="Node2D"]
 z_index = 1
-sprite_frames = ExtResource("1_dpclg")
-frame = 2
-frame_progress = 0.621926
 script = ExtResource("2_aynsk")
+
+[node name="Fill" type="Sprite2D" parent="."]
+position = Vector2(6, 3)
+texture = ExtResource("2_bktky")
+
+[node name="Glass" type="Sprite2D" parent="."]
+texture = ExtResource("3_55n7v")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1, 9.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(6, -8)
 shape = SubResource("RectangleShape2D_jah83")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

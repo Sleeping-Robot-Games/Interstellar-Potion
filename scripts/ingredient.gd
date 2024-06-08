@@ -11,10 +11,11 @@ var in_cauldron = false
 var dragging = false
 var mouse_over = false
 
+# TODO: Maybe mix this up each level?
 var sprite_dict = {
-	'blue': ['res://assets/arcane_rune.png'],
-	'green': ['res://assets/ice_rune.png'],
-	'red': ['res://assets/earth_rune.png'],
+	'blue': ['res://assets/Ingredient_Crystal.png'],
+	'green': ['res://assets/Ingredient_Sack.png'],
+	'red': ['res://assets/Ingredient_Sack.png'],
 }
 
 
