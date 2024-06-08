@@ -1,16 +1,29 @@
-[gd_scene load_steps=18 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=31 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
-[ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG.png" id="2_3bwar"]
-[ext_resource type="Texture2D" uid="uid://btmbk4rhgn5mm" path="res://assets/Door_Entrance.png" id="3_6lcuj"]
+[ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
+[ext_resource type="Texture2D" uid="uid://btmbk4rhgn5mm" path="res://assets/BG/Door_Entrance.png" id="3_6lcuj"]
 [ext_resource type="Texture2D" uid="uid://dgbffdtp371jp" path="res://assets/Rules_BG.png" id="4_x211b"]
-[ext_resource type="Texture2D" uid="uid://x1byl7v74bce" path="res://assets/Door_Exit.png" id="5_vyg04"]
+[ext_resource type="Texture2D" uid="uid://x1byl7v74bce" path="res://assets/BG/Door_Exit.png" id="5_vyg04"]
+[ext_resource type="Texture2D" uid="uid://yssarompf41p" path="res://assets/Door_CTA.png" id="6_ese23"]
+[ext_resource type="Texture2D" uid="uid://bn141qbuaknda" path="res://assets/BG/Key_1.png" id="6_kc8ea"]
 [ext_resource type="Texture2D" uid="uid://v6ih0qv16i7k" path="res://assets/Player.png" id="6_ur01h"]
+[ext_resource type="Material" uid="uid://co6exputhnvsb" path="res://add_canvas_item_material.tres" id="6_xtvfh"]
 [ext_resource type="Texture2D" uid="uid://di2v17ptpwqy0" path="res://assets/Cauldron.png" id="7_d6pkp"]
-[ext_resource type="Texture2D" uid="uid://ccra6yup1hjp4" path="res://assets/FilterMachine.png" id="8_fibk1"]
-[ext_resource type="Texture2D" uid="uid://braqca824437o" path="res://assets/Shelf1.png" id="9_8s0cu"]
-[ext_resource type="Texture2D" uid="uid://cm1br1fg0qk46" path="res://assets/Potion.png" id="11_irsb1"]
+[ext_resource type="Texture2D" uid="uid://wtmr3pjhny0c" path="res://assets/BG/Key_2.png" id="7_ujy7w"]
+[ext_resource type="Texture2D" uid="uid://4gpnf4biwfps" path="res://assets/FilterMachine.png" id="8_fibk1"]
+[ext_resource type="Texture2D" uid="uid://b8xrvrotrw228" path="res://assets/BG/Key_3.png" id="8_y84gg"]
+[ext_resource type="Texture2D" uid="uid://braqca824437o" path="res://assets/BG/Shelf1.png" id="9_8s0cu"]
+[ext_resource type="Texture2D" uid="uid://b2yvc76akuhog" path="res://assets/BG/Key_4.png" id="9_ew8dv"]
+[ext_resource type="Texture2D" uid="uid://pmhhiqaj7lio" path="res://assets/BG/Key_5.png" id="10_1kn3p"]
+[ext_resource type="Texture2D" uid="uid://oqydmr0sghv0" path="res://assets/BG/Dial_FG.png" id="11_872v5"]
+[ext_resource type="Texture2D" uid="uid://cm1br1fg0qk46" path="res://assets/Draggables/Potion.png" id="11_irsb1"]
 [ext_resource type="Script" path="res://scripts/drawing_board.gd" id="11_kygup"]
+[ext_resource type="Texture2D" uid="uid://bgcev6d1exxf0" path="res://assets/Cauldron_CTA.png" id="14_lwaou"]
+[ext_resource type="Texture2D" uid="uid://civ3gtivv7rei" path="res://assets/Player_CTA.png" id="14_yhw3r"]
+[ext_resource type="Texture2D" uid="uid://5yx0hhew4w4a" path="res://assets/Spoon_CTA.png" id="16_cs3hm"]
+[ext_resource type="Texture2D" uid="uid://bfnh7pkl7rfss" path="res://assets/FilterMachine_CTA.png" id="16_i5p58"]
+[ext_resource type="Texture2D" uid="uid://byqkcor4mowas" path="res://assets/Spoon.png" id="17_ly7y0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iehke"]
 size = Vector2(312, 507.75)
@@ -71,6 +84,64 @@ position = Vector2(1568, 511)
 [node name="Sprite2D" type="Sprite2D" parent="Door"]
 texture = ExtResource("5_vyg04")
 
+[node name="BasinOutline" type="Sprite2D" parent="Door"]
+position = Vector2(-5, 146)
+texture = ExtResource("6_ese23")
+
+[node name="Control" type="Control" parent="Door"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -57.0
+offset_top = -168.0
+offset_right = -17.0
+offset_bottom = -128.0
+
+[node name="Color1" type="TextureRect" parent="Door/Control"]
+modulate = Color(1, 0.171875, 0.171875, 1)
+material = ExtResource("6_xtvfh")
+layout_mode = 0
+offset_left = -51.0
+offset_top = 12.0
+offset_right = 22.0
+offset_bottom = 63.0
+texture = ExtResource("6_kc8ea")
+
+[node name="Color2" type="TextureRect" parent="Door/Control"]
+modulate = Color(1, 0.171875, 0.171875, 1)
+material = ExtResource("6_xtvfh")
+offset_left = -18.0
+offset_top = -19.0
+offset_right = 48.0
+offset_bottom = 46.0
+texture = ExtResource("7_ujy7w")
+
+[node name="Color3" type="TextureRect" parent="Door/Control"]
+modulate = Color(1, 0.171875, 0.171875, 1)
+material = ExtResource("6_xtvfh")
+offset_left = 32.0
+offset_top = -25.0
+offset_right = 100.0
+offset_bottom = 30.0
+texture = ExtResource("8_y84gg")
+
+[node name="Color4" type="TextureRect" parent="Door/Control"]
+modulate = Color(1, 0.171875, 0.171875, 1)
+material = ExtResource("6_xtvfh")
+offset_left = 84.0
+offset_top = -19.0
+offset_right = 163.0
+offset_bottom = 54.0
+texture = ExtResource("9_ew8dv")
+
+[node name="Color5" type="TextureRect" parent="Door/Control"]
+modulate = Color(1, 0.171875, 0.171875, 1)
+material = ExtResource("6_xtvfh")
+offset_left = 112.0
+offset_top = 20.0
+offset_right = 182.0
+offset_bottom = 65.0
+texture = ExtResource("10_1kn3p")
+
 [node name="Requirements" type="Control" parent="Door"]
 layout_mode = 3
 anchor_left = -0.0212422
@@ -78,9 +149,9 @@ anchor_top = 0.56385
 anchor_right = -0.0212422
 anchor_bottom = 0.56385
 offset_left = -57.0
-offset_top = -168.0
+offset_top = -280.0
 offset_right = -7.0
-offset_bottom = -152.0
+offset_bottom = -264.0
 scale = Vector2(2.77616, 4.21552)
 metadata/_edit_use_anchors_ = true
 
@@ -129,6 +200,10 @@ offset_bottom = 13.896
 color = Color(0, 0, 1, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="DialFG" type="Sprite2D" parent="Door"]
+position = Vector2(13, -151)
+texture = ExtResource("11_872v5")
+
 [node name="Marker2D" type="Marker2D" parent="Door"]
 position = Vector2(13, 338)
 
@@ -141,6 +216,9 @@ shape = SubResource("RectangleShape2D_iehke")
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(1340, 826)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("14_yhw3r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_jh0vb")
@@ -156,6 +234,9 @@ offset_bottom = 59.0
 scale = Vector2(2.24079, 3.72554)
 text = "Cauldron"
 metadata/_edit_use_anchors_ = true
+
+[node name="CauldronOutline" type="Sprite2D" parent="Cauldron"]
+texture = ExtResource("14_lwaou")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cauldron"]
 texture = ExtResource("7_d6pkp")
@@ -196,8 +277,21 @@ position = Vector2(86, 141)
 [node name="Pos5" type="Marker2D" parent="Cauldron/StateHolder"]
 position = Vector2(159, 131)
 
+[node name="Spoon" type="Node2D" parent="."]
+position = Vector2(1078, 692)
+
+[node name="SpoonOutline" type="Sprite2D" parent="Spoon"]
+scale = Vector2(1, 1)
+texture = ExtResource("16_cs3hm")
+
+[node name="Spoon" type="Sprite2D" parent="Spoon"]
+texture = ExtResource("17_ly7y0")
+
 [node name="Distiller" type="Node2D" parent="."]
 position = Vector2(556, 708)
+
+[node name="DistillerOutline" type="Sprite2D" parent="Distiller"]
+texture = ExtResource("16_i5p58")
 
 [node name="Sprite2D" type="Sprite2D" parent="Distiller"]
 texture = ExtResource("8_fibk1")
