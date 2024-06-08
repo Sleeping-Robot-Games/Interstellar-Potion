@@ -281,22 +281,22 @@ offset_bottom = 21.0
 text = "Ingredient Shelf"
 
 [node name="Pos1" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(-141, 66)
+position = Vector2(-159, 61)
 
 [node name="Pos2" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(-73, 65)
+position = Vector2(-84, 64)
 
 [node name="Pos3" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(5, 63)
+position = Vector2(-6, 66)
 
 [node name="Pos4" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(74, 64)
+position = Vector2(80, 63)
 
 [node name="Pos5" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(138, 62)
+position = Vector2(156, 62)
 
 [node name="Pos6" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(211, 61)
+position = Vector2(230, 59)
 
 [node name="TestPotion" type="Node2D" parent="."]
 position = Vector2(753, 372)

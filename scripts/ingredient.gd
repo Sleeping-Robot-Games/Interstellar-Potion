@@ -15,7 +15,7 @@ var mouse_over = false
 var sprite_dict = {
 	'blue': ['res://assets/Ingredient_Crystal.png'],
 	'green': ['res://assets/Ingredient_Sack.png'],
-	'red': ['res://assets/Ingredient_Sack.png'],
+	'red': ['res://assets/Ingredient_Bowl.png'],
 }
 
 
