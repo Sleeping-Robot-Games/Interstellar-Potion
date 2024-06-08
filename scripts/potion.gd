@@ -1,12 +1,12 @@
 extends Node2D
 
 @onready var game = get_tree().root.get_node('Game')
-@onready var potion_shelf = game.get_node('PotionShelf')
 
-@export var effect = 'smoke'
-@export var shelf_index = 1
-@onready var potion_shelf_position = potion_shelf.get_node('Pos'+str(shelf_index)).global_position
-@onready var drop_location = potion_shelf_position
+var effect: String
+var shelf_index: int
+
+var potion_shelf_position 
+var drop_location 
 
 var ingredients
 var dragging = false
@@ -14,6 +14,7 @@ var mouse_over = false
 
 func _ready():
 	ingredients = game.rubric[effect]
+	global_position = potion_shelf_position
 
 func _process(delta):
 	if dragging:
@@ -47,7 +48,7 @@ func _on_area_2d_area_entered(area):
 	var parent_node = area.get_parent()
 	
 	if parent_node.name == 'TestPotion' or parent_node.name == 'Distiller':
-		drop_location = parent_node.get_node('Marker2D').global_position
+		drop_location = parent_node.get_node('PotionDropMarker').global_position
 		
 		if parent_node.name == 'TestPotion':
 			game.current_test_potion = self

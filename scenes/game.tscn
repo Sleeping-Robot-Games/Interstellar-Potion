@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=16 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG.png" id="2_3bwar"]
 [ext_resource type="Texture2D" uid="uid://btmbk4rhgn5mm" path="res://assets/Door_Entrance.png" id="3_6lcuj"]
-[ext_resource type="PackedScene" uid="uid://b078erutahxlu" path="res://scenes/potion.tscn" id="4_lu131"]
 [ext_resource type="Texture2D" uid="uid://dgbffdtp371jp" path="res://assets/Rules_BG.png" id="4_x211b"]
 [ext_resource type="Texture2D" uid="uid://x1byl7v74bce" path="res://assets/Door_Exit.png" id="5_vyg04"]
 [ext_resource type="Texture2D" uid="uid://v6ih0qv16i7k" path="res://assets/Player.png" id="6_ur01h"]
@@ -13,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cm1br1fg0qk46" path="res://assets/Potion.png" id="11_irsb1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iehke"]
-size = Vector2(400.5, 561.5)
+size = Vector2(312, 507.75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jh0vb"]
 animations = [{
@@ -27,13 +26,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmckp"]
-size = Vector2(384, 308)
+size = Vector2(360, 339)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6oc5"]
 size = Vector2(277, 547)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d7w"]
-size = Vector2(96.25, 98.5)
+size = Vector2(80, 89)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5uhqb")
@@ -41,6 +40,7 @@ script = ExtResource("1_5uhqb")
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_3bwar")
 offset = Vector2(960, 540)
+metadata/_edit_lock_ = true
 
 [node name="EnterDoor" type="Node2D" parent="."]
 position = Vector2(353, 511)
@@ -49,28 +49,10 @@ position = Vector2(353, 511)
 texture = ExtResource("3_6lcuj")
 
 [node name="Rubric" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Container" type="VBoxContainer" parent="Rubric"]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 95.0
-offset_right = 174.0
-offset_bottom = 290.0
-theme_override_constants/separation = 30
-
-[node name="Label" type="Label" parent="Rubric"]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 25.0
-offset_right = 83.0
-offset_bottom = 48.0
-scale = Vector2(2.03786, 2.36778)
-text = "Rubric"
 
 [node name="TextureRect" type="TextureRect" parent="Rubric"]
 layout_mode = 0
@@ -80,34 +62,34 @@ offset_right = 323.0
 offset_bottom = 1062.0
 texture = ExtResource("4_x211b")
 
+[node name="Container" type="VBoxContainer" parent="Rubric"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 161.0
+offset_right = 246.0
+offset_bottom = 562.0
+theme_override_constants/separation = 30
+
 [node name="Door" type="Node2D" parent="."]
 position = Vector2(1568, 511)
 
 [node name="Sprite2D" type="Sprite2D" parent="Door"]
 texture = ExtResource("5_vyg04")
 
-[node name="Label2" type="Label" parent="Door"]
-offset_left = -42.0
-offset_top = -99.0
-offset_right = -2.0
-offset_bottom = -76.0
-scale = Vector2(3.24804, 4.11691)
-text = "Door"
-metadata/_edit_use_anchors_ = true
-
-[node name="Requirements" type="Control" parent="Door/Label2"]
-layout_mode = 1
+[node name="Requirements" type="Control" parent="Door"]
+layout_mode = 3
 anchor_left = -0.0212422
 anchor_top = 0.56385
 anchor_right = -0.0212422
 anchor_bottom = 0.56385
-offset_left = -5.0
-offset_top = -29.0
-offset_right = 45.0
-offset_bottom = -13.0
+offset_left = -57.0
+offset_top = -168.0
+offset_right = -7.0
+offset_bottom = -152.0
+scale = Vector2(2.77616, 4.21552)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Door/Label2/Requirements"]
+[node name="ColorRect" type="ColorRect" parent="Door/Requirements"]
 layout_mode = 0
 offset_left = -16.5515
 offset_top = 5.92442
@@ -116,7 +98,7 @@ offset_bottom = 12.9244
 color = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="Door/Label2/Requirements"]
+[node name="ColorRect2" type="ColorRect" parent="Door/Requirements"]
 layout_mode = 0
 offset_left = -1.15757
 offset_top = -3.54871
@@ -125,7 +107,7 @@ offset_bottom = 3.45129
 color = Color(0, 1, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="Door/Label2/Requirements"]
+[node name="ColorRect3" type="ColorRect" parent="Door/Requirements"]
 layout_mode = 0
 offset_left = 17.623
 offset_top = -3.79161
@@ -134,7 +116,7 @@ offset_bottom = 3.20839
 color = Color(0, 1, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect4" type="ColorRect" parent="Door/Label2/Requirements"]
+[node name="ColorRect4" type="ColorRect" parent="Door/Requirements"]
 layout_mode = 0
 offset_left = 37.6351
 offset_top = -2.57711
@@ -143,7 +125,7 @@ offset_bottom = 4.42289
 color = Color(0, 1, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect5" type="ColorRect" parent="Door/Label2/Requirements"]
+[node name="ColorRect5" type="ColorRect" parent="Door/Requirements"]
 layout_mode = 0
 offset_left = 51.7975
 offset_top = 6.89602
@@ -156,8 +138,10 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(13, 338)
 
 [node name="Area2D" type="Area2D" parent="Door"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D"]
+position = Vector2(14, 26.875)
 shape = SubResource("RectangleShape2D_iehke")
 
 [node name="Player" type="Node2D" parent="."]
@@ -182,10 +166,11 @@ metadata/_edit_use_anchors_ = true
 texture = ExtResource("7_d6pkp")
 
 [node name="Button" type="Button" parent="Cauldron"]
-offset_left = 89.0
-offset_top = -23.0
-offset_right = 137.0
-offset_bottom = 8.0
+offset_left = 162.0
+offset_top = -3.99999
+offset_right = 210.0
+offset_bottom = 27.0
+scale = Vector2(2.16814, 2.36286)
 text = "Brew"
 metadata/_edit_use_anchors_ = true
 
@@ -193,26 +178,28 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(10, -21)
 
 [node name="Area2D" type="Area2D" parent="Cauldron"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron/Area2D"]
+position = Vector2(2, -15.5)
 shape = SubResource("RectangleShape2D_bmckp")
 
 [node name="StateHolder" type="Node2D" parent="Cauldron"]
 
 [node name="Pos1" type="Marker2D" parent="Cauldron/StateHolder"]
-position = Vector2(-71, 135)
+position = Vector2(-150, 136)
 
 [node name="Pos2" type="Marker2D" parent="Cauldron/StateHolder"]
-position = Vector2(-32, 135)
+position = Vector2(-85, 144)
 
 [node name="Pos3" type="Marker2D" parent="Cauldron/StateHolder"]
-position = Vector2(9, 135)
+position = Vector2(-2, 146)
 
 [node name="Pos4" type="Marker2D" parent="Cauldron/StateHolder"]
-position = Vector2(47, 135)
+position = Vector2(86, 141)
 
 [node name="Pos5" type="Marker2D" parent="Cauldron/StateHolder"]
-position = Vector2(84, 135)
+position = Vector2(159, 131)
 
 [node name="Distiller" type="Node2D" parent="."]
 position = Vector2(556, 708)
@@ -220,19 +207,23 @@ position = Vector2(556, 708)
 [node name="Sprite2D" type="Sprite2D" parent="Distiller"]
 texture = ExtResource("8_fibk1")
 
-[node name="Marker2D" type="Marker2D" parent="Distiller"]
-position = Vector2(12, 87)
+[node name="PotionDropMarker" type="Marker2D" parent="Distiller"]
+position = Vector2(-80, -236)
+
+[node name="IngredientExitMarker" type="Marker2D" parent="Distiller"]
+position = Vector2(105, 298)
 
 [node name="Area2D" type="Area2D" parent="Distiller"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Distiller/Area2D"]
 shape = SubResource("RectangleShape2D_j6oc5")
 
 [node name="Button" type="Button" parent="Distiller"]
-offset_left = 72.0
-offset_top = 15.0
-offset_right = 124.0
-offset_bottom = 46.0
+offset_left = 80.0
+offset_top = -40.0
+offset_right = 157.0
+offset_bottom = 4.0
 text = "Distill"
 
 [node name="ShelfSprite2" type="Sprite2D" parent="."]
@@ -265,36 +256,50 @@ position = Vector2(85, 271)
 [node name="Pos5" type="Marker2D" parent="PotionShelf"]
 position = Vector2(176, 271)
 
+[node name="Label" type="Label" parent="PotionShelf"]
+offset_left = -372.0
+offset_top = 268.0
+offset_right = -279.0
+offset_bottom = 291.0
+text = "Potion Shelf"
+
+[node name="Button" type="Button" parent="PotionShelf"]
+offset_left = -91.0
+offset_top = 351.0
+offset_right = 53.0
+offset_bottom = 382.0
+text = "Refill Potion Shelf"
+
 [node name="IngredientShelf" type="Node2D" parent="."]
 position = Vector2(936, 378)
 
 [node name="Label" type="Label" parent="IngredientShelf"]
-offset_left = -12.0
-offset_top = -2.0
-offset_right = 111.0
-offset_bottom = 21.0
+offset_left = -374.0
+offset_top = -108.0
+offset_right = -251.0
+offset_bottom = -85.0
 text = "Ingredient Shelf"
 
 [node name="Pos1" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(-159, -111)
+position = Vector2(-159, -104)
 
 [node name="Pos2" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(-84, -108)
+position = Vector2(-84, -103)
 
 [node name="Pos3" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(-6, -106)
+position = Vector2(-6, -101)
 
 [node name="Pos4" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(80, -109)
+position = Vector2(80, -104)
 
 [node name="Pos5" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(156, -110)
+position = Vector2(156, -105)
 
 [node name="Pos6" type="Marker2D" parent="IngredientShelf"]
-position = Vector2(230, -113)
+position = Vector2(230, -107)
 
 [node name="TestPotion" type="Node2D" parent="."]
-position = Vector2(716, 334)
+position = Vector2(1194, 672)
 
 [node name="Label" type="Label" parent="TestPotion"]
 offset_left = 110.0
@@ -306,45 +311,25 @@ offset_bottom = -38.0
 position = Vector2(46, -58)
 texture = ExtResource("11_irsb1")
 
-[node name="Marker2D" type="Marker2D" parent="TestPotion"]
+[node name="PotionDropMarker" type="Marker2D" parent="TestPotion"]
 position = Vector2(45, -54)
 
 [node name="Button" type="Button" parent="TestPotion"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 95.0
+offset_bottom = 40.0
 text = "Test Potion"
 
 [node name="Area2D" type="Area2D" parent="TestPotion"]
-position = Vector2(0, -7)
+position = Vector2(-9, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestPotion/Area2D"]
-position = Vector2(46.125, -60.25)
+position = Vector2(57, -67)
 shape = SubResource("RectangleShape2D_h4d7w")
 
 [node name="Dragables" type="Node2D" parent="."]
 position = Vector2(0, -155)
 
-[node name="Potion" parent="Dragables" instance=ExtResource("4_lu131")]
-position = Vector2(781, 544)
-
-[node name="Potion2" parent="Dragables" instance=ExtResource("4_lu131")]
-position = Vector2(873, 544)
-shelf_index = 2
-
-[node name="Potion3" parent="Dragables" instance=ExtResource("4_lu131")]
-position = Vector2(964, 544)
-effect = "sparkle"
-shelf_index = 3
-
-[node name="Potion4" parent="Dragables" instance=ExtResource("4_lu131")]
-position = Vector2(1053, 544)
-effect = "shrink"
-shelf_index = 4
-
-[node name="Potion5" parent="Dragables" instance=ExtResource("4_lu131")]
-position = Vector2(1145, 543)
-effect = "shrink"
-shelf_index = 5
-
+[connection signal="button_up" from="Cauldron/Button" to="." method="_on_Cauldron_button_up"]
 [connection signal="button_up" from="Distiller/Button" to="." method="_on_Distill_button_up"]
+[connection signal="button_up" from="PotionShelf/Button" to="." method="_on_PotionRefill_button_up"]
 [connection signal="button_up" from="TestPotion/Button" to="." method="_on_TestPotion_button_up"]
