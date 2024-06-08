@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
 @onready var game = get_tree().root.get_node('Game')
-@onready var potion_shelf = get_parent()
+@onready var potion_shelf = game.get_node('PotionShelf')
 
 @export var effect = 'smoke'
 @export var shelf_index = 1
@@ -28,9 +28,11 @@ func _input(event):
 				if mouse_over:
 					dragging = true
 			else:
-				# Stop dragging when the mouse button is released
-				dragging = false
-				global_position = drop_location
+				if dragging:
+					# Stop dragging when the mouse button is released
+					dragging = false
+					var tween = create_tween()
+					tween.tween_property(self, 'global_position', drop_location, .2)
 
 func _on_area_2d_mouse_entered():
 	play()
@@ -43,11 +45,24 @@ func _on_area_2d_mouse_exited():
 
 func _on_area_2d_area_entered(area):
 	var parent_node = area.get_parent()
+	
 	if parent_node.name == 'TestPotion' or parent_node.name == 'Distiller':
 		drop_location = parent_node.get_node('Marker2D').global_position
-
+		
+		if parent_node.name == 'TestPotion':
+			game.current_test_potion = self
+		if parent_node.name == 'Distiller':
+			game.current_distill_potion = self
 
 func _on_area_2d_area_exited(area):
 	var parent_node = area.get_parent()
+	
 	if parent_node.name == 'TestPotion' or parent_node.name == 'Distiller':
 		drop_location = potion_shelf_position
+		
+		if parent_node.name == 'TestPotion':
+			game.current_test_potion = null
+			game.clear_test_potion_text()
+			
+		if parent_node.name == 'Distiller':
+			game.current_distill_potion = null
