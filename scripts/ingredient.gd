@@ -88,8 +88,6 @@ func _on_area_2d_area_entered(area):
 	# Go into Cauldron
 	if parent_node.name == 'Cauldron' and game.cauldron_state.size() < 5:
 		drop_location = game.get_cauldron_state_pos(self)
-	else:
-		drop_location = shelf_position
 		
 
 func _on_area_2d_area_exited(area):
