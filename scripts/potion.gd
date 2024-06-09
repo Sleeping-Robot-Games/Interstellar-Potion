@@ -66,6 +66,7 @@ func _on_area_2d_mouse_entered():
 	if not g.dragging_ingredient:
 		if player_made:
 			game.toggle_highlight('Door', true)
+			game.toggle_highlight('Distiller', true)
 		else:
 			if game.first_potion and g.current_level == 1:
 				game.toggle_highlight('Player', true)
@@ -79,6 +80,7 @@ func _on_area_2d_mouse_exited():
 	if not dragging and not g.dragging_ingredient and not g.dragging_potion:
 		if player_made:
 			game.toggle_highlight('Door', false)
+			game.toggle_highlight('Distiller', false)
 		else:
 			game.toggle_highlight('Distiller', false)
 			game.toggle_highlight('Player', false)

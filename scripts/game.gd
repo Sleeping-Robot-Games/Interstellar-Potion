@@ -25,13 +25,14 @@ var player_made_potion_shelf_state = {}
 var cauldron_state = []
 var spoon_disabled = true
 
-func _ready():	
-	# Set game window
-	var window = get_window()
-	var screen_size = DisplayServer.screen_get_size()
-	var window_size = Vector2i(1280, 720)
-	window.size = window_size
-	window.position = (screen_size - window_size) / 2
+func _ready():
+	if OS.get_name() == "Windows":
+		# Set game window
+		var window = get_window()
+		var screen_size = DisplayServer.screen_get_size()
+		var window_size = Vector2i(1280, 720)
+		window.size = window_size
+		window.position = (screen_size - window_size) / 2
 	
 	# Set Level
 	solution = g.level_dict[g.current_level].solution
