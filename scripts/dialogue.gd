@@ -33,4 +33,5 @@ func animate_text():
 func _on_visibility_changed():
 	if visible:
 		animate_text()
+		g.play_dialogue_sfx(self, laugh)
 		# TODO: Play sound and laugh after if true
