@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=38 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dw1cexcy8qe43" path="res://assets/Rules/ClearButton.png" id="6_upeed"]
 [ext_resource type="Texture2D" uid="uid://v6ih0qv16i7k" path="res://assets/Player.png" id="6_ur01h"]
 [ext_resource type="Material" uid="uid://co6exputhnvsb" path="res://add_canvas_item_material.tres" id="6_xtvfh"]
-[ext_resource type="Texture2D" uid="uid://di2v17ptpwqy0" path="res://assets/Cauldron.png" id="7_d6pkp"]
 [ext_resource type="Texture2D" uid="uid://wtmr3pjhny0c" path="res://assets/BG/Key_2.png" id="7_ujy7w"]
 [ext_resource type="Texture2D" uid="uid://4gpnf4biwfps" path="res://assets/FilterMachine.png" id="8_fibk1"]
 [ext_resource type="Texture2D" uid="uid://b8xrvrotrw228" path="res://assets/BG/Key_3.png" id="8_y84gg"]
@@ -25,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://5yx0hhew4w4a" path="res://assets/Spoon_CTA.png" id="16_cs3hm"]
 [ext_resource type="Texture2D" uid="uid://bfnh7pkl7rfss" path="res://assets/FilterMachine_CTA.png" id="16_i5p58"]
 [ext_resource type="Texture2D" uid="uid://byqkcor4mowas" path="res://assets/Spoon.png" id="17_ly7y0"]
+[ext_resource type="Texture2D" uid="uid://dpnmrbw5ospx7" path="res://assets/Cauldron_Back.png" id="19_eun6s"]
+[ext_resource type="Texture2D" uid="uid://bs4bc0ku43acd" path="res://assets/Cauldron_Front.png" id="20_qg5qc"]
 [ext_resource type="Texture2D" uid="uid://bevjk547g77sy" path="res://assets/DistillerFill.png" id="22_d1m1y"]
 [ext_resource type="Texture2D" uid="uid://ciryrh4detjvj" path="res://assets/BG/Plaque_Supplies.png" id="24_xlthj"]
 [ext_resource type="Texture2D" uid="uid://bm15mqy46ggij" path="res://assets/BG/Plaque_Ingredients.png" id="25_cqgv0"]
@@ -289,8 +290,13 @@ metadata/_edit_use_anchors_ = true
 visible = false
 texture = ExtResource("14_lwaou")
 
-[node name="Sprite2D" type="Sprite2D" parent="Cauldron"]
-texture = ExtResource("7_d6pkp")
+[node name="CauldronBack" type="Sprite2D" parent="Cauldron"]
+texture = ExtResource("19_eun6s")
+
+[node name="CauldronFront" type="Sprite2D" parent="Cauldron"]
+visible = false
+position = Vector2(0, 25.5)
+texture = ExtResource("20_qg5qc")
 
 [node name="Marker2D" type="Marker2D" parent="Cauldron"]
 position = Vector2(10, -21)
@@ -366,7 +372,7 @@ offset_bottom = 4.0
 text = "Distill"
 
 [node name="ShelfSprite2" type="Sprite2D" parent="."]
-position = Vector2(968, 460)
+position = Vector2(968, 462)
 texture = ExtResource("9_8s0cu")
 
 [node name="Plaque" type="Sprite2D" parent="ShelfSprite2"]
@@ -374,7 +380,7 @@ position = Vector2(2, -15.5)
 texture = ExtResource("24_xlthj")
 
 [node name="ShelfSprite3" type="Sprite2D" parent="."]
-position = Vector2(966, 349)
+position = Vector2(966, 343)
 texture = ExtResource("9_8s0cu")
 
 [node name="Plaque" type="Sprite2D" parent="ShelfSprite3"]
@@ -382,7 +388,7 @@ position = Vector2(2, -15.5)
 texture = ExtResource("25_cqgv0")
 
 [node name="ShelfSprite4" type="Sprite2D" parent="."]
-position = Vector2(969, 239)
+position = Vector2(969, 203)
 texture = ExtResource("9_8s0cu")
 
 [node name="Plaque" type="Sprite2D" parent="ShelfSprite4"]
