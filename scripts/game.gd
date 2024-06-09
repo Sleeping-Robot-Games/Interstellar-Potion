@@ -4,6 +4,9 @@ extends Node2D
 var rubric_row_scene = preload("res://scenes/rubric_row.tscn")
 var potion_scene = preload("res://scenes/potion.tscn")
 var ingredient_scene = preload("res://scenes/ingredient.tscn")
+var tutorial_music = preload("res://sfx/BGM/BGM - Tutorial.ogg")
+var stage_1_music = preload("res://sfx/BGM/BGM - Stage 1.ogg")
+var stage_2_music = preload("res://sfx/BGM/BGM - Stage 2.ogg")
 
 var dialogue_state = []
 var distill_counter = 0
@@ -33,6 +36,15 @@ func _ready():
 		var window_size = Vector2i(1280, 720)
 		window.size = window_size
 		window.position = (screen_size - window_size) / 2
+	
+	# Music
+	var music
+	if g.current_level == 1:
+		music = tutorial_music
+	else:
+		music = stage_2_music
+	$AudioStreamPlayer.stream = music
+	$AudioStreamPlayer.play()
 	
 	# Set Level
 	solution = g.level_dict[g.current_level].solution

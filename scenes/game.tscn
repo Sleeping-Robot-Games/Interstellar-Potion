@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=51 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
@@ -40,7 +40,6 @@
 [ext_resource type="PackedScene" uid="uid://sp77tkksj53" path="res://scenes/potion_crate.tscn" id="25_s4b3b"]
 [ext_resource type="Texture2D" uid="uid://cqxk12ct6vx22" path="res://assets/BG/Plaque_Potions.png" id="26_qtlf4"]
 [ext_resource type="PackedScene" uid="uid://d1so7gfvlbhaa" path="res://scenes/dialogue.tscn" id="34_vey8l"]
-[ext_resource type="AudioStream" uid="uid://c775xwt7kfqvf" path="res://sfx/BGM/BGM - Tutorial.ogg" id="41_hdpfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iehke"]
 size = Vector2(312, 507.75)
@@ -624,7 +623,6 @@ text = "You might want to take notes on [color=blue]Potions[/color], [color=dark
 show_arm = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("41_hdpfp")
 autoplay = true
 
 [node name="IntercomMarker" type="Marker2D" parent="."]
