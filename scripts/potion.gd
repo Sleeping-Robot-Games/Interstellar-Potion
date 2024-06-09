@@ -52,6 +52,9 @@ func _on_potion_drop_tween_finished():
 	if drop_location == game.get_node("Distiller/PotionDropMarker").global_position:
 		game.add_potion_to_distiller(self)
 		
+	if drop_location == game.get_node("Player/PotionDropMarker").global_position:
+		game.show_potion_effect()
+		
 	if drop_location == game.get_node("Door/PotionDropMarker").global_position:
 		game.toggle_highlight('Door', false)
 		game.check_solution(self)

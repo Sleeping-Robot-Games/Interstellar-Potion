@@ -185,7 +185,7 @@ func set_cauldron_ingredient(ingredient):
 func toggle_highlight(object: String, toggle: bool):
 	get_node(object+"/"+"Highlight").visible = toggle
 	
-func _on_TestPotion_button_up():
+func show_potion_effect():
 	if current_test_potion:
 		$Player/Label.text = current_test_potion.effect
 

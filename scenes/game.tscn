@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=50 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
@@ -61,6 +61,10 @@ size = Vector2(241, 303)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmckp"]
 size = Vector2(390, 370)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02a36"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhb6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6oc5"]
 size = Vector2(277, 547)
@@ -212,7 +216,7 @@ offset_top = -304.0
 offset_right = 47.0
 offset_bottom = -244.0
 theme_override_fonts/font = ExtResource("20_6glyu")
-theme_override_font_sizes/font_size = 47
+theme_override_font_sizes/font_size = 48
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(1340, 826)
@@ -227,13 +231,6 @@ texture = ExtResource("14_yhw3r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_jh0vb")
 
-[node name="Button" type="Button" parent="Player"]
-offset_left = -28.0
-offset_top = -204.0
-offset_right = 67.0
-offset_bottom = -164.0
-text = "Test Potion"
-
 [node name="Area2D" type="Area2D" parent="Player"]
 position = Vector2(-155, -150)
 
@@ -242,10 +239,12 @@ position = Vector2(157.5, 153.5)
 shape = SubResource("RectangleShape2D_h4d7w")
 
 [node name="Label" type="Label" parent="Player"]
-offset_left = 179.0
-offset_top = 12.0
-offset_right = 219.0
-offset_bottom = 35.0
+offset_left = -110.0
+offset_top = -203.0
+offset_right = -70.0
+offset_bottom = -180.0
+theme_override_fonts/font = ExtResource("20_6glyu")
+theme_override_font_sizes/font_size = 48
 
 [node name="Cauldron" type="Node2D" parent="."]
 position = Vector2(961, 869)
@@ -340,6 +339,8 @@ offset_left = -49.0
 offset_top = -84.0
 offset_right = 54.0
 offset_bottom = 83.0
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_02a36")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uhb6i")
 icon = ExtResource("17_ly7y0")
 flat = true
 
@@ -489,7 +490,6 @@ visible = false
 stream = ExtResource("41_33gf5")
 autoplay = true
 
-[connection signal="button_up" from="Player/Button" to="." method="_on_TestPotion_button_up"]
 [connection signal="button_up" from="Spoon/Button" to="." method="_on_Cauldron_button_up"]
 [connection signal="button_up" from="PotionShelf/RefillButton" to="." method="_on_PotionRefill_button_up"]
 [connection signal="button_up" from="DrawingBoard/ClearButton" to="DrawingBoard" method="_on_clear_button_button_up"]
