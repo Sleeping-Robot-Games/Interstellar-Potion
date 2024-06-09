@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://djg2e2jg78ji4"]
+
+[ext_resource type="Texture2D" uid="uid://bc3wndycmatd2" path="res://assets/BG/PotionCrateFill.png" id="1_12ek8"]
+[ext_resource type="Texture2D" uid="uid://vajathk724a3" path="res://assets/BG/PotionCrate.png" id="2_nekw0"]
+
+[node name="PotionCrate" type="Node2D"]
+
+[node name="Fill" type="Sprite2D" parent="."]
+position = Vector2(3, -9)
+texture = ExtResource("1_12ek8")
+
+[node name="Crate" type="Sprite2D" parent="."]
+texture = ExtResource("2_nekw0")

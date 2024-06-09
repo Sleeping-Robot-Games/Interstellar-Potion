@@ -1,12 +1,14 @@
-[gd_scene load_steps=31 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=37 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
 [ext_resource type="Texture2D" uid="uid://btmbk4rhgn5mm" path="res://assets/BG/Door_Entrance.png" id="3_6lcuj"]
-[ext_resource type="Texture2D" uid="uid://dgbffdtp371jp" path="res://assets/Rules_BG.png" id="4_x211b"]
+[ext_resource type="Texture2D" uid="uid://dgbffdtp371jp" path="res://assets/Rules/Rules_BG.png" id="4_x211b"]
+[ext_resource type="Texture2D" uid="uid://wdpaiv5xt6o0" path="res://assets/Rules/RulesCTA.png" id="5_vh70u"]
 [ext_resource type="Texture2D" uid="uid://x1byl7v74bce" path="res://assets/BG/Door_Exit.png" id="5_vyg04"]
 [ext_resource type="Texture2D" uid="uid://yssarompf41p" path="res://assets/Door_CTA.png" id="6_ese23"]
 [ext_resource type="Texture2D" uid="uid://bn141qbuaknda" path="res://assets/BG/Key_1.png" id="6_kc8ea"]
+[ext_resource type="Texture2D" uid="uid://dw1cexcy8qe43" path="res://assets/Rules/ClearButton.png" id="6_upeed"]
 [ext_resource type="Texture2D" uid="uid://v6ih0qv16i7k" path="res://assets/Player.png" id="6_ur01h"]
 [ext_resource type="Material" uid="uid://co6exputhnvsb" path="res://add_canvas_item_material.tres" id="6_xtvfh"]
 [ext_resource type="Texture2D" uid="uid://di2v17ptpwqy0" path="res://assets/Cauldron.png" id="7_d6pkp"]
@@ -24,6 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://bfnh7pkl7rfss" path="res://assets/FilterMachine_CTA.png" id="16_i5p58"]
 [ext_resource type="Texture2D" uid="uid://byqkcor4mowas" path="res://assets/Spoon.png" id="17_ly7y0"]
 [ext_resource type="Texture2D" uid="uid://bevjk547g77sy" path="res://assets/DistillerFill.png" id="22_d1m1y"]
+[ext_resource type="Texture2D" uid="uid://ciryrh4detjvj" path="res://assets/BG/Plaque_Supplies.png" id="24_xlthj"]
+[ext_resource type="Texture2D" uid="uid://bm15mqy46ggij" path="res://assets/BG/Plaque_Ingredients.png" id="25_cqgv0"]
+[ext_resource type="PackedScene" uid="uid://djg2e2jg78ji4" path="res://scenes/potion_crate.tscn" id="25_s4b3b"]
+[ext_resource type="Texture2D" uid="uid://cqxk12ct6vx22" path="res://assets/BG/Plaque_Potions.png" id="26_qtlf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iehke"]
 size = Vector2(312, 507.75)
@@ -77,6 +83,21 @@ offset_top = 154.0
 offset_right = 246.0
 offset_bottom = 508.0
 theme_override_constants/separation = 30
+
+[node name="Instructions" type="Sprite2D" parent="Rubric"]
+position = Vector2(148, 754)
+texture = ExtResource("5_vh70u")
+
+[node name="TextureButton" type="TextureButton" parent="Rubric"]
+offset_left = 135.0
+offset_top = 541.0
+offset_right = 252.0
+offset_bottom = 581.0
+texture_normal = ExtResource("6_upeed")
+texture_pressed = ExtResource("6_upeed")
+texture_hover = ExtResource("6_upeed")
+texture_disabled = ExtResource("6_upeed")
+texture_focused = ExtResource("6_upeed")
 
 [node name="Door" type="Node2D" parent="."]
 position = Vector2(1568, 511)
@@ -348,26 +369,34 @@ text = "Distill"
 position = Vector2(968, 460)
 texture = ExtResource("9_8s0cu")
 
+[node name="Plaque" type="Sprite2D" parent="ShelfSprite2"]
+position = Vector2(2, -15.5)
+texture = ExtResource("24_xlthj")
+
 [node name="ShelfSprite3" type="Sprite2D" parent="."]
 position = Vector2(966, 349)
 texture = ExtResource("9_8s0cu")
+
+[node name="Plaque" type="Sprite2D" parent="ShelfSprite3"]
+position = Vector2(2, -15.5)
+texture = ExtResource("25_cqgv0")
 
 [node name="ShelfSprite4" type="Sprite2D" parent="."]
 position = Vector2(969, 239)
 texture = ExtResource("9_8s0cu")
 
+[node name="Plaque" type="Sprite2D" parent="ShelfSprite4"]
+position = Vector2(2, -15.5)
+texture = ExtResource("26_qtlf4")
+
 [node name="PlayerPotionShelf" type="Node2D" parent="."]
 position = Vector2(969, 239)
 
-[node name="Label" type="Label" parent="PlayerPotionShelf"]
-offset_left = -449.0
-offset_top = -87.0
-offset_right = -290.0
-offset_bottom = -64.0
-text = "Created Potion Shelf"
-
 [node name="PotionShelf" type="Node2D" parent="."]
 position = Vector2(968, 118)
+
+[node name="PotionCrate" parent="PotionShelf" instance=ExtResource("25_s4b3b")]
+position = Vector2(-191, 257)
 
 [node name="Pos1" type="Marker2D" parent="PotionShelf"]
 position = Vector2(-187, 271)
@@ -384,13 +413,6 @@ position = Vector2(85, 271)
 [node name="Pos5" type="Marker2D" parent="PotionShelf"]
 position = Vector2(176, 271)
 
-[node name="Label" type="Label" parent="PotionShelf"]
-offset_left = -372.0
-offset_top = 268.0
-offset_right = -279.0
-offset_bottom = 291.0
-text = "Potion Shelf"
-
 [node name="Button" type="Button" parent="PotionShelf"]
 offset_left = -91.0
 offset_top = 351.0
@@ -400,13 +422,6 @@ text = "Refill Potion Shelf"
 
 [node name="IngredientShelf" type="Node2D" parent="."]
 position = Vector2(936, 378)
-
-[node name="Label" type="Label" parent="IngredientShelf"]
-offset_left = -374.0
-offset_top = -108.0
-offset_right = -251.0
-offset_bottom = -85.0
-text = "Ingredient Shelf"
 
 [node name="Pos1" type="Marker2D" parent="IngredientShelf"]
 position = Vector2(-159, -104)
