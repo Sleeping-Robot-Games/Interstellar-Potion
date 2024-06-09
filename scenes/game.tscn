@@ -1,8 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=45 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
 [ext_resource type="Texture2D" uid="uid://btmbk4rhgn5mm" path="res://assets/BG/Door_Entrance.png" id="3_6lcuj"]
+[ext_resource type="Texture2D" uid="uid://bqcofw0p5r8e1" path="res://assets/Intercom.png" id="3_bm3uv"]
 [ext_resource type="Texture2D" uid="uid://dgbffdtp371jp" path="res://assets/Rules/Rules_BG.png" id="4_x211b"]
 [ext_resource type="Texture2D" uid="uid://wdpaiv5xt6o0" path="res://assets/Rules/RulesCTA.png" id="5_vh70u"]
 [ext_resource type="Texture2D" uid="uid://x1byl7v74bce" path="res://assets/BG/Door_Exit.png" id="5_vyg04"]
@@ -31,6 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://bm15mqy46ggij" path="res://assets/BG/Plaque_Ingredients.png" id="25_cqgv0"]
 [ext_resource type="PackedScene" uid="uid://djg2e2jg78ji4" path="res://scenes/potion_crate.tscn" id="25_s4b3b"]
 [ext_resource type="Texture2D" uid="uid://cqxk12ct6vx22" path="res://assets/BG/Plaque_Potions.png" id="26_qtlf4"]
+[ext_resource type="Texture2D" uid="uid://b2ouuoyhi8tvi" path="res://assets/DialogueBG.png" id="33_2eys4"]
+[ext_resource type="Texture2D" uid="uid://cw1s2byy7v2kn" path="res://assets/DialogueTail.png" id="33_mh2g8"]
+[ext_resource type="Texture2D" uid="uid://d1m07q6g03kjp" path="res://assets/DialogueArm.png" id="34_yhxpb"]
+[ext_resource type="FontFile" uid="uid://bx3ujw7iramtn" path="res://assets/FreckleFace-Regular.ttf" id="36_je45h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iehke"]
 size = Vector2(312, 507.75)
@@ -58,6 +63,15 @@ size = Vector2(277, 547)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cynv4"]
 size = Vector2(224, 433)
 
+[sub_resource type="Curve" id="Curve_gkql6"]
+_data = [Vector2(0.0133588, 1), 0.0, -0.0636724, 0, 0, Vector2(0.150763, 0.851177), -1.28141, -1.28141, 0, 0, Vector2(0.398855, 0.411094), -1.51283, -1.51283, 0, 0, Vector2(0.921756, 0.199291), 0.0, 0.0, 0, 0, Vector2(1, 0.205579), -0.0732244, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Theme" id="Theme_hd16e"]
+default_font = ExtResource("36_je45h")
+default_font_size = 33
+RichTextLabel/colors/default_color = Color(0.25098, 0.2, 0.113725, 1)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5uhqb")
 
@@ -65,6 +79,11 @@ script = ExtResource("1_5uhqb")
 texture = ExtResource("2_3bwar")
 offset = Vector2(960, 540)
 metadata/_edit_lock_ = true
+
+[node name="Intercom" type="Sprite2D" parent="."]
+position = Vector2(686, -410)
+texture = ExtResource("3_bm3uv")
+offset = Vector2(960, 540)
 
 [node name="EnterDoor" type="Node2D" parent="."]
 position = Vector2(353, 511)
@@ -465,6 +484,50 @@ offset_top = 948.0
 offset_right = 380.0
 offset_bottom = 991.0
 text = "Clear Board"
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Line2D" type="Line2D" parent="Dialogue"]
+position = Vector2(720, 1183)
+points = PackedVector2Array(817, -894, 824, -953, 861, -990, 885, -970, 908, -995)
+width = 33.0
+width_curve = SubResource("Curve_gkql6")
+default_color = Color(0.94902, 0.87451, 0.690196, 1)
+texture = ExtResource("33_mh2g8")
+texture_mode = 2
+joint_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Dialogue"]
+layout_mode = 0
+offset_left = 1343.0
+offset_top = 255.0
+offset_right = 1635.0
+offset_bottom = 358.0
+texture = ExtResource("33_2eys4")
+patch_margin_left = 50
+patch_margin_right = 50
+
+[node name="Arm" type="TextureRect" parent="Dialogue"]
+offset_left = 1238.0
+offset_top = 333.0
+offset_right = 1380.0
+offset_bottom = 402.0
+texture = ExtResource("34_yhxpb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue"]
+layout_mode = 0
+offset_left = 1389.0
+offset_top = 288.0
+offset_right = 1587.0
+offset_bottom = 328.0
+theme = SubResource("Theme_hd16e")
+text = "Lorem Ipsum"
 
 [connection signal="button_up" from="Player/Button" to="." method="_on_TestPotion_button_up"]
 [connection signal="button_up" from="Spoon/Button" to="." method="_on_Cauldron_button_up"]
