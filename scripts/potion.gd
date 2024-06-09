@@ -24,7 +24,8 @@ func _ready():
 	var potion_hex_color = g.level_dict[g.current_level].potion_colors[effect]
 	$Fill.modulate = Color.html(potion_hex_color)
 	ingredients = game.rubric[effect]
-	global_position = potion_shelf_position
+	if not player_made:
+		global_position = potion_shelf_position
 
 func _process(delta):
 	if dragging:
@@ -54,6 +55,7 @@ func _on_potion_drop_tween_finished():
 		
 	if drop_location == game.get_node("Player/PotionDropMarker").global_position:
 		game.show_potion_effect()
+		game.first_potion = false
 		
 	if drop_location == game.get_node("Door/PotionDropMarker").global_position:
 		game.toggle_highlight('Door', false)
@@ -65,8 +67,11 @@ func _on_area_2d_mouse_entered():
 		if player_made:
 			game.toggle_highlight('Door', true)
 		else:
-			game.toggle_highlight('Distiller', true)
-			game.toggle_highlight('Player', true)
+			if game.first_potion and g.current_level == 1:
+				game.toggle_highlight('Player', true)
+			else:
+				game.toggle_highlight('Player', true)
+				game.toggle_highlight('Distiller', true)
 		Input.set_custom_mouse_cursor(grabber)
 
 func _on_area_2d_mouse_exited():

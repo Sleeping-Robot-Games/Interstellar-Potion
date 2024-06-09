@@ -7,6 +7,7 @@ var ingredient_scene = preload("res://scenes/ingredient.tscn")
 
 var dialogue_state = []
 var distill_counter = 0
+var first_potion = true
 
 var solution = []
 var rubric = {}
@@ -179,10 +180,10 @@ func distill_potion():
 	play_dialogue("Ingredients")
 	if distill_counter == 2:
 		play_dialogue("Notes")
-	await get_tree().create_timer(10).timeout
-	play_dialogue("Cauldron")
 	if distill_counter == 5:
 		play_dialogue("Supplies")
+	await get_tree().create_timer(10).timeout
+	play_dialogue("Cauldron")
 	
 func get_cauldron_state_pos(ingredient):
 	if cauldron_state.size() < 5:
@@ -284,9 +285,13 @@ func _on_Cauldron_button_up():
 	new_potion.potion_shelf_position = player_potion_shelf_node.get_node('Pos'+str(shelf_index)).global_position
 	new_potion.drop_location = new_potion.potion_shelf_position
 	new_potion.player_made = true
+	new_potion.global_position = $Cauldron.global_position
 	
 	dragables_node.add_child(new_potion)
 	# Tween it to the top shelf
+	var tween = create_tween()
+	tween.tween_property(new_potion, 'global_position', new_potion.drop_location, 1)
+	
 	cauldron_state = []
 	
 	play_dialogue("Escape")

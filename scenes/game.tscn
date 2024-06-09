@@ -603,7 +603,6 @@ offset_top = 426.0
 offset_right = 1454.0
 offset_bottom = 466.0
 text = "Obviously that potion wasn't the answer! Make sure the potion contains all five Glyphs!"
-laugh = true
 
 [node name="BadBrew" parent="Dialogues" instance=ExtResource("34_vey8l")]
 visible = false
