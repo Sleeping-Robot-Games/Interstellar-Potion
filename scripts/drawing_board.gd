@@ -3,6 +3,9 @@ extends Node2D
 var current_line: Line2D = null
 var is_over_board = false
 
+var pointer = preload("res://assets/Cursors/Cursor_Pointer.png")
+var pen = preload("res://assets/Cursors/Cursor_Pen.png")
+
 func _input(event): 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed() and is_over_board:
@@ -20,9 +23,11 @@ func _input(event):
 
 func _on_area_2d_mouse_entered():
 	is_over_board = true
+	Input.set_custom_mouse_cursor(pen)
 
 func _on_area_2d_mouse_exited():
 	is_over_board = false
+	Input.set_custom_mouse_cursor(pointer)
 
 func _on_clear_button_button_up():
 	$Instructions.show()

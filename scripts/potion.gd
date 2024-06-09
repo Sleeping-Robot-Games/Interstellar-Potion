@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var game = get_tree().root.get_node('Game')
 
+var pointer = preload("res://assets/Cursors/Cursor_Pointer.png")
+var grabber = preload("res://assets/Cursors/Cursor_Grab.png")
+
 var effect: String
 var shelf_index: int
 
@@ -44,19 +47,18 @@ func _on_potion_drop_tween_finished():
 		game.add_potion_to_distiller(self)
 
 func _on_area_2d_mouse_entered():
-	#play()
 	mouse_over = true
 	if not g.dragging_ingredient:
 		game.toggle_highlight('Distiller', true)
 		game.toggle_highlight('Player', true)
+		Input.set_custom_mouse_cursor(grabber)
 
 func _on_area_2d_mouse_exited():
-	#if drop_location == potion_shelf_position: 
-		#stop()
 	mouse_over = false
 	if not dragging and not g.dragging_ingredient and not g.dragging_potion:
 		game.toggle_highlight('Distiller', false)
 		game.toggle_highlight('Player', false)
+		Input.set_custom_mouse_cursor(pointer)
 
 func _on_area_2d_area_entered(area):
 	var parent_node = area.get_parent()

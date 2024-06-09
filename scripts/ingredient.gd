@@ -2,6 +2,9 @@ extends Sprite2D
 
 @onready var game = get_tree().root.get_node('Game')
 
+var pointer = preload("res://assets/Cursors/Cursor_Pointer.png")
+var grabber = preload("res://assets/Cursors/Cursor_Grab.png")
+
 var shelf_index: int
 var shelf_position: Vector2
 var drop_location: Vector2
@@ -47,6 +50,7 @@ func _input(event):
 					in_cauldron = true
 					if not g.dragging_potion:
 						game.toggle_highlight('Cauldron', false)
+						Input.set_custom_mouse_cursor(pointer)
 				else:
 					in_cauldron = false
 				
@@ -68,6 +72,7 @@ func _on_area_2d_mouse_entered():
 		mouse_over = true
 		if not g.dragging_potion:
 			game.toggle_highlight('Cauldron', true)
+			Input.set_custom_mouse_cursor(grabber)
 
 
 func _on_area_2d_mouse_exited():
@@ -75,6 +80,7 @@ func _on_area_2d_mouse_exited():
 		mouse_over = false
 		if not dragging and not g.dragging_potion and not g.dragging_ingredient:
 			game.toggle_highlight('Cauldron', false)
+			Input.set_custom_mouse_cursor(pointer)
 
 
 func _on_area_2d_area_entered(area):
