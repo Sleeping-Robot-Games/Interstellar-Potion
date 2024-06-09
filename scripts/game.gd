@@ -66,7 +66,7 @@ func fill_potion_shelf():
 		dragables_node.add_child(new_potion)
 
 func clear_test_potion_text():
-	$TestPotion/Label.text = ''
+	$Player/Label.text = ''
 
 func get_next_free_ingredient_shelf_position() -> int:
 	for index in ingredient_shelf_state.keys():
@@ -113,10 +113,15 @@ func get_cauldron_state_pos(ingredient):
 func set_cauldron_ingredient(ingredient):
 	cauldron_state.append(ingredient)
 	ingredient_shelf_state[ingredient.shelf_index] = null
+	if cauldron_state.size() >= 2:
+		toggle_highlight("Spoon", true)
+	
+func toggle_highlight(object: String, toggle: bool):
+	get_node(object+"/"+"Highlight").visible = toggle
 	
 func _on_TestPotion_button_up():
 	if current_test_potion:
-		$TestPotion/Label.text = current_test_potion.effect
+		$Player/Label.text = current_test_potion.effect
 
 func _on_Distill_button_up():
 	if current_distill_potion and get_next_free_ingredient_shelf_position() != -1:
@@ -124,8 +129,9 @@ func _on_Distill_button_up():
 
 func _on_Cauldron_button_up():
 	# TODO: Clear cauldron state
-	# Bring sprites back up and create colorful potion out of cauldron
-	# Move new Potion to door and show success or failure state
+	# Clear ingredient runes on the cauldron
+	# Create a new potion based on the ingredients given and the rubric
+	# Tween it to the top shelf
 	pass 
 
 func _on_PotionRefill_button_up():

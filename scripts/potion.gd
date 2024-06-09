@@ -9,6 +9,7 @@ var potion_shelf_position
 var drop_location 
 
 var ingredients
+var player_made = false
 var dragging = false
 var mouse_over = false
 
@@ -28,29 +29,37 @@ func _input(event):
 				# Start dragging if the mouse button is pressed and is over the sprite
 				if mouse_over:
 					dragging = true
+					g.dragging_potion = true
 			else:
 				if dragging:
 					# Stop dragging when the mouse button is released
 					dragging = false
+					g.dragging_potion = false
 					var tween = create_tween()
 					tween.tween_property(self, 'global_position', drop_location, .2)
 
 func _on_area_2d_mouse_entered():
 	#play()
 	mouse_over = true
+	if not g.dragging_ingredient:
+		game.toggle_highlight('Distiller', true)
+		game.toggle_highlight('Player', true)
 
 func _on_area_2d_mouse_exited():
 	#if drop_location == potion_shelf_position: 
 		#stop()
 	mouse_over = false
+	if not dragging and not g.dragging_ingredient and not g.dragging_potion:
+		game.toggle_highlight('Distiller', false)
+		game.toggle_highlight('Player', false)
 
 func _on_area_2d_area_entered(area):
 	var parent_node = area.get_parent()
 	
-	if parent_node.name == 'TestPotion' or parent_node.name == 'Distiller':
+	if parent_node.name == 'Player' or parent_node.name == 'Distiller':
 		drop_location = parent_node.get_node('PotionDropMarker').global_position
 		
-		if parent_node.name == 'TestPotion':
+		if parent_node.name == 'Player':
 			game.current_test_potion = self
 		if parent_node.name == 'Distiller':
 			game.current_distill_potion = self
@@ -58,10 +67,10 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	var parent_node = area.get_parent()
 	
-	if parent_node.name == 'TestPotion' or parent_node.name == 'Distiller':
+	if parent_node.name == 'Player' or parent_node.name == 'Distiller':
 		drop_location = potion_shelf_position
 		
-		if parent_node.name == 'TestPotion':
+		if parent_node.name == 'Player':
 			game.current_test_potion = null
 			game.clear_test_potion_text()
 			

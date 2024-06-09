@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=31 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://b2yvc76akuhog" path="res://assets/BG/Key_4.png" id="9_ew8dv"]
 [ext_resource type="Texture2D" uid="uid://pmhhiqaj7lio" path="res://assets/BG/Key_5.png" id="10_1kn3p"]
 [ext_resource type="Texture2D" uid="uid://oqydmr0sghv0" path="res://assets/BG/Dial_FG.png" id="11_872v5"]
-[ext_resource type="Texture2D" uid="uid://cm1br1fg0qk46" path="res://assets/Draggables/Potion.png" id="11_irsb1"]
 [ext_resource type="Script" path="res://scripts/drawing_board.gd" id="11_kygup"]
 [ext_resource type="Texture2D" uid="uid://bgcev6d1exxf0" path="res://assets/Cauldron_CTA.png" id="14_lwaou"]
 [ext_resource type="Texture2D" uid="uid://civ3gtivv7rei" path="res://assets/Player_CTA.png" id="14_yhw3r"]
@@ -40,17 +39,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d7w"]
+size = Vector2(241, 303)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmckp"]
-size = Vector2(360, 339)
+size = Vector2(390, 370)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6oc5"]
 size = Vector2(277, 547)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d7w"]
-size = Vector2(80, 89)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cynv4"]
-size = Vector2(224, 656.5)
+size = Vector2(224, 433)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5uhqb")
@@ -74,9 +73,9 @@ texture = ExtResource("4_x211b")
 
 [node name="Container" type="VBoxContainer" parent="Rubric"]
 offset_left = 48.0
-offset_top = 161.0
+offset_top = 154.0
 offset_right = 246.0
-offset_bottom = 328.0
+offset_bottom = 508.0
 theme_override_constants/separation = 30
 
 [node name="Door" type="Node2D" parent="."]
@@ -85,7 +84,8 @@ position = Vector2(1568, 511)
 [node name="Sprite2D" type="Sprite2D" parent="Door"]
 texture = ExtResource("5_vyg04")
 
-[node name="BasinOutline" type="Sprite2D" parent="Door"]
+[node name="Highlight" type="Sprite2D" parent="Door"]
+visible = false
 position = Vector2(-5, 146)
 texture = ExtResource("6_ese23")
 
@@ -110,6 +110,7 @@ texture = ExtResource("6_kc8ea")
 [node name="Color2" type="TextureRect" parent="Door/Control"]
 modulate = Color(1, 0.171875, 0.171875, 1)
 material = ExtResource("6_xtvfh")
+layout_mode = 0
 offset_left = -18.0
 offset_top = -19.0
 offset_right = 48.0
@@ -119,6 +120,7 @@ texture = ExtResource("7_ujy7w")
 [node name="Color3" type="TextureRect" parent="Door/Control"]
 modulate = Color(1, 0.171875, 0.171875, 1)
 material = ExtResource("6_xtvfh")
+layout_mode = 0
 offset_left = 32.0
 offset_top = -25.0
 offset_right = 100.0
@@ -128,6 +130,7 @@ texture = ExtResource("8_y84gg")
 [node name="Color4" type="TextureRect" parent="Door/Control"]
 modulate = Color(1, 0.171875, 0.171875, 1)
 material = ExtResource("6_xtvfh")
+layout_mode = 0
 offset_left = 84.0
 offset_top = -19.0
 offset_right = 163.0
@@ -137,6 +140,7 @@ texture = ExtResource("9_ew8dv")
 [node name="Color5" type="TextureRect" parent="Door/Control"]
 modulate = Color(1, 0.171875, 0.171875, 1)
 material = ExtResource("6_xtvfh")
+layout_mode = 0
 offset_left = 112.0
 offset_top = 20.0
 offset_right = 182.0
@@ -206,7 +210,7 @@ position = Vector2(13, -151)
 texture = ExtResource("11_872v5")
 
 [node name="Marker2D" type="Marker2D" parent="Door"]
-position = Vector2(13, 338)
+position = Vector2(-3, 88)
 
 [node name="Area2D" type="Area2D" parent="Door"]
 visible = false
@@ -218,11 +222,35 @@ shape = SubResource("RectangleShape2D_iehke")
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(1340, 826)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
+[node name="PotionDropMarker" type="Marker2D" parent="Player"]
+position = Vector2(-49, 75)
+
+[node name="Highlight" type="Sprite2D" parent="Player"]
+visible = false
 texture = ExtResource("14_yhw3r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_jh0vb")
+
+[node name="Button" type="Button" parent="Player"]
+offset_left = -28.0
+offset_top = -204.0
+offset_right = 67.0
+offset_bottom = -164.0
+text = "Test Potion"
+
+[node name="Area2D" type="Area2D" parent="Player"]
+position = Vector2(-155, -150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(157.5, 153.5)
+shape = SubResource("RectangleShape2D_h4d7w")
+
+[node name="Label" type="Label" parent="Player"]
+offset_left = 179.0
+offset_top = 12.0
+offset_right = 219.0
+offset_bottom = 35.0
 
 [node name="Cauldron" type="Node2D" parent="."]
 position = Vector2(961, 869)
@@ -236,29 +264,20 @@ scale = Vector2(2.24079, 3.72554)
 text = "Cauldron"
 metadata/_edit_use_anchors_ = true
 
-[node name="CauldronOutline" type="Sprite2D" parent="Cauldron"]
+[node name="Highlight" type="Sprite2D" parent="Cauldron"]
+visible = false
 texture = ExtResource("14_lwaou")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cauldron"]
 texture = ExtResource("7_d6pkp")
 
-[node name="Button" type="Button" parent="Cauldron"]
-offset_left = 162.0
-offset_top = -3.99999
-offset_right = 210.0
-offset_bottom = 27.0
-scale = Vector2(2.16814, 2.36286)
-text = "Brew"
-metadata/_edit_use_anchors_ = true
-
 [node name="Marker2D" type="Marker2D" parent="Cauldron"]
 position = Vector2(10, -21)
 
 [node name="Area2D" type="Area2D" parent="Cauldron"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron/Area2D"]
-position = Vector2(2, -15.5)
+position = Vector2(0, -31)
 shape = SubResource("RectangleShape2D_bmckp")
 
 [node name="StateHolder" type="Node2D" parent="Cauldron"]
@@ -281,23 +300,29 @@ position = Vector2(159, 131)
 [node name="Spoon" type="Node2D" parent="."]
 position = Vector2(1078, 692)
 
-[node name="SpoonOutline" type="Sprite2D" parent="Spoon"]
-scale = Vector2(1, 1)
+[node name="Highlight" type="Sprite2D" parent="Spoon"]
+visible = false
 texture = ExtResource("16_cs3hm")
 
-[node name="Spoon" type="Sprite2D" parent="Spoon"]
-texture = ExtResource("17_ly7y0")
+[node name="Button" type="Button" parent="Spoon"]
+offset_left = -52.0
+offset_top = -85.0
+offset_right = 51.0
+offset_bottom = 82.0
+icon = ExtResource("17_ly7y0")
+flat = true
 
 [node name="Distiller" type="Node2D" parent="."]
 position = Vector2(556, 708)
 
-[node name="DistillerOutline" type="Sprite2D" parent="Distiller"]
+[node name="Highlight" type="Sprite2D" parent="Distiller"]
+visible = false
 texture = ExtResource("16_i5p58")
 
 [node name="Sprite2D" type="Sprite2D" parent="Distiller"]
 texture = ExtResource("8_fibk1")
 
-[node name="DistillerFill" type="Sprite2D" parent="Distiller"]
+[node name="Fill" type="Sprite2D" parent="Distiller"]
 position = Vector2(-18, -121)
 texture = ExtResource("22_d1m1y")
 
@@ -308,7 +333,6 @@ position = Vector2(-80, -236)
 position = Vector2(105, 298)
 
 [node name="Area2D" type="Area2D" parent="Distiller"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Distiller/Area2D"]
 shape = SubResource("RectangleShape2D_j6oc5")
@@ -331,6 +355,16 @@ texture = ExtResource("9_8s0cu")
 [node name="ShelfSprite4" type="Sprite2D" parent="."]
 position = Vector2(969, 239)
 texture = ExtResource("9_8s0cu")
+
+[node name="PlayerPotionShelf" type="Node2D" parent="."]
+position = Vector2(969, 239)
+
+[node name="Label" type="Label" parent="PlayerPotionShelf"]
+offset_left = -449.0
+offset_top = -87.0
+offset_right = -290.0
+offset_bottom = -64.0
+text = "Created Potion Shelf"
 
 [node name="PotionShelf" type="Node2D" parent="."]
 position = Vector2(968, 118)
@@ -392,34 +426,6 @@ position = Vector2(156, -105)
 [node name="Pos6" type="Marker2D" parent="IngredientShelf"]
 position = Vector2(230, -107)
 
-[node name="TestPotion" type="Node2D" parent="."]
-position = Vector2(1194, 672)
-
-[node name="Label" type="Label" parent="TestPotion"]
-offset_left = 110.0
-offset_top = -61.0
-offset_right = 150.0
-offset_bottom = -38.0
-
-[node name="Sprite2D" type="Sprite2D" parent="TestPotion"]
-position = Vector2(46, -58)
-texture = ExtResource("11_irsb1")
-
-[node name="PotionDropMarker" type="Marker2D" parent="TestPotion"]
-position = Vector2(45, -54)
-
-[node name="Button" type="Button" parent="TestPotion"]
-offset_right = 95.0
-offset_bottom = 40.0
-text = "Test Potion"
-
-[node name="Area2D" type="Area2D" parent="TestPotion"]
-position = Vector2(-9, 4)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPotion/Area2D"]
-position = Vector2(57, -67)
-shape = SubResource("RectangleShape2D_h4d7w")
-
 [node name="Dragables" type="Node2D" parent="."]
 position = Vector2(0, -155)
 
@@ -429,20 +435,20 @@ script = ExtResource("11_kygup")
 [node name="Area2D" type="Area2D" parent="DrawingBoard"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DrawingBoard/Area2D"]
-position = Vector2(146, 666.75)
+position = Vector2(146, 778.5)
 shape = SubResource("RectangleShape2D_cynv4")
 
 [node name="Button" type="Button" parent="DrawingBoard"]
-offset_left = 282.0
-offset_top = 336.0
-offset_right = 387.0
-offset_bottom = 379.0
+offset_left = 275.0
+offset_top = 948.0
+offset_right = 380.0
+offset_bottom = 991.0
 text = "Clear Board"
 
-[connection signal="button_up" from="Cauldron/Button" to="." method="_on_Cauldron_button_up"]
+[connection signal="button_up" from="Player/Button" to="." method="_on_TestPotion_button_up"]
+[connection signal="button_up" from="Spoon/Button" to="." method="_on_Cauldron_button_up"]
 [connection signal="button_up" from="Distiller/Button" to="." method="_on_Distill_button_up"]
 [connection signal="button_up" from="PotionShelf/Button" to="." method="_on_PotionRefill_button_up"]
-[connection signal="button_up" from="TestPotion/Button" to="." method="_on_TestPotion_button_up"]
 [connection signal="mouse_entered" from="DrawingBoard/Area2D" to="DrawingBoard" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="DrawingBoard/Area2D" to="DrawingBoard" method="_on_area_2d_mouse_exited"]
 [connection signal="button_up" from="DrawingBoard/Button" to="DrawingBoard" method="_on_button_button_up"]

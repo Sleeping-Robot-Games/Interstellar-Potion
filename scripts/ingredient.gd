@@ -13,9 +13,9 @@ var mouse_over = false
 
 # TODO: Maybe mix this up each level?
 var sprite_dict = {
-	'blue': ['res://assets/Ingredient_Crystal.png'],
-	'green': ['res://assets/Ingredient_Sack.png'],
-	'red': ['res://assets/Ingredient_Bowl.png'],
+	'blue': ['res://assets/Draggables/Ingredient_Crystal.png'],
+	'green': ['res://assets/Draggables/Ingredient_Sack.png'],
+	'red': ['res://assets/Draggables/Ingredient_Bowl.png'],
 }
 
 
@@ -32,25 +32,29 @@ func _input(event):
 	if in_cauldron:
 		return
 	# Check if the event is a mouse button press
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				# Start dragging if the mouse button is pressed and is over the sprite
-				if mouse_over:
-					dragging = true
-			else:
-				if dragging:
-					# Stop dragging when the mouse button is released
-					dragging = false
-					if drop_location != shelf_position:
-						game.set_cauldron_ingredient(self)
-						in_cauldron = true
-					else:
-						in_cauldron = false
-					
-				print('sending ingredient to drop location')
-				var tween = create_tween()
-				tween.tween_property(self, 'global_position', drop_location, .2)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.is_pressed():
+			# Start dragging if the mouse button is pressed and is over the sprite
+			if mouse_over:
+				dragging = true
+				g.dragging_ingredient = self
+		else:
+			if dragging:
+				print('stop dragging')
+				# Stop dragging when the mouse button is released
+				dragging = false
+				g.dragging_ingredient = null
+				if drop_location != shelf_position:
+					game.set_cauldron_ingredient(self)
+					in_cauldron = true
+					if not g.dragging_potion:
+						game.toggle_highlight('Cauldron', false)
+				else:
+					in_cauldron = false
+				
+			print('sending ingredient to drop location')
+			var tween = create_tween()
+			tween.tween_property(self, 'global_position', drop_location, .2)
 
 
 func set_shelf_location(ingredient_shelf_node: Node2D):
@@ -62,21 +66,23 @@ func set_shelf_location(ingredient_shelf_node: Node2D):
 func _on_area_2d_mouse_entered():
 	if not in_cauldron:
 		mouse_over = true
+		if not g.dragging_potion:
+			game.toggle_highlight('Cauldron', true)
 
 
 func _on_area_2d_mouse_exited():
 	if not in_cauldron:
 		mouse_over = false
+		if not dragging and not g.dragging_potion and not g.dragging_ingredient:
+			game.toggle_highlight('Cauldron', false)
 
 
 func _on_area_2d_area_entered(area):
 	var parent_node = area.get_parent()
 	# Go into Cauldron
 	if parent_node.name == 'Cauldron' and game.cauldron_state.size() < 5:
-		print('setting cauldron state pos')
 		drop_location = game.get_cauldron_state_pos(self)
 	else:
-		print('setting shelf pos')
 		drop_location = shelf_position
 		
 
@@ -85,6 +91,5 @@ func _on_area_2d_area_exited(area):
 	
 	# Go back to shelf
 	if parent_node.name == 'Cauldron':
-		print('going back to shelf')
 		drop_location = shelf_position
 		

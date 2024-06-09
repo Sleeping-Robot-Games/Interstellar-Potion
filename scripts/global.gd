@@ -6,3 +6,5 @@ var hex_conversion = {
 	'green': '#00ff00'
 }
 
+var dragging_ingredient = false
+var dragging_potion = false
