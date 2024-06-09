@@ -155,7 +155,7 @@ func distill_potion():
 		new_ingredient.global_position = get_node("Distiller/IngredientExitMarker").global_position
 		# Remove potion
 		current_distill_potion.queue_free()
-		# TODO: Reset color of Distiller when potion is gone
+		$Distiller/Fill.modulate = Color(1, 1, 1, 1)
 		# Add Ingredient
 		dragables_node.add_child(new_ingredient)
 		
@@ -190,7 +190,8 @@ func _on_TestPotion_button_up():
 		$Player/Label.text = current_test_potion.effect
 
 func add_potion_to_distiller(potion):
-	# TODO: Change color of Distiller when potion is here
+	var color = g.level_dict[g.current_level].potion_colors[potion.effect]
+	$Distiller/Fill.modulate = Color.html(color)
 	await get_tree().create_timer(1).timeout 
 	current_distill_potion = potion
 	distill_potion()
