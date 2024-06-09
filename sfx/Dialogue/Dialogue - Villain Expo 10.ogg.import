@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dybc8uq7615iq"
+path="res://.godot/imported/Dialogue - Villain Expo 10.ogg-d784abc5190e20d6198d6db274a832d7.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/Dialogue/Dialogue - Villain Expo 10.ogg"
+dest_files=["res://.godot/imported/Dialogue - Villain Expo 10.ogg-d784abc5190e20d6198d6db274a832d7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

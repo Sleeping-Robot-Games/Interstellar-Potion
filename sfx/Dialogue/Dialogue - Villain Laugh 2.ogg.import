@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvciw55eaumrd"
+path="res://.godot/imported/Dialogue - Villain Laugh 2.ogg-0ab625a27899b5dc4b51f7d1297a2a62.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/Dialogue/Dialogue - Villain Laugh 2.ogg"
+dest_files=["res://.godot/imported/Dialogue - Villain Laugh 2.ogg-0ab625a27899b5dc4b51f7d1297a2a62.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
