@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=52 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
@@ -68,6 +68,10 @@ size = Vector2(390, 370)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6oc5"]
 size = Vector2(277, 547)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mpw6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shgce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cynv4"]
 size = Vector2(224, 433)
@@ -434,6 +438,8 @@ offset_left = -34.0
 offset_top = 397.0
 offset_right = 34.0
 offset_bottom = 473.0
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7mpw6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_shgce")
 
 [node name="IngredientShelf" type="Node2D" parent="."]
 position = Vector2(936, 378)
@@ -483,12 +489,147 @@ texture_focused = ExtResource("6_upeed")
 position = Vector2(146, 778.5)
 shape = SubResource("RectangleShape2D_cynv4")
 
-[node name="Dialogue" parent="." instance=ExtResource("34_vey8l")]
+[node name="Dialogues" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Intro" parent="Dialogues" instance=ExtResource("34_vey8l")]
 visible = false
+z_index = 2
+offset_left = 1267.0
+offset_top = 209.0
+offset_right = 1307.0
+offset_bottom = 249.0
+text = "Welcome to Potion Class detention! As a failure, you must pass a series of challenges to leave.. hehehe.."
+laugh = true
+
+[node name="DrinkPotion" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 1267.0
+offset_top = 271.0
+offset_right = 1307.0
+offset_bottom = 311.0
+text = "First you must drink a potion from the supplies shelf to test it's effect.."
+show_arm = true
+
+[node name="StudyLaws" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 344.0
+offset_top = 78.0
+offset_right = 384.0
+offset_bottom = 118.0
+text = "Now study the Laws of Mixing. Pay attention to the Glyphs required for such an effect"
+show_arm = true
+
+[node name="Distill" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 710.0
+offset_top = 436.0
+offset_right = 750.0
+offset_bottom = 476.0
+text = "Next, place the potion in the distilling machine to isolate it's raw ingredients"
+show_arm = true
+
+[node name="Ingredients" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 993.0
+offset_top = 162.0
+offset_right = 1033.0
+offset_bottom = 202.0
+text = "If you studied the Laws of Mixing you can deduce which Glyphs each ingredient possessess... hehehe..."
+show_arm = true
+laugh = true
+
+[node name="Cauldron" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 1121.0
+offset_top = 639.0
+offset_right = 1161.0
+offset_bottom = 679.0
+text = "You can now create new potions with the ingredients by placing them into the cauldron..."
+show_arm = true
+
+[node name="Brew" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 1209.0
+offset_top = 547.0
+offset_right = 1249.0
+offset_bottom = 587.0
+text = "Once you have the neccessary Ingredients you can use the Spoon to create a new Potion"
+show_arm = true
+
+[node name="Escape" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 1416.0
+offset_top = 428.0
+offset_right = 1456.0
+offset_bottom = 468.0
+text = "To escape.. you must brew a potion that possesses all 5 Glyphs shown on the Door."
+
+[node name="Supplies" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 1105.0
+offset_top = 436.0
+offset_right = 1145.0
+offset_bottom = 476.0
+text = "If you run out of Supplies, click here to get more"
+show_arm = true
+
+[node name="Success" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 1414.0
+offset_top = 426.0
+offset_right = 1454.0
+offset_bottom = 466.0
+text = "Surprisingly, you've brewed the correct potion, place it in the door to leave. Your next challenge awaits. hehehe.."
+laugh = true
+
+[node name="Fail" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 1414.0
+offset_top = 426.0
+offset_right = 1454.0
+offset_bottom = 466.0
+text = "Obviously that potion wasn't the answer! Make sure the potion contains all five Glyphs!"
+laugh = true
+
+[node name="BadBrew" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 743.0
+offset_top = 567.0
+offset_right = 783.0
+offset_bottom = 607.0
+text = "If you attempted to brew a potion with improper ingredients it will fail and the ingredients are wasted"
+
+[node name="Notes" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+z_index = 2
+offset_left = 344.0
+offset_top = 631.0
+offset_right = 384.0
+offset_bottom = 671.0
+text = "You might want to take notes on Potions, Ingredients, and the Glyphs they may hold..."
+show_arm = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_33gf5")
 autoplay = true
+
+[node name="IntercomMarker" type="Marker2D" parent="."]
+position = Vector2(1640, 135)
 
 [connection signal="button_up" from="Spoon/Button" to="." method="_on_Cauldron_button_up"]
 [connection signal="button_up" from="PotionShelf/RefillButton" to="." method="_on_PotionRefill_button_up"]

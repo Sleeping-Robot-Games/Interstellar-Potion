@@ -5,6 +5,9 @@ var rubric_row_scene = preload("res://scenes/rubric_row.tscn")
 var potion_scene = preload("res://scenes/potion.tscn")
 var ingredient_scene = preload("res://scenes/ingredient.tscn")
 
+var dialogue_state = []
+var distill_counter = 0
+
 var solution = []
 var rubric = {}
 
@@ -21,7 +24,7 @@ var player_made_potion_shelf_state = {}
 var cauldron_state = []
 var spoon_disabled = true
 
-func _ready():
+func _ready():	
 	# Set game window
 	var window = get_window()
 	var screen_size = DisplayServer.screen_get_size()
@@ -70,6 +73,11 @@ func _ready():
 
 	# Set inital potions
 	fill_potion_shelf()
+	
+	play_dialogue("Intro")
+	await get_tree().create_timer(10).timeout
+	play_dialogue("DrinkPotion")
+	
 
 func _process(delta):
 	if Input.is_action_pressed("Escape"):
@@ -85,11 +93,15 @@ func check_solution(potion):
 		$Door/Label.text = "WIN!"
 	else:
 		$Door/Label.text = "Try Again"
+		play_dialogue("Fail")
+		await get_tree().create_timer(10).timeout
+		hide_dialogue("Fail")
 	
 	potion.queue_free()
 	
 	await get_tree().create_timer(4).timeout
 	$Door/Label.text = ""
+	hide_dialogue("Success")
 
 func fill_potion_shelf():
 	# Fill shelf until there's no more room
@@ -162,7 +174,15 @@ func distill_potion():
 		# Animation ingredient to shelf
 		var tween = create_tween()
 		tween.tween_property(new_ingredient, 'global_position', shelf_position, .5)
-	
+		
+	distill_counter += 1
+	play_dialogue("Ingredients")
+	if distill_counter == 2:
+		play_dialogue("Notes")
+	await get_tree().create_timer(10).timeout
+	play_dialogue("Cauldron")
+	if distill_counter == 5:
+		play_dialogue("Supplies")
 	
 func get_cauldron_state_pos(ingredient):
 	if cauldron_state.size() < 5:
@@ -181,6 +201,7 @@ func set_cauldron_ingredient(ingredient):
 	if cauldron_state.size() >= 2:
 		spoon_disabled = false
 		toggle_highlight("Spoon", true)
+		play_dialogue("Brew")
 	
 func toggle_highlight(object: String, toggle: bool):
 	get_node(object+"/"+"Highlight").visible = toggle
@@ -188,6 +209,10 @@ func toggle_highlight(object: String, toggle: bool):
 func show_potion_effect():
 	if current_test_potion:
 		$Player/Label.text = current_test_potion.effect
+		await get_tree().create_timer(2).timeout
+		play_dialogue("StudyLaws")
+		await get_tree().create_timer(10).timeout
+		play_dialogue("Distill")
 
 func add_potion_to_distiller(potion):
 	var color = g.level_dict[g.current_level].potion_colors[potion.effect]
@@ -238,9 +263,13 @@ func _on_Cauldron_button_up():
 			
 	# Create a new potion based on the ingredients given and the rubric
 	var effect = find_effect_by_ingredients(cauldron_state)
+	if effect == 'solution':
+		play_dialogue("Success")
 	if effect == 'none':
 		# No potion can be created based on the ingredients, clear state
 		cauldron_state = []
+		play_dialogue("BadBrew")
+		await get_tree().create_timer(10).timeout
 		return
 		
 	var new_potion = potion_scene.instantiate()
@@ -260,10 +289,28 @@ func _on_Cauldron_button_up():
 	# Tween it to the top shelf
 	cauldron_state = []
 	
+	play_dialogue("Escape")
+	await get_tree().create_timer(10).timeout
+	hide_dialogue("Escape")
+	
+	
 func on_spoon_tween_finished():
 	spoon_disabled = false
 	toggle_highlight('Spoon', false)
 
 func _on_PotionRefill_button_up():
 	fill_potion_shelf()
+	hide_dialogue("Supplies")
 
+func play_dialogue(type):
+	if g.current_level != 1 or type in dialogue_state:
+		return
+	for dialogue in $Dialogues.get_children():
+		hide_dialogue(dialogue.name)
+	dialogue_state.append(type)
+	get_node("Dialogues/" + type).show()
+	
+func hide_dialogue(type):
+	if g.current_level != 1:
+		return
+	get_node("Dialogues/" + type).hide()

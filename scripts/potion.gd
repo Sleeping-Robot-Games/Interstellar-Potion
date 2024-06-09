@@ -17,7 +17,7 @@ var player_made = false
 var dragging = false
 var mouse_over = false
 
-# always false, I know it's a hack
+# always false, I know it's a hack. It's so loops going through ing nodes don't bork
 const in_cauldron = false
 
 func _ready():
@@ -96,7 +96,7 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	var parent_node = area.get_parent()
 	
-	if parent_node.name == 'Player' or parent_node.name == 'Distiller':
+	if parent_node.name == 'Player' or parent_node.name == 'Distiller' or parent_node.name == 'Door':
 		drop_location = potion_shelf_position
 		
 		if parent_node.name == 'Player':

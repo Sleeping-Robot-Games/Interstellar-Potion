@@ -15,6 +15,7 @@ func _input(event):
 			current_line.default_color = Color.BLACK  # Set the color of the line
 			add_child(current_line)  # Add the new Line2D to the scene
 			$Instructions.hide()
+			get_parent().hide_dialogue("Notes")
 		else:
 			current_line = null
 	
