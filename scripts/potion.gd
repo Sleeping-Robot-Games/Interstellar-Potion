@@ -7,6 +7,7 @@ var grabber = preload("res://assets/Cursors/Cursor_Grab.png")
 
 var effect: String
 var shelf_index: int
+var dud: bool = false
 
 var potion_shelf_position 
 var drop_location 
@@ -16,7 +17,12 @@ var player_made = false
 var dragging = false
 var mouse_over = false
 
+# always false, I know it's a hack
+const in_cauldron = false
+
 func _ready():
+	var potion_hex_color = g.level_dict[g.current_level].potion_colors[effect]
+	$Fill.modulate = Color.html(potion_hex_color)
 	ingredients = game.rubric[effect]
 	global_position = potion_shelf_position
 
@@ -43,21 +49,31 @@ func _input(event):
 					tween.connect('finished', _on_potion_drop_tween_finished)
 					
 func _on_potion_drop_tween_finished():
-	if drop_location != potion_shelf_position:
+	if drop_location == game.get_node("Distiller/PotionDropMarker").global_position:
 		game.add_potion_to_distiller(self)
+		
+	if drop_location == game.get_node("Door/PotionDropMarker").global_position:
+		game.toggle_highlight('Door', false)
+		game.check_solution(self)
 
 func _on_area_2d_mouse_entered():
 	mouse_over = true
 	if not g.dragging_ingredient:
-		game.toggle_highlight('Distiller', true)
-		game.toggle_highlight('Player', true)
+		if player_made:
+			game.toggle_highlight('Door', true)
+		else:
+			game.toggle_highlight('Distiller', true)
+			game.toggle_highlight('Player', true)
 		Input.set_custom_mouse_cursor(grabber)
 
 func _on_area_2d_mouse_exited():
 	mouse_over = false
 	if not dragging and not g.dragging_ingredient and not g.dragging_potion:
-		game.toggle_highlight('Distiller', false)
-		game.toggle_highlight('Player', false)
+		if player_made:
+			game.toggle_highlight('Door', false)
+		else:
+			game.toggle_highlight('Distiller', false)
+			game.toggle_highlight('Player', false)
 		Input.set_custom_mouse_cursor(pointer)
 
 func _on_area_2d_area_entered(area):
@@ -70,6 +86,8 @@ func _on_area_2d_area_entered(area):
 		if game.count_ingredients_on_shelf() == 5:
 			return
 		game.current_distill_potion = self
+		drop_location = parent_node.get_node('PotionDropMarker').global_position
+	if parent_node.name == 'Door':
 		drop_location = parent_node.get_node('PotionDropMarker').global_position
 
 func _on_area_2d_area_exited(area):

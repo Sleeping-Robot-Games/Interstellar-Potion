@@ -13,7 +13,7 @@ config_version=5
 config/name="Interstellar Potion"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://goat-boi.png"
 
 [autoload]
 

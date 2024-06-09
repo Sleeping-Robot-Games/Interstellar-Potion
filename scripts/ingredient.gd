@@ -8,7 +8,7 @@ var grabber = preload("res://assets/Cursors/Cursor_Grab.png")
 var shelf_index: int
 var shelf_position: Vector2
 var drop_location: Vector2
-var color: String
+var glyph: int
 
 var in_cauldron = false
 var dragging = false
@@ -17,7 +17,7 @@ var duration: float = 1.0
 var move_distance: float = 10.0
 
 func _ready():
-	texture = load(game.ingredient_sprite_dict[color].sprite)
+	texture = load(game.ingredient_sprite_dict[glyph].sprite)
 
 func _process(delta):
 	if dragging:
