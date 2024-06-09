@@ -25,10 +25,26 @@ func animate_text():
 	add_child(timer)
 	timer.start()
 
-	for i in range(text.length()):
-		current_text += text[i]
-		$RichTextLabel.text = current_text
-		await timer.timeout
+	var i = 0
+	while i < text.length():
+		if text[i] == '[':  # Detect the start of a BBCode tag
+			var end_index = text.find(']', i)
+			if end_index != -1:  # Ensure there's a closing bracket
+				while text.find('[', end_index + 1) == end_index + 1:
+					end_index = text.find(']', end_index + 1)
+				current_text += text.substr(i, end_index - i + 1)
+				$RichTextLabel.text = current_text
+				i = end_index + 1  # Move past the BBCode tag
+			else:
+				current_text += text[i]
+				$RichTextLabel.text = current_text
+				i += 1
+		else:
+			current_text += text[i]
+			$RichTextLabel.text = current_text
+			i += 1
+
+		await get_tree().create_timer(timer.wait_time).timeout
 
 	timer.queue_free()  # Remove the timer when done
 

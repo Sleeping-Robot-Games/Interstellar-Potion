@@ -502,7 +502,7 @@ offset_left = 1267.0
 offset_top = 209.0
 offset_right = 1307.0
 offset_bottom = 249.0
-text = "Welcome to Potion Class detention! As a failure, you must pass a series of challenges to leave.. hehehe.."
+text = "Welcome to [color=blue]Potion[/color] Class detention! As a failure, you must pass a series of challenges to leave.. hehehe.."
 laugh = true
 
 [node name="DrinkPotion" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -512,7 +512,7 @@ offset_left = 1267.0
 offset_top = 271.0
 offset_right = 1307.0
 offset_bottom = 311.0
-text = "First you must drink a potion from the supplies shelf to test it's effect.."
+text = "First you must drink a [color=blue]Potion[/color] from the supplies shelf to test it's effect.."
 show_arm = true
 
 [node name="StudyLaws" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -522,7 +522,7 @@ offset_left = 344.0
 offset_top = 78.0
 offset_right = 384.0
 offset_bottom = 118.0
-text = "Now study the Laws of Mixing. Pay attention to the Glyphs required for such an effect"
+text = "Now study the [color=brown]Laws of Mixing[/color]. Pay attention to the [color=red]Glyphs[/color] required for such an effect"
 show_arm = true
 
 [node name="Distill" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -532,7 +532,7 @@ offset_left = 710.0
 offset_top = 436.0
 offset_right = 750.0
 offset_bottom = 476.0
-text = "Next, place the potion in the distilling machine to isolate it's raw ingredients"
+text = "Next, place the potion in the [color=purple]Distilling[/color]  machine to isolate it's raw [color=darkgreen]Ingredients[/color]"
 show_arm = true
 
 [node name="Ingredients" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -542,7 +542,7 @@ offset_left = 993.0
 offset_top = 162.0
 offset_right = 1033.0
 offset_bottom = 202.0
-text = "If you studied the Laws of Mixing you can deduce which Glyphs each ingredient possessess... hehehe..."
+text = "If you studied the [color=brown]Laws of Mixing[/color] you can deduce which [color=red]Glyphs[/color] each [color=darkgreen]Ingredient[/color] possessess... hehehe..."
 show_arm = true
 laugh = true
 
@@ -553,7 +553,7 @@ offset_left = 1121.0
 offset_top = 639.0
 offset_right = 1161.0
 offset_bottom = 679.0
-text = "You can now create new potions with the ingredients by placing them into the cauldron..."
+text = "You can now create new [color=blue]Potions[/color] with the [color=darkgreen]Ingredients[/color] by placing them into the [color=darkorange]Cauldron[/color] ..."
 show_arm = true
 
 [node name="Brew" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -563,7 +563,7 @@ offset_left = 1209.0
 offset_top = 547.0
 offset_right = 1249.0
 offset_bottom = 587.0
-text = "Once you have the neccessary Ingredients you can use the Spoon to create a new Potion"
+text = "Once you have the neccessary [color=darkgreen]Ingredients[/color] you can use the [color=darkorange]Spoon[/color] to create a new [color=blue]Potion[/color]"
 show_arm = true
 
 [node name="Escape" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -573,7 +573,7 @@ offset_left = 1416.0
 offset_top = 428.0
 offset_right = 1456.0
 offset_bottom = 468.0
-text = "To escape.. you must brew a potion that possesses all 5 Glyphs shown on the Door."
+text = "To escape.. you must brew a [color=blue]Potion[/color]  that possesses all 5 [color=red]Glyphs[/color] shown on the Door."
 
 [node name="Supplies" parent="Dialogues" instance=ExtResource("34_vey8l")]
 visible = false
@@ -582,7 +582,7 @@ offset_left = 1105.0
 offset_top = 436.0
 offset_right = 1145.0
 offset_bottom = 476.0
-text = "If you run out of Supplies, click here to get more"
+text = "If you run out of Supply [color=blue]Potions[/color], click here to get more"
 show_arm = true
 
 [node name="Success" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -592,7 +592,7 @@ offset_left = 1414.0
 offset_top = 426.0
 offset_right = 1454.0
 offset_bottom = 466.0
-text = "Surprisingly, you've brewed the correct potion, place it in the door to leave. Your next challenge awaits. hehehe.."
+text = "Surprisingly, you've brewed the correct [color=blue]Potion[/color] , place it in the door to leave. Your next challenge awaits. hehehe.."
 laugh = true
 
 [node name="Fail" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -602,7 +602,7 @@ offset_left = 1414.0
 offset_top = 426.0
 offset_right = 1454.0
 offset_bottom = 466.0
-text = "Obviously that potion wasn't the answer! Make sure the potion contains all five Glyphs!"
+text = "Obviously that [color=blue]Potion[/color]  wasn't the answer! Make sure the [color=blue]Potion[/color]  contains all five [color=red]Glyphs[/color]!"
 
 [node name="BadBrew" parent="Dialogues" instance=ExtResource("34_vey8l")]
 visible = false
@@ -611,7 +611,7 @@ offset_left = 743.0
 offset_top = 567.0
 offset_right = 783.0
 offset_bottom = 607.0
-text = "If you attempted to brew a potion with improper ingredients it will fail and the ingredients are wasted"
+text = "If you attempted to brew a [color=blue]Potion[/color] with improper [color=darkgreen]Ingredients[/color] it will fail and the [color=darkgreen]Ingredients[/color] are wasted"
 
 [node name="Notes" parent="Dialogues" instance=ExtResource("34_vey8l")]
 visible = false
@@ -620,7 +620,7 @@ offset_left = 344.0
 offset_top = 631.0
 offset_right = 384.0
 offset_bottom = 671.0
-text = "You might want to take notes on Potions, Ingredients, and the Glyphs they may hold..."
+text = "You might want to take notes on [color=blue]Potions[/color], [color=darkgreen]Ingredients[/color], and the [color=red]Glyphs[/color] they may hold..."
 show_arm = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

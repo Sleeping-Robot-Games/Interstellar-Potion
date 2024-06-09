@@ -272,6 +272,7 @@ func _on_Cauldron_button_up():
 		cauldron_state = []
 		play_dialogue("BadBrew")
 		await get_tree().create_timer(10).timeout
+		hide_dialogue("BadBrew")
 		return
 		
 	var new_potion = potion_scene.instantiate()
