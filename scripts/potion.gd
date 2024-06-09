@@ -37,6 +37,11 @@ func _input(event):
 					g.dragging_potion = false
 					var tween = create_tween()
 					tween.tween_property(self, 'global_position', drop_location, .2)
+					tween.connect('finished', _on_potion_drop_tween_finished)
+					
+func _on_potion_drop_tween_finished():
+	if drop_location != potion_shelf_position:
+		game.add_potion_to_distiller(self)
 
 func _on_area_2d_mouse_entered():
 	#play()
@@ -55,14 +60,15 @@ func _on_area_2d_mouse_exited():
 
 func _on_area_2d_area_entered(area):
 	var parent_node = area.get_parent()
-	
-	if parent_node.name == 'Player' or parent_node.name == 'Distiller':
+
+	if parent_node.name == 'Player':
+		game.current_test_potion = self
 		drop_location = parent_node.get_node('PotionDropMarker').global_position
-		
-		if parent_node.name == 'Player':
-			game.current_test_potion = self
-		if parent_node.name == 'Distiller':
-			game.current_distill_potion = self
+	if parent_node.name == 'Distiller' and game.current_distill_potion == null and game.get_next_free_ingredient_shelf_position() != -1:
+		if game.count_ingredients_on_shelf() == 5:
+			return
+		game.current_distill_potion = self
+		drop_location = parent_node.get_node('PotionDropMarker').global_position
 
 func _on_area_2d_area_exited(area):
 	var parent_node = area.get_parent()

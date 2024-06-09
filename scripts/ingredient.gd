@@ -10,23 +10,22 @@ var color: String
 var in_cauldron = false
 var dragging = false
 var mouse_over = false
-
-# TODO: Maybe mix this up each level?
-var sprite_dict = {
-	'blue': ['res://assets/Draggables/Ingredient_Crystal.png'],
-	'green': ['res://assets/Draggables/Ingredient_Sack.png'],
-	'red': ['res://assets/Draggables/Ingredient_Bowl.png'],
-}
-
+var duration: float = 1.0
+var move_distance: float = 10.0
 
 func _ready():
-	texture = load(sprite_dict[color].pick_random())
-
+	texture = load(game.ingredient_sprite_dict[color].sprite)
 
 func _process(delta):
 	if dragging:
 		global_position = get_global_mouse_position()
-
+		
+func start_bob_animation():
+	var tween = create_tween()
+	tween.set_loops()
+	tween.tween_property(self, "position:y", position.y + move_distance, duration)
+	tween.tween_property(self, "position:y", position.y - move_distance, duration)
+	tween.tween_property(self, "position:y", position.y, duration)
 
 func _input(event):
 	if in_cauldron:
@@ -40,7 +39,6 @@ func _input(event):
 				g.dragging_ingredient = self
 		else:
 			if dragging:
-				print('stop dragging')
 				# Stop dragging when the mouse button is released
 				dragging = false
 				g.dragging_ingredient = null
@@ -52,9 +50,11 @@ func _input(event):
 				else:
 					in_cauldron = false
 				
-			print('sending ingredient to drop location')
 			var tween = create_tween()
 			tween.tween_property(self, 'global_position', drop_location, .2)
+			await tween.finished
+			if in_cauldron:
+				start_bob_animation()
 
 
 func set_shelf_location(ingredient_shelf_node: Node2D):

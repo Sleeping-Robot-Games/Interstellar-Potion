@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ded46rb34nh27"]
+
+[ext_resource type="FontFile" uid="uid://bx3ujw7iramtn" path="res://assets/FreckleFace-Regular.ttf" id="1_rl3fe"]
+
+[resource]
+default_font = ExtResource("1_rl3fe")
+default_font_size = 33
+RichTextLabel/colors/default_color = Color(0.25098, 0.2, 0.113725, 1)
+RichTextLabel/font_sizes/bold_font_size = 16
+RichTextLabel/font_sizes/normal_font_size = 22

@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1so7gfvlbhaa"]
+
+[ext_resource type="Texture2D" uid="uid://cw1s2byy7v2kn" path="res://assets/DialogueTail.png" id="1_thdir"]
+[ext_resource type="Texture2D" uid="uid://b2ouuoyhi8tvi" path="res://assets/DialogueBG.png" id="2_vbxv6"]
+[ext_resource type="Texture2D" uid="uid://d1m07q6g03kjp" path="res://assets/DialogueArm.png" id="3_gj22n"]
+[ext_resource type="Theme" uid="uid://ded46rb34nh27" path="res://resources/bubble_theme.tres" id="4_n5qst"]
+
+[sub_resource type="Curve" id="Curve_gkql6"]
+_data = [Vector2(0.0133588, 1), 0.0, -0.0636724, 0, 0, Vector2(0.150763, 0.851177), -1.28141, -1.28141, 0, 0, Vector2(0.398855, 0.411094), -1.51283, -1.51283, 0, 0, Vector2(0.921756, 0.199291), 0.0, 0.0, 0, 0, Vector2(1, 0.205579), -0.0732244, 0.0, 0, 0]
+point_count = 5
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(720, 1183)
+points = PackedVector2Array(817, -894, 824, -953, 861, -990, 885, -970, 908, -995)
+width = 33.0
+width_curve = SubResource("Curve_gkql6")
+default_color = Color(0.94902, 0.87451, 0.690196, 1)
+texture = ExtResource("1_thdir")
+texture_mode = 2
+joint_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 1343.0
+offset_top = 255.0
+offset_right = 1635.0
+offset_bottom = 358.0
+texture = ExtResource("2_vbxv6")
+patch_margin_left = 50
+patch_margin_right = 50
+
+[node name="Arm" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1238.0
+offset_top = 333.0
+offset_right = 1380.0
+offset_bottom = 402.0
+texture = ExtResource("3_gj22n")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1378.0
+offset_top = 269.0
+offset_right = 1604.0
+offset_bottom = 344.0
+theme = ExtResource("4_n5qst")
+text = "Lorem Ipsum"
+scroll_active = false

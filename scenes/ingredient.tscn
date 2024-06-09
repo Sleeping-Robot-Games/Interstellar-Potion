@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwsgtumnbrxfi"]
 
-[ext_resource type="Texture2D" uid="uid://b4phagolubr0o" path="res://assets/Draggables/arcane_rune.png" id="1_wf0ve"]
+[ext_resource type="Texture2D" uid="uid://co0x1sp1oevov" path="res://assets/Draggables/Ingredient_Crystal.png" id="1_x4qom"]
 [ext_resource type="Script" path="res://scripts/ingredient.gd" id="2_o6mpo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6ib2"]
-size = Vector2(34, 36)
+size = Vector2(65, 71)
 
 [node name="Ingredient" type="Sprite2D"]
-texture = ExtResource("1_wf0ve")
+texture = ExtResource("1_x4qom")
 script = ExtResource("2_o6mpo")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 0)
+position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_y6ib2")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

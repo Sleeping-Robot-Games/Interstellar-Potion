@@ -9,8 +9,10 @@ var ingredient_scene = preload("res://scenes/ingredient.tscn")
 var rubric = {
 	'sparkle': ['red', 'green'],
 	'smoke': ['green', 'blue'],
-	'shrink': ['blue', 'blue']
+	'shrink': ['blue', 'blue'],
 }
+
+var ingredient_sprite_dict = {}
 
 var current_test_potion
 var current_distill_potion
@@ -19,8 +21,16 @@ var max_potion_shelf_space = 5
 var ingredient_shelf_state = {}
 var potion_shelf_state = {}
 var cauldron_state = []
+var spoon_disabled = true
 
 func _ready():
+	# Set game window
+	var window = get_window()
+	var screen_size = DisplayServer.screen_get_size()
+	var window_size = Vector2i(1280, 720)
+	window.size = window_size
+	window.position = (screen_size - window_size) / 2
+
 	# Set Door Requirements
 	var requirement_nodes = $Door/Requirements.get_children()
 	for i in range(requirement_nodes.size()):
@@ -31,6 +41,18 @@ func _ready():
 		var row_instance = rubric_row_scene.instantiate()
 		row_instance.effect = effect
 		$Rubric/Container.add_child(row_instance)
+		
+	# Set and randomize ingredient sprites based on colors
+	var colors = ['blue', 'green', 'red', 'purple']
+	var glyph_sprite_pairs = [
+		{'glyph': 'res://assets/Ingredient_Glyph_Crystal.png', 'sprite': 'res://assets/Draggables/Ingredient_Crystal.png'},
+		{'glyph': 'res://assets/Ingredient_Glyph_Sack.png', 'sprite': 'res://assets/Draggables/Ingredient_Sack.png'},
+		{'glyph': 'res://assets/Ingredient_Glyph_Bowl.png', 'sprite': 'res://assets/Draggables/Ingredient_Bowl.png'},
+		{'glyph': 'res://assets/Ingredient_Glyph_Tincture.png', 'sprite': 'res://assets/Draggables/Ingredient_Tincture.png'}
+	]
+	glyph_sprite_pairs.shuffle()
+	for i in range(colors.size()):
+		ingredient_sprite_dict[colors[i]] = glyph_sprite_pairs[i]
 	
 	# Sets up dictionaries with positions and empty null values
 	for i in range(max_ingredient_shelf_space):
@@ -45,7 +67,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("Escape"):
 		get_tree().quit()
-		
+
 
 func fill_potion_shelf():
 	# Fill shelf until there's no more room
@@ -68,6 +90,13 @@ func fill_potion_shelf():
 func clear_test_potion_text():
 	$Player/Label.text = ''
 
+func count_ingredients_on_shelf() -> int:
+	var count = 0
+	for index in ingredient_shelf_state.keys():
+		if ingredient_shelf_state[index] != null:
+			count += 1
+	return count
+	
 func get_next_free_ingredient_shelf_position() -> int:
 	for index in ingredient_shelf_state.keys():
 		if ingredient_shelf_state[index] == null:
@@ -94,15 +123,15 @@ func distill_potion():
 		new_ingredient.shelf_index = shelf_index
 		var shelf_position = new_ingredient.set_shelf_location(ingredient_shelf_node)
 		new_ingredient.global_position = get_node("Distiller/IngredientExitMarker").global_position
-		# TODO: Figure out why the global position isn't right 
 		# Remove potion
 		current_distill_potion.queue_free()
+		# TODO: Reset color of Distiller when potion is gone
 		# Add Ingredient
 		dragables_node.add_child(new_ingredient)
 		
 		# Animation ingredient to shelf
 		var tween = create_tween()
-		tween.tween_property(new_ingredient, 'global_position', shelf_position, 1)
+		tween.tween_property(new_ingredient, 'global_position', shelf_position, .5)
 	
 	
 func get_cauldron_state_pos(ingredient):
@@ -113,7 +142,14 @@ func get_cauldron_state_pos(ingredient):
 func set_cauldron_ingredient(ingredient):
 	cauldron_state.append(ingredient)
 	ingredient_shelf_state[ingredient.shelf_index] = null
+	# animate glyph of ingredient
+	var glyph = get_node("Cauldron/Glyph"+str(cauldron_state.size()))
+	glyph.texture = load(ingredient_sprite_dict[ingredient.color].glyph)
+	var tween = create_tween()
+	tween.tween_property(glyph, "modulate:a", 1.0, 2)
+	
 	if cauldron_state.size() >= 2:
+		spoon_disabled = false
 		toggle_highlight("Spoon", true)
 	
 func toggle_highlight(object: String, toggle: bool):
@@ -123,16 +159,28 @@ func _on_TestPotion_button_up():
 	if current_test_potion:
 		$Player/Label.text = current_test_potion.effect
 
-func _on_Distill_button_up():
-	if current_distill_potion and get_next_free_ingredient_shelf_position() != -1:
-		distill_potion()
+func add_potion_to_distiller(potion):
+	# TODO: Change color of Distiller when potion is here
+	await get_tree().create_timer(1).timeout 
+	current_distill_potion = potion
+	distill_potion()
 
 func _on_Cauldron_button_up():
+	if spoon_disabled:
+		return
 	# TODO: Clear cauldron state
 	# Clear ingredient runes on the cauldron
 	# Create a new potion based on the ingredients given and the rubric
 	# Tween it to the top shelf
-	pass 
+	var starting_pos = $Spoon.position
+	var tween = create_tween()
+	tween.tween_property($Spoon, 'position:x', starting_pos.x - 200, .4)
+	tween.tween_property($Spoon, 'position:x', starting_pos.x, .4)
+	tween.connect("finished", on_spoon_tween_finished)
+	spoon_disabled = true
+	
+func on_spoon_tween_finished():
+	spoon_disabled = false
 
 func _on_PotionRefill_button_up():
 	fill_potion_shelf()

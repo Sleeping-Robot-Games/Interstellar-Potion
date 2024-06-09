@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=41 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bn141qbuaknda" path="res://assets/BG/Key_1.png" id="6_kc8ea"]
 [ext_resource type="Texture2D" uid="uid://dw1cexcy8qe43" path="res://assets/Rules/ClearButton.png" id="6_upeed"]
 [ext_resource type="Texture2D" uid="uid://v6ih0qv16i7k" path="res://assets/Player.png" id="6_ur01h"]
-[ext_resource type="Material" uid="uid://co6exputhnvsb" path="res://add_canvas_item_material.tres" id="6_xtvfh"]
+[ext_resource type="Material" uid="uid://co6exputhnvsb" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
 [ext_resource type="Texture2D" uid="uid://wtmr3pjhny0c" path="res://assets/BG/Key_2.png" id="7_ujy7w"]
 [ext_resource type="Texture2D" uid="uid://4gpnf4biwfps" path="res://assets/FilterMachine.png" id="8_fibk1"]
 [ext_resource type="Texture2D" uid="uid://b8xrvrotrw228" path="res://assets/BG/Key_3.png" id="8_y84gg"]
@@ -26,16 +26,14 @@
 [ext_resource type="Texture2D" uid="uid://bfnh7pkl7rfss" path="res://assets/FilterMachine_CTA.png" id="16_i5p58"]
 [ext_resource type="Texture2D" uid="uid://byqkcor4mowas" path="res://assets/Spoon.png" id="17_ly7y0"]
 [ext_resource type="Texture2D" uid="uid://dpnmrbw5ospx7" path="res://assets/Cauldron_Back.png" id="19_eun6s"]
+[ext_resource type="Texture2D" uid="uid://cfkp8d3cx5i1e" path="res://assets/Ingredient_Glyph_Bowl.png" id="20_ildx6"]
 [ext_resource type="Texture2D" uid="uid://bs4bc0ku43acd" path="res://assets/Cauldron_Front.png" id="20_qg5qc"]
 [ext_resource type="Texture2D" uid="uid://bevjk547g77sy" path="res://assets/DistillerFill.png" id="22_d1m1y"]
 [ext_resource type="Texture2D" uid="uid://ciryrh4detjvj" path="res://assets/BG/Plaque_Supplies.png" id="24_xlthj"]
 [ext_resource type="Texture2D" uid="uid://bm15mqy46ggij" path="res://assets/BG/Plaque_Ingredients.png" id="25_cqgv0"]
-[ext_resource type="PackedScene" uid="uid://djg2e2jg78ji4" path="res://scenes/potion_crate.tscn" id="25_s4b3b"]
+[ext_resource type="PackedScene" uid="uid://sp77tkksj53" path="res://scenes/potion_crate.tscn" id="25_s4b3b"]
 [ext_resource type="Texture2D" uid="uid://cqxk12ct6vx22" path="res://assets/BG/Plaque_Potions.png" id="26_qtlf4"]
-[ext_resource type="Texture2D" uid="uid://b2ouuoyhi8tvi" path="res://assets/DialogueBG.png" id="33_2eys4"]
-[ext_resource type="Texture2D" uid="uid://cw1s2byy7v2kn" path="res://assets/DialogueTail.png" id="33_mh2g8"]
-[ext_resource type="Texture2D" uid="uid://d1m07q6g03kjp" path="res://assets/DialogueArm.png" id="34_yhxpb"]
-[ext_resource type="FontFile" uid="uid://bx3ujw7iramtn" path="res://assets/FreckleFace-Regular.ttf" id="36_je45h"]
+[ext_resource type="PackedScene" uid="uid://d1so7gfvlbhaa" path="res://scenes/dialogue.tscn" id="34_vey8l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iehke"]
 size = Vector2(312, 507.75)
@@ -62,15 +60,6 @@ size = Vector2(277, 547)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cynv4"]
 size = Vector2(224, 433)
-
-[sub_resource type="Curve" id="Curve_gkql6"]
-_data = [Vector2(0.0133588, 1), 0.0, -0.0636724, 0, 0, Vector2(0.150763, 0.851177), -1.28141, -1.28141, 0, 0, Vector2(0.398855, 0.411094), -1.51283, -1.51283, 0, 0, Vector2(0.921756, 0.199291), 0.0, 0.0, 0, 0, Vector2(1, 0.205579), -0.0732244, 0.0, 0, 0]
-point_count = 5
-
-[sub_resource type="Theme" id="Theme_hd16e"]
-default_font = ExtResource("36_je45h")
-default_font_size = 33
-RichTextLabel/colors/default_color = Color(0.25098, 0.2, 0.113725, 1)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5uhqb")
@@ -103,21 +92,6 @@ offset_top = 154.0
 offset_right = 246.0
 offset_bottom = 508.0
 theme_override_constants/separation = 30
-
-[node name="Instructions" type="Sprite2D" parent="Rubric"]
-position = Vector2(148, 754)
-texture = ExtResource("5_vh70u")
-
-[node name="TextureButton" type="TextureButton" parent="Rubric"]
-offset_left = 135.0
-offset_top = 541.0
-offset_right = 252.0
-offset_bottom = 581.0
-texture_normal = ExtResource("6_upeed")
-texture_pressed = ExtResource("6_upeed")
-texture_hover = ExtResource("6_upeed")
-texture_disabled = ExtResource("6_upeed")
-texture_focused = ExtResource("6_upeed")
 
 [node name="Door" type="Node2D" parent="."]
 position = Vector2(1568, 511)
@@ -313,48 +287,79 @@ texture = ExtResource("14_lwaou")
 texture = ExtResource("19_eun6s")
 
 [node name="CauldronFront" type="Sprite2D" parent="Cauldron"]
-visible = false
+z_index = 1
 position = Vector2(0, 25.5)
 texture = ExtResource("20_qg5qc")
 
 [node name="Marker2D" type="Marker2D" parent="Cauldron"]
 position = Vector2(10, -21)
 
+[node name="Glyph1" type="Sprite2D" parent="Cauldron"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(-130, 31)
+texture = ExtResource("20_ildx6")
+
+[node name="Glyph2" type="Sprite2D" parent="Cauldron"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(-67, 33)
+texture = ExtResource("20_ildx6")
+
+[node name="Glyph3" type="Sprite2D" parent="Cauldron"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(0, 32)
+texture = ExtResource("20_ildx6")
+
+[node name="Glyph4" type="Sprite2D" parent="Cauldron"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(62, 30)
+texture = ExtResource("20_ildx6")
+
+[node name="Glyph5" type="Sprite2D" parent="Cauldron"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(124, 25)
+texture = ExtResource("20_ildx6")
+
 [node name="Area2D" type="Area2D" parent="Cauldron"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron/Area2D"]
-position = Vector2(0, -31)
+position = Vector2(0, -39)
 shape = SubResource("RectangleShape2D_bmckp")
 
 [node name="StateHolder" type="Node2D" parent="Cauldron"]
 
 [node name="Pos1" type="Marker2D" parent="Cauldron/StateHolder"]
-position = Vector2(-150, 136)
+position = Vector2(-122, -102)
 
 [node name="Pos2" type="Marker2D" parent="Cauldron/StateHolder"]
-position = Vector2(-85, 144)
+position = Vector2(-61, -99)
 
 [node name="Pos3" type="Marker2D" parent="Cauldron/StateHolder"]
-position = Vector2(-2, 146)
+position = Vector2(-6, -98)
 
 [node name="Pos4" type="Marker2D" parent="Cauldron/StateHolder"]
-position = Vector2(86, 141)
+position = Vector2(50, -99)
 
 [node name="Pos5" type="Marker2D" parent="Cauldron/StateHolder"]
-position = Vector2(159, 131)
+position = Vector2(109, -104)
 
 [node name="Spoon" type="Node2D" parent="."]
 position = Vector2(1078, 692)
 
 [node name="Highlight" type="Sprite2D" parent="Spoon"]
 visible = false
+position = Vector2(4, -3)
 texture = ExtResource("16_cs3hm")
 
 [node name="Button" type="Button" parent="Spoon"]
-offset_left = -52.0
-offset_top = -85.0
-offset_right = 51.0
-offset_bottom = 82.0
+offset_left = -49.0
+offset_top = -84.0
+offset_right = 54.0
+offset_bottom = 83.0
 icon = ExtResource("17_ly7y0")
 flat = true
 
@@ -382,13 +387,6 @@ position = Vector2(105, 298)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Distiller/Area2D"]
 shape = SubResource("RectangleShape2D_j6oc5")
-
-[node name="Button" type="Button" parent="Distiller"]
-offset_left = 80.0
-offset_top = -40.0
-offset_right = 157.0
-offset_bottom = 4.0
-text = "Distill"
 
 [node name="ShelfSprite2" type="Sprite2D" parent="."]
 position = Vector2(968, 462)
@@ -420,9 +418,6 @@ position = Vector2(969, 239)
 [node name="PotionShelf" type="Node2D" parent="."]
 position = Vector2(968, 118)
 
-[node name="PotionCrate" parent="PotionShelf" instance=ExtResource("25_s4b3b")]
-position = Vector2(-191, 257)
-
 [node name="Pos1" type="Marker2D" parent="PotionShelf"]
 position = Vector2(-187, 271)
 
@@ -438,12 +433,11 @@ position = Vector2(85, 271)
 [node name="Pos5" type="Marker2D" parent="PotionShelf"]
 position = Vector2(176, 271)
 
-[node name="Button" type="Button" parent="PotionShelf"]
-offset_left = -91.0
-offset_top = 351.0
-offset_right = 53.0
-offset_bottom = 382.0
-text = "Refill Potion Shelf"
+[node name="RefillButton" parent="PotionShelf" instance=ExtResource("25_s4b3b")]
+offset_left = -34.0
+offset_top = 397.0
+offset_right = 34.0
+offset_bottom = 473.0
 
 [node name="IngredientShelf" type="Node2D" parent="."]
 position = Vector2(936, 378)
@@ -472,6 +466,21 @@ position = Vector2(0, -155)
 [node name="DrawingBoard" type="Node2D" parent="."]
 script = ExtResource("11_kygup")
 
+[node name="Instructions" type="Sprite2D" parent="DrawingBoard"]
+position = Vector2(148, 754)
+texture = ExtResource("5_vh70u")
+
+[node name="ClearButton" type="TextureButton" parent="DrawingBoard"]
+offset_left = 135.0
+offset_top = 541.0
+offset_right = 252.0
+offset_bottom = 581.0
+texture_normal = ExtResource("6_upeed")
+texture_pressed = ExtResource("6_upeed")
+texture_hover = ExtResource("6_upeed")
+texture_disabled = ExtResource("6_upeed")
+texture_focused = ExtResource("6_upeed")
+
 [node name="Area2D" type="Area2D" parent="DrawingBoard"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DrawingBoard/Area2D"]
@@ -485,54 +494,11 @@ offset_right = 380.0
 offset_bottom = 991.0
 text = "Clear Board"
 
-[node name="Dialogue" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Line2D" type="Line2D" parent="Dialogue"]
-position = Vector2(720, 1183)
-points = PackedVector2Array(817, -894, 824, -953, 861, -990, 885, -970, 908, -995)
-width = 33.0
-width_curve = SubResource("Curve_gkql6")
-default_color = Color(0.94902, 0.87451, 0.690196, 1)
-texture = ExtResource("33_mh2g8")
-texture_mode = 2
-joint_mode = 2
-end_cap_mode = 2
-antialiased = true
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Dialogue"]
-layout_mode = 0
-offset_left = 1343.0
-offset_top = 255.0
-offset_right = 1635.0
-offset_bottom = 358.0
-texture = ExtResource("33_2eys4")
-patch_margin_left = 50
-patch_margin_right = 50
-
-[node name="Arm" type="TextureRect" parent="Dialogue"]
-offset_left = 1238.0
-offset_top = 333.0
-offset_right = 1380.0
-offset_bottom = 402.0
-texture = ExtResource("34_yhxpb")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue"]
-layout_mode = 0
-offset_left = 1389.0
-offset_top = 288.0
-offset_right = 1587.0
-offset_bottom = 328.0
-theme = SubResource("Theme_hd16e")
-text = "Lorem Ipsum"
+[node name="Dialogue" parent="." instance=ExtResource("34_vey8l")]
 
 [connection signal="button_up" from="Player/Button" to="." method="_on_TestPotion_button_up"]
 [connection signal="button_up" from="Spoon/Button" to="." method="_on_Cauldron_button_up"]
-[connection signal="button_up" from="Distiller/Button" to="." method="_on_Distill_button_up"]
-[connection signal="button_up" from="PotionShelf/Button" to="." method="_on_PotionRefill_button_up"]
+[connection signal="button_up" from="PotionShelf/RefillButton" to="." method="_on_PotionRefill_button_up"]
+[connection signal="button_up" from="DrawingBoard/ClearButton" to="DrawingBoard" method="_on_clear_button_button_up"]
 [connection signal="mouse_entered" from="DrawingBoard/Area2D" to="DrawingBoard" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="DrawingBoard/Area2D" to="DrawingBoard" method="_on_area_2d_mouse_exited"]
-[connection signal="button_up" from="DrawingBoard/Button" to="DrawingBoard" method="_on_button_button_up"]

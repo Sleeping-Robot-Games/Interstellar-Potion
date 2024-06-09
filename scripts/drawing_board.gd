@@ -11,23 +11,21 @@ func _input(event):
 			current_line.width = 3  # Set the width of the line
 			current_line.default_color = Color.BLACK  # Set the color of the line
 			add_child(current_line)  # Add the new Line2D to the scene
+			$Instructions.hide()
 		else:
 			current_line = null
 	
 	elif event is InputEventMouseMotion and current_line != null and is_over_board:
 		current_line.add_point(event.position)
 
-
-
 func _on_area_2d_mouse_entered():
 	is_over_board = true
-
 
 func _on_area_2d_mouse_exited():
 	is_over_board = false
 
-
-func _on_button_button_up():
+func _on_clear_button_button_up():
+	$Instructions.show()
 	for line in get_children():
 		if line is Line2D:
 			line.queue_free()
