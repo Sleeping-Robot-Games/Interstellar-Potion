@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var rubric_row_scene = preload("res://scenes/rubric_row.tscn")
 var potion_scene = preload("res://scenes/potion.tscn")
 var ingredient_scene = preload("res://scenes/ingredient.tscn")
@@ -109,14 +108,14 @@ func check_solution(potion):
 		$Door/Label.text = "WIN!"
 	else:
 		$Door/Label.text = "Try Again"
-		play_dialogue("Fail")
-		await get_tree().create_timer(10).timeout
-		hide_dialogue("Fail")
+		if not "Fail" in dialogue_state:
+			play_dialogue("Fail")
+			await get_tree().create_timer(10).timeout
+			hide_dialogue("Fail")
 	
-	potion.queue_free()
-	
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(2).timeout
 	$Door/Label.text = ""
+	potion.queue_free()
 	hide_dialogue("Success")
 	if success:
 		## TODO: increment level

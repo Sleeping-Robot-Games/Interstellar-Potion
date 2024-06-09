@@ -205,7 +205,7 @@ position = Vector2(13, -151)
 texture = ExtResource("11_872v5")
 
 [node name="PotionDropMarker" type="Marker2D" parent="Door"]
-position = Vector2(-3, 88)
+position = Vector2(-7, 64)
 
 [node name="Area2D" type="Area2D" parent="Door"]
 
