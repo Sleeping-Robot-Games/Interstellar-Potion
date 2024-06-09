@@ -35,6 +35,7 @@ func play_dialogue_sfx(parent, laugh = false):
 		sfx_player.finished.connect(sfx_player.queue_free)
 	parent.add_child(sfx_player)
 	sfx_player.play()
+	return sfx_player
 	
 func play_dialogue_laugh_sfx(sfx_player):
 	randomize()

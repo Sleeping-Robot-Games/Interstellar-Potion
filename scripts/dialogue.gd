@@ -6,6 +6,8 @@ extends Control
 @export var show_arm = false
 @export var laugh = false
 
+var sfx_player: AudioStreamPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Line2D.points[4] = $Line2D.to_local(game.get_node('IntercomMarker').global_position)
@@ -33,5 +35,7 @@ func animate_text():
 func _on_visibility_changed():
 	if visible:
 		animate_text()
-		g.play_dialogue_sfx(self, laugh)
-		# TODO: Play sound and laugh after if true
+		sfx_player = g.play_dialogue_sfx(self, laugh)
+	else:
+		if is_instance_valid(sfx_player):
+			sfx_player.queue_free()
