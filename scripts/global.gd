@@ -20,6 +20,23 @@ var level_dict = {
 			'shrink': "#a1ca48",
 			'solution': "#a867b2"
 		}
+	},
+	2: {
+		'solution': [1, 2, 3, 4, 4],
+		'rubric': {
+			'glow': [4, 4],
+			'shimmer': [1, 4],
+			'flash': [1, 2],
+			'sparkle': [3, 2],
+			'solution': [1, 2, 3, 4, 4]
+		},
+		'potion_colors': {
+			'glow': "#e6bc73",
+			'shimmer': "#80cdf4",
+			'flash': "#ffd21d",
+			'sparkle': "#f28e3d",
+			'solution': "#ed4d41"
+		}
 	}
 }
 

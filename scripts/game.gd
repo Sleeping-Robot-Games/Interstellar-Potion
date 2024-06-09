@@ -91,7 +91,9 @@ func check_solution(potion):
 	var potion_ing = potion.ingredients
 	potion_ing.sort()
 	
-	if solution == potion_ing:
+	var success = solution == potion_ing
+	
+	if success:
 		$Door/Label.text = "WIN!"
 	else:
 		$Door/Label.text = "Try Again"
@@ -104,6 +106,10 @@ func check_solution(potion):
 	await get_tree().create_timer(4).timeout
 	$Door/Label.text = ""
 	hide_dialogue("Success")
+	if success:
+		## TODO: increment level
+		g.current_level = 2
+		get_tree().reload_current_scene()
 
 func fill_potion_shelf():
 	# Fill shelf until there's no more room
