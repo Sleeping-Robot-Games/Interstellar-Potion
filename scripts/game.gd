@@ -28,14 +28,6 @@ var cauldron_state = []
 var spoon_disabled = true
 
 func _ready():
-	if OS.get_name() == "Windows":
-		# Set game window
-		var window = get_window()
-		var screen_size = DisplayServer.screen_get_size()
-		var window_size = Vector2i(1280, 720)
-		window.size = window_size
-		window.position = (screen_size - window_size) / 2
-	
 	# Music
 	var music
 	if g.current_level == 1:

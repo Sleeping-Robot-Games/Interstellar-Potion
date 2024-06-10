@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2lcqp6tr6rk6"]
+[gd_scene load_steps=11 format=3 uid="uid://b2lcqp6tr6rk6"]
 
 [ext_resource type="Texture2D" uid="uid://bpsik5n4n3db5" path="res://assets/BG/BG2.png" id="1_3aj6k"]
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_gmnwm"]
 [ext_resource type="Texture2D" uid="uid://bqcofw0p5r8e1" path="res://assets/Intercom.png" id="2_bmfyi"]
 [ext_resource type="Texture2D" uid="uid://x1byl7v74bce" path="res://assets/BG/Door_Exit.png" id="3_pfu1p"]
 [ext_resource type="Texture2D" uid="uid://btmbk4rhgn5mm" path="res://assets/BG/Door_Entrance.png" id="4_hktlv"]
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gmnwm")
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -126,3 +128,6 @@ theme = ExtResource("8_ad2xs")
 text = "Skip Tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="TextureButton2" to="." method="_on_texture_button_2_button_up"]
