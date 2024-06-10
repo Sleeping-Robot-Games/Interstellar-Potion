@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1so7gfvlbhaa"]
+[gd_scene load_steps=7 format=3 uid="uid://ds5lfampnwlx5"]
 
 [ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_3xj2x"]
 [ext_resource type="Texture2D" uid="uid://cw1s2byy7v2kn" path="res://assets/DialogueTail.png" id="1_thdir"]
 [ext_resource type="Texture2D" uid="uid://b2ouuoyhi8tvi" path="res://assets/DialogueBG.png" id="2_vbxv6"]
 [ext_resource type="Texture2D" uid="uid://d1m07q6g03kjp" path="res://assets/DialogueArm.png" id="3_gj22n"]
-[ext_resource type="Theme" uid="uid://ded46rb34nh27" path="res://resources/bubble_theme.tres" id="4_n5qst"]
+[ext_resource type="Theme" path="res://resources/bubble_theme.tres" id="4_n5qst"]
 
 [sub_resource type="Curve" id="Curve_gkql6"]
 _data = [Vector2(0.0133588, 1), 0.0, -0.0636724, 0, 0, Vector2(0.150763, 0.851177), -1.28141, -1.28141, 0, 0, Vector2(0.398855, 0.411094), -1.51283, -1.51283, 0, 0, Vector2(0.921756, 0.199291), 0.0, 0.0, 0, 0, Vector2(1, 0.205579), -0.0732244, 0.0, 0, 0]
