@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=74 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bn141qbuaknda" path="res://assets/BG/Key_1.png" id="6_kc8ea"]
 [ext_resource type="Texture2D" uid="uid://dw1cexcy8qe43" path="res://assets/Rules/ClearButton.png" id="6_upeed"]
 [ext_resource type="Texture2D" uid="uid://v6ih0qv16i7k" path="res://assets/Player.png" id="6_ur01h"]
-[ext_resource type="Material" uid="uid://co6exputhnvsb" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
+[ext_resource type="Material" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
 [ext_resource type="Texture2D" uid="uid://wtmr3pjhny0c" path="res://assets/BG/Key_2.png" id="7_ujy7w"]
 [ext_resource type="Texture2D" uid="uid://4gpnf4biwfps" path="res://assets/FilterMachine.png" id="8_fibk1"]
 [ext_resource type="Texture2D" uid="uid://b8xrvrotrw228" path="res://assets/BG/Key_3.png" id="8_y84gg"]
@@ -35,28 +35,36 @@
 [ext_resource type="Texture2D" uid="uid://cfkp8d3cx5i1e" path="res://assets/Ingredient_Glyph_Bowl.png" id="20_ildx6"]
 [ext_resource type="Texture2D" uid="uid://bs4bc0ku43acd" path="res://assets/Cauldron_Front.png" id="20_qg5qc"]
 [ext_resource type="Texture2D" uid="uid://bevjk547g77sy" path="res://assets/DistillerFill.png" id="22_d1m1y"]
+[ext_resource type="Texture2D" uid="uid://db082tp76n2ek" path="res://assets/Cloud.png" id="22_go6sh"]
+[ext_resource type="Texture2D" uid="uid://b6c8v0nc2ea5r" path="res://assets/PotionEffects/Player_Cloning.png" id="22_vbceg"]
 [ext_resource type="Texture2D" uid="uid://ciryrh4detjvj" path="res://assets/BG/Plaque_Supplies.png" id="24_xlthj"]
 [ext_resource type="Texture2D" uid="uid://bm15mqy46ggij" path="res://assets/BG/Plaque_Ingredients.png" id="25_cqgv0"]
 [ext_resource type="PackedScene" uid="uid://sp77tkksj53" path="res://scenes/potion_crate.tscn" id="25_s4b3b"]
 [ext_resource type="Texture2D" uid="uid://cqxk12ct6vx22" path="res://assets/BG/Plaque_Potions.png" id="26_qtlf4"]
-[ext_resource type="PackedScene" uid="uid://d1so7gfvlbhaa" path="res://scenes/dialogue.tscn" id="34_vey8l"]
+[ext_resource type="PackedScene" path="res://scenes/dialogue.tscn" id="34_vey8l"]
+[ext_resource type="Texture2D" uid="uid://daqfbjj788ajd" path="res://assets/PotionEffects/Player_Invisible.png" id="41_r8ydc"]
+[ext_resource type="Texture2D" uid="uid://c12l7p00hq3ms" path="res://assets/PotionEffects/Player_Youthfulness.png" id="43_8b56t"]
+[ext_resource type="Texture2D" uid="uid://bnkpd6eprtyvd" path="res://assets/PotionEffects/Player_Strength.png" id="44_4ydee"]
+[ext_resource type="Texture2D" uid="uid://b4iju1kfw0c5l" path="res://assets/PotionEffects/Player_Sleeping.png" id="46_nr3xa"]
+[ext_resource type="Texture2D" uid="uid://2obwhv5b4tbj" path="res://assets/PotionEffects/Player_Shapeshifting.png" id="47_t41bp"]
+[ext_resource type="Texture2D" uid="uid://c1558rlkulfq0" path="res://assets/PotionEffects/Player_Glowing.png" id="48_132qx"]
+[ext_resource type="Texture2D" uid="uid://cvcm1q1xbhli6" path="res://assets/PotionEffects/Player_Elasticity.png" id="49_qr06k"]
+[ext_resource type="Texture2D" uid="uid://drlxfjiipknpd" path="res://assets/PotionEffects/Player_Combustion.png" id="50_gpv1m"]
+[ext_resource type="Texture2D" uid="uid://wdcwf7y8rifc" path="res://assets/PotionEffects/Player_AstralProjection.png" id="51_vompl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iehke"]
 size = Vector2(312, 507.75)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jh0vb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_ur01h")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d7w"]
 size = Vector2(241, 303)
+
+[sub_resource type="Curve" id="Curve_d4v23"]
+_data = [Vector2(0, 0), 0.0, 11.9189, 0, 0, Vector2(0.0306279, 0.699742), 1.27952, 1.27952, 0, 0, Vector2(0.978561, 0.949677), -0.0869329, 0.284507, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_2nrix"]
+offsets = PackedFloat32Array(0, 0.161345, 0.556303, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmckp"]
 size = Vector2(390, 370)
@@ -75,10 +83,473 @@ size = Vector2(277, 547)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cynv4"]
 size = Vector2(224, 433)
 
+[sub_resource type="Animation" id="Animation_37h7m"]
+resource_name = "Invisibility"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.655708, 1.11605, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.440751, 1.57883),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("41_r8ydc"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_w04u8"]
+resource_name = "Youthfulness"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.655708, 1.11605, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("43_8b56t"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_y3hol"]
+resource_name = "Strength"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("44_4ydee"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_6kx0n"]
+resource_name = "Sleeping"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("46_nr3xa"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_jxooh"]
+resource_name = "Shapeshifting"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("47_t41bp"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_0u58q"]
+resource_name = "Glowing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("48_132qx"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_fd58b"]
+resource_name = "Elasticity"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("49_qr06k"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_p4dbp"]
+resource_name = "Combustion"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("50_gpv1m"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_d710k"]
+resource_name = "AstralProjection"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("51_vompl"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_0pe70"]
+resource_name = "Cloning"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.655708, 1.11605, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Clone4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Clone2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Clone3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Clone:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_21odh"]
+_data = {
+"AstralProjection": SubResource("Animation_d710k"),
+"Cloning": SubResource("Animation_0pe70"),
+"Combustion": SubResource("Animation_p4dbp"),
+"Elasticity": SubResource("Animation_fd58b"),
+"Glowing": SubResource("Animation_0u58q"),
+"Invisibility": SubResource("Animation_37h7m"),
+"Shapeshifting": SubResource("Animation_jxooh"),
+"Sleeping": SubResource("Animation_6kx0n"),
+"Strength": SubResource("Animation_y3hol"),
+"Youthfulness": SubResource("Animation_w04u8")
+}
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5uhqb")
 
 [node name="Background" type="Sprite2D" parent="."]
+z_index = -10
 texture = ExtResource("2_3bwar")
 offset = Vector2(960, 540)
 metadata/_edit_lock_ = true
@@ -222,7 +693,7 @@ theme_override_fonts/font = ExtResource("20_6glyu")
 theme_override_font_sizes/font_size = 48
 
 [node name="Player" type="Node2D" parent="."]
-position = Vector2(1340, 826)
+position = Vector2(1340, 780)
 
 [node name="PotionDropMarker" type="Marker2D" parent="Player"]
 position = Vector2(-49, 75)
@@ -230,9 +701,6 @@ position = Vector2(-49, 75)
 [node name="Highlight" type="Sprite2D" parent="Player"]
 visible = false
 texture = ExtResource("14_yhw3r")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-sprite_frames = SubResource("SpriteFrames_jh0vb")
 
 [node name="Area2D" type="Area2D" parent="Player"]
 position = Vector2(-155, -150)
@@ -248,6 +716,55 @@ offset_right = -70.0
 offset_bottom = -180.0
 theme_override_fonts/font = ExtResource("20_6glyu")
 theme_override_font_sizes/font_size = 48
+
+[node name="PlayerPivot" type="Node2D" parent="Player"]
+position = Vector2(0, 146)
+
+[node name="Clone4" type="Sprite2D" parent="Player/PlayerPivot"]
+visible = false
+position = Vector2(-187.179, -265.848)
+scale = Vector2(1, 1)
+texture = ExtResource("22_vbceg")
+
+[node name="Clone2" type="Sprite2D" parent="Player/PlayerPivot"]
+visible = false
+position = Vector2(-112.112, -249.425)
+scale = Vector2(1, 1)
+texture = ExtResource("22_vbceg")
+
+[node name="Clone3" type="Sprite2D" parent="Player/PlayerPivot"]
+visible = false
+position = Vector2(227.149, -264.821)
+scale = Vector2(1, 1)
+texture = ExtResource("22_vbceg")
+
+[node name="Clone" type="Sprite2D" parent="Player/PlayerPivot"]
+visible = false
+position = Vector2(125.761, -249.425)
+scale = Vector2(1, 1)
+texture = ExtResource("22_vbceg")
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="Player/PlayerPivot"]
+position = Vector2(2, -237)
+texture = ExtResource("6_ur01h")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Player"]
+position = Vector2(-11, 58)
+emitting = false
+amount = 12
+one_shot = true
+speed_scale = 2.84
+explosiveness = 0.92
+texture = ExtResource("22_go6sh")
+emission_shape = 3
+emission_rect_extents = Vector2(180, 70)
+direction = Vector2(0, 652.345)
+gravity = Vector2(0, -22)
+angle_min = -20.0
+angle_max = 45.0
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_d4v23")
+color_ramp = SubResource("Gradient_2nrix")
 
 [node name="Cauldron" type="Node2D" parent="."]
 position = Vector2(961, 869)
@@ -629,6 +1146,12 @@ autoplay = true
 
 [node name="IntercomMarker" type="Marker2D" parent="."]
 position = Vector2(1640, 135)
+
+[node name="PotionEffectsAnimations" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Player/PlayerPivot/AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_21odh")
+}
 
 [connection signal="button_up" from="Spoon/Button" to="." method="_on_Cauldron_button_up"]
 [connection signal="button_up" from="PotionShelf/RefillButton" to="." method="_on_PotionRefill_button_up"]
