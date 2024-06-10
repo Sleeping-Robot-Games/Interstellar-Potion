@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ca4jmanhqj47d"]
+
+[ext_resource type="FontFile" uid="uid://ui6iamkx5j3w" path="res://resources/conformity.normal.ttf" id="1_nfbsi"]
+
+[resource]
+default_font = ExtResource("1_nfbsi")
+default_font_size = 55
+Label/colors/font_color = Color(0.345703, 0.249107, 0.118835, 1)
