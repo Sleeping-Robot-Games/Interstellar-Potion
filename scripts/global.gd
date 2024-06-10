@@ -4,38 +4,51 @@ var dragging_ingredient = false
 var dragging_potion = false
 var volume_control = 0
 
+const effects = [
+	"AstralProjection",
+	"Cloning",
+	"Combustion",
+	"Elasticity",
+	"Glowing",
+	"Invisibility",
+	"Shapeshifting",
+	"Sleeping",
+	"Strength",
+	"Youthfulness"
+]
+
 # Game level state
 var current_level = 1
 var level_dict = {
 	1: {
 		'solution': [1, 3, 3, 3, 4],
 		'rubric': {
-			'sparkle': [1, 3],
-			'smoke': [3, 4],
-			'shrink': [4, 4],
+			'AstralProjection': [1, 3],
+			'Combustion': [3, 4],
+			'Shapeshifting': [4, 4],
 			'solution': [1, 3, 3, 3, 4]
 		},
 		'potion_colors': {
-			'sparkle': '#eca7aa',
-			'smoke': "#2d9789",
-			'shrink': "#a1ca48",
+			'AstralProjection': '#eca7aa',
+			'Combustion': "#2d9789",
+			'Shapeshifting': "#a1ca48",
 			'solution': "#a867b2"
 		}
 	},
 	2: {
 		'solution': [1, 2, 3, 4, 4],
 		'rubric': {
-			'glow': [4, 4],
-			'shimmer': [1, 4],
-			'flash': [1, 2],
-			'sparkle': [3, 2],
+			'Strength': [4, 4],
+			'Elasticity': [1, 4],
+			'Cloning': [1, 2],
+			'Glowing': [3, 2],
 			'solution': [1, 2, 3, 4, 4]
 		},
 		'potion_colors': {
-			'glow': "#e6bc73",
-			'shimmer': "#80cdf4",
-			'flash': "#ffd21d",
-			'sparkle': "#f28e3d",
+			'Strength': "#e6bc73",
+			'Elasticity': "#80cdf4",
+			'Cloning': "#ffd21d",
+			'Glowing': "#f28e3d",
 			'solution': "#ed4d41"
 		}
 	}
