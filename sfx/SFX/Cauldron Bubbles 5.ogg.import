@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://blnrtc1gbvsno"
+path="res://.godot/imported/Cauldron Bubbles 5.ogg-268098f8e4ca50e0aca8afc35e559027.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Cauldron Bubbles 5.ogg"
+dest_files=["res://.godot/imported/Cauldron Bubbles 5.ogg-268098f8e4ca50e0aca8afc35e559027.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

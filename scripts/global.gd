@@ -40,6 +40,17 @@ var level_dict = {
 	}
 }
 
+func play_random_sfx(parent, fname, custom_range=2, db_override=0, ext='.ogg'):
+	var sfx_player = AudioStreamPlayer.new()
+	sfx_player.volume_db = db_override
+	randomize()
+	var track_num = randi_range(1, custom_range)
+	print(fname+str(track_num))
+	sfx_player.stream = load('res://sfx/SFX/'+fname+' '+str(track_num)+ext)
+	sfx_player.finished.connect(sfx_player.queue_free)
+	parent.add_child(sfx_player)
+	sfx_player.play()
+
 func play_dialogue_sfx(parent, laugh = false):
 	var sfx_player = AudioStreamPlayer.new()
 	randomize()

@@ -209,6 +209,7 @@ func get_cauldron_state_pos(ingredient):
 	return ingredient.shelf_position
 	
 func set_cauldron_ingredient(ingredient):
+	g.play_random_sfx(self, 'Adding Ingredient', 1)
 	cauldron_state.append(ingredient)
 	ingredient_shelf_state[ingredient.shelf_index] = null
 	# animate rune of ingredient
@@ -227,6 +228,7 @@ func toggle_highlight(object: String, toggle: bool):
 	
 func show_potion_effect():
 	if current_test_potion:
+		g.play_random_sfx(self, 'Drinking Potion', 6)
 		$Player/Label.text = current_test_potion.effect
 		await get_tree().create_timer(2).timeout
 		play_dialogue("StudyLaws")
@@ -263,6 +265,8 @@ func find_effect_by_ingredients(ingredients):
 func _on_Cauldron_button_up():
 	if spoon_disabled or get_next_free_player_potion_shelf_position() == -1:
 		return
+		
+	g.play_random_sfx(self, 'Cauldron Bubbles', 8)
 	
 	# Animate spoon
 	var starting_pos = $Spoon.position

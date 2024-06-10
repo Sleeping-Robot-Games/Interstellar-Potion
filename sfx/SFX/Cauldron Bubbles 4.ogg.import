@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://barrl8re73rnw"
+path="res://.godot/imported/Cauldron Bubbles 4.ogg-72c8ef74ca475d3dbc4c0fb0dfe1a78f.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Cauldron Bubbles 4.ogg"
+dest_files=["res://.godot/imported/Cauldron Bubbles 4.ogg-72c8ef74ca475d3dbc4c0fb0dfe1a78f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

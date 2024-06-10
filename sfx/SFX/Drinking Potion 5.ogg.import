@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cj3hr7fo0aabx"
+path="res://.godot/imported/Drinking Potion 5.ogg-bc353944c9091e6b3511566a7115a51e.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Drinking Potion 5.ogg"
+dest_files=["res://.godot/imported/Drinking Potion 5.ogg-bc353944c9091e6b3511566a7115a51e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
