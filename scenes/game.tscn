@@ -1,10 +1,11 @@
-[gd_scene load_steps=74 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=75 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
 [ext_resource type="Texture2D" uid="uid://btmbk4rhgn5mm" path="res://assets/BG/Door_Entrance.png" id="3_6lcuj"]
 [ext_resource type="Texture2D" uid="uid://bqcofw0p5r8e1" path="res://assets/Intercom.png" id="3_bm3uv"]
 [ext_resource type="Texture2D" uid="uid://dgbffdtp371jp" path="res://assets/Rules/Rules_BG.png" id="4_x211b"]
+[ext_resource type="Texture2D" uid="uid://bmxaca5bnj4cr" path="res://assets/BG/DoorOpen.png" id="5_fvg4o"]
 [ext_resource type="Texture2D" uid="uid://wdpaiv5xt6o0" path="res://assets/Rules/RulesCTA.png" id="5_vh70u"]
 [ext_resource type="Texture2D" uid="uid://x1byl7v74bce" path="res://assets/BG/Door_Exit.png" id="5_vyg04"]
 [ext_resource type="Texture2D" uid="uid://yssarompf41p" path="res://assets/Door_CTA.png" id="6_ese23"]
@@ -82,326 +83,6 @@ size = Vector2(277, 547)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cynv4"]
 size = Vector2(224, 433)
-
-[sub_resource type="Animation" id="Animation_37h7m"]
-resource_name = "Invisibility"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.655708, 1.11605, 1.25391, 1.39807, 1.57883, 1.78907),
-"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-0.0724092, 0.440751, 1.57883),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_ur01h"), ExtResource("41_r8ydc"), ExtResource("6_ur01h")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../CPUParticles2D:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1338, 1.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
-[sub_resource type="Animation" id="Animation_w04u8"]
-resource_name = "Youthfulness"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.655708, 1.11605, 1.25391, 1.39807, 1.57883, 1.78907),
-"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_ur01h"), ExtResource("43_8b56t"), ExtResource("6_ur01h")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../CPUParticles2D:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1338, 1.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
-[sub_resource type="Animation" id="Animation_y3hol"]
-resource_name = "Strength"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
-"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_ur01h"), ExtResource("44_4ydee"), ExtResource("6_ur01h")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../CPUParticles2D:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1338, 1.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
-[sub_resource type="Animation" id="Animation_6kx0n"]
-resource_name = "Sleeping"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
-"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_ur01h"), ExtResource("46_nr3xa"), ExtResource("6_ur01h")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../CPUParticles2D:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1338, 1.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
-[sub_resource type="Animation" id="Animation_jxooh"]
-resource_name = "Shapeshifting"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
-"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_ur01h"), ExtResource("47_t41bp"), ExtResource("6_ur01h")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../CPUParticles2D:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1338, 1.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
-[sub_resource type="Animation" id="Animation_0u58q"]
-resource_name = "Glowing"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
-"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_ur01h"), ExtResource("48_132qx"), ExtResource("6_ur01h")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../CPUParticles2D:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1338, 1.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
-[sub_resource type="Animation" id="Animation_fd58b"]
-resource_name = "Elasticity"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
-"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_ur01h"), ExtResource("49_qr06k"), ExtResource("6_ur01h")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../CPUParticles2D:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1338, 1.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
-[sub_resource type="Animation" id="Animation_p4dbp"]
-resource_name = "Combustion"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
-"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_ur01h"), ExtResource("50_gpv1m"), ExtResource("6_ur01h")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../CPUParticles2D:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1338, 1.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
 
 [sub_resource type="Animation" id="Animation_d710k"]
 resource_name = "AstralProjection"
@@ -531,6 +212,326 @@ tracks/6/keys = {
 "values": [false, true, false]
 }
 
+[sub_resource type="Animation" id="Animation_p4dbp"]
+resource_name = "Combustion"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("50_gpv1m"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_fd58b"]
+resource_name = "Elasticity"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("49_qr06k"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_0u58q"]
+resource_name = "Glowing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("48_132qx"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_37h7m"]
+resource_name = "Invisibility"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.655708, 1.11605, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.440751, 1.57883),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("41_r8ydc"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_jxooh"]
+resource_name = "Shapeshifting"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("47_t41bp"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_6kx0n"]
+resource_name = "Sleeping"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("46_nr3xa"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_y3hol"]
+resource_name = "Strength"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.7, 1.1, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("44_4ydee"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_w04u8"]
+resource_name = "Youthfulness"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0173153, 0.120551, 0.264714, 0.447048, 0.655708, 1.11605, 1.25391, 1.39807, 1.57883, 1.78907),
+"transitions": PackedFloat32Array(0.450625, 0.615572, 0.267944, 0.31864, 1, 0.450625, 0.615572, 0.267944, 0.31864, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.8, 1.2), Vector2(1.2, 0.6), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0724092, 0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_ur01h"), ExtResource("43_8b56t"), ExtResource("6_ur01h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1338, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_21odh"]
 _data = {
 "AstralProjection": SubResource("Animation_d710k"),
@@ -565,6 +566,10 @@ position = Vector2(353, 511)
 [node name="Sprite2D" type="Sprite2D" parent="EnterDoor"]
 texture = ExtResource("3_6lcuj")
 
+[node name="OpenDoor" type="Sprite2D" parent="EnterDoor"]
+visible = false
+texture = ExtResource("5_fvg4o")
+
 [node name="Rubric" type="Node2D" parent="."]
 
 [node name="ScrollSprite" type="Sprite2D" parent="Rubric"]
@@ -583,6 +588,11 @@ position = Vector2(1568, 511)
 
 [node name="Sprite2D" type="Sprite2D" parent="Door"]
 texture = ExtResource("5_vyg04")
+
+[node name="OpenDoor" type="Sprite2D" parent="Door"]
+visible = false
+scale = Vector2(-1, 1)
+texture = ExtResource("5_fvg4o")
 
 [node name="Highlight" type="Sprite2D" parent="Door"]
 visible = false
@@ -723,25 +733,21 @@ position = Vector2(0, 146)
 [node name="Clone4" type="Sprite2D" parent="Player/PlayerPivot"]
 visible = false
 position = Vector2(-187.179, -265.848)
-scale = Vector2(1, 1)
 texture = ExtResource("22_vbceg")
 
 [node name="Clone2" type="Sprite2D" parent="Player/PlayerPivot"]
 visible = false
 position = Vector2(-112.112, -249.425)
-scale = Vector2(1, 1)
 texture = ExtResource("22_vbceg")
 
 [node name="Clone3" type="Sprite2D" parent="Player/PlayerPivot"]
 visible = false
 position = Vector2(227.149, -264.821)
-scale = Vector2(1, 1)
 texture = ExtResource("22_vbceg")
 
 [node name="Clone" type="Sprite2D" parent="Player/PlayerPivot"]
 visible = false
 position = Vector2(125.761, -249.425)
-scale = Vector2(1, 1)
 texture = ExtResource("22_vbceg")
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="Player/PlayerPivot"]
