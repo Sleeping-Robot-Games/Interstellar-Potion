@@ -28,6 +28,4 @@ func _on_texture_button_2_button_up():
 func _on_h_slider_value_changed(value):
 	var mute = value == -20
 	AudioServer.set_bus_mute(bus_idx, mute)
-	if not mute:
-		AudioServer.set_bus_volume_db(bus_idx, value)
-		
+	AudioServer.set_bus_volume_db(bus_idx, value)
