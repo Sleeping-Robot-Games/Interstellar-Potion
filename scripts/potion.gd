@@ -55,7 +55,7 @@ func _on_potion_drop_tween_finished():
 		
 	if drop_location == game.get_node("Player/PotionDropMarker").global_position:
 		g.play_random_sfx(self, 'Drinking Potion', 6)
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(.5).timeout
 		game.show_potion_effect()
 		game.first_potion = false
 		

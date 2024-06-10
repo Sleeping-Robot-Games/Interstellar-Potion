@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bn141qbuaknda" path="res://assets/BG/Key_1.png" id="6_kc8ea"]
 [ext_resource type="Texture2D" uid="uid://dw1cexcy8qe43" path="res://assets/Rules/ClearButton.png" id="6_upeed"]
 [ext_resource type="Texture2D" uid="uid://v6ih0qv16i7k" path="res://assets/Player.png" id="6_ur01h"]
-[ext_resource type="Material" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
+[ext_resource type="Material" uid="uid://co6exputhnvsb" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
 [ext_resource type="Texture2D" uid="uid://wtmr3pjhny0c" path="res://assets/BG/Key_2.png" id="7_ujy7w"]
 [ext_resource type="Texture2D" uid="uid://4gpnf4biwfps" path="res://assets/FilterMachine.png" id="8_fibk1"]
 [ext_resource type="Texture2D" uid="uid://b8xrvrotrw228" path="res://assets/BG/Key_3.png" id="8_y84gg"]
@@ -42,7 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://bm15mqy46ggij" path="res://assets/BG/Plaque_Ingredients.png" id="25_cqgv0"]
 [ext_resource type="PackedScene" uid="uid://sp77tkksj53" path="res://scenes/potion_crate.tscn" id="25_s4b3b"]
 [ext_resource type="Texture2D" uid="uid://cqxk12ct6vx22" path="res://assets/BG/Plaque_Potions.png" id="26_qtlf4"]
-[ext_resource type="PackedScene" uid="uid://ds5lfampnwlx5" path="res://scenes/dialogue.tscn" id="34_vey8l"]
+[ext_resource type="PackedScene" uid="uid://d1so7gfvlbhaa" path="res://scenes/dialogue.tscn" id="34_vey8l"]
 [ext_resource type="Texture2D" uid="uid://daqfbjj788ajd" path="res://assets/PotionEffects/Player_Invisible.png" id="41_r8ydc"]
 [ext_resource type="Texture2D" uid="uid://c12l7p00hq3ms" path="res://assets/PotionEffects/Player_Youthfulness.png" id="43_8b56t"]
 [ext_resource type="Texture2D" uid="uid://bnkpd6eprtyvd" path="res://assets/PotionEffects/Player_Strength.png" id="44_4ydee"]
@@ -82,7 +82,7 @@ size = Vector2(277, 547)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shgce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cynv4"]
-size = Vector2(224, 433)
+size = Vector2(309, 448)
 
 [sub_resource type="Animation" id="Animation_pxyr5"]
 resource_name = "Glyph1_Inactive"
@@ -916,14 +916,15 @@ texture = ExtResource("5_fvg4o")
 [node name="Rubric" type="Node2D" parent="."]
 
 [node name="ScrollSprite" type="Sprite2D" parent="Rubric"]
-position = Vector2(171, 544)
+position = Vector2(233, 546)
+scale = Vector2(1.44901, 1.03654)
 texture = ExtResource("4_x211b")
 
 [node name="Container" type="VBoxContainer" parent="Rubric"]
-offset_left = 48.0
-offset_top = 128.0
-offset_right = 246.0
-offset_bottom = 508.0
+offset_left = 50.0
+offset_top = 131.0
+offset_right = 343.0
+offset_bottom = 511.0
 theme_override_constants/separation = 36
 
 [node name="Door" type="Node2D" parent="."]
@@ -1055,10 +1056,11 @@ theme_override_font_sizes/font_size = 48
 position = Vector2(1340, 780)
 
 [node name="PotionDropMarker" type="Marker2D" parent="Player"]
-position = Vector2(-49, 75)
+position = Vector2(-72, 65)
 
 [node name="Highlight" type="Sprite2D" parent="Player"]
 visible = false
+position = Vector2(1, -9)
 texture = ExtResource("14_yhw3r")
 
 [node name="Area2D" type="Area2D" parent="Player"]
@@ -1069,10 +1071,10 @@ position = Vector2(157.5, 153.5)
 shape = SubResource("RectangleShape2D_h4d7w")
 
 [node name="Label" type="Label" parent="Player"]
-offset_left = -110.0
-offset_top = -203.0
-offset_right = -70.0
-offset_bottom = -180.0
+offset_left = -69.0
+offset_top = 175.0
+offset_right = -29.0
+offset_bottom = 236.0
 theme_override_fonts/font = ExtResource("20_6glyu")
 theme_override_font_sizes/font_size = 48
 
@@ -1342,13 +1344,13 @@ position = Vector2(0, -155)
 script = ExtResource("11_kygup")
 
 [node name="Instructions" type="Sprite2D" parent="DrawingBoard"]
-position = Vector2(148, 754)
+position = Vector2(179, 754)
 texture = ExtResource("5_vh70u")
 
 [node name="ClearButton" type="TextureButton" parent="DrawingBoard"]
-offset_left = 135.0
+offset_left = 185.0
 offset_top = 541.0
-offset_right = 252.0
+offset_right = 302.0
 offset_bottom = 581.0
 texture_normal = ExtResource("6_upeed")
 texture_pressed = ExtResource("6_upeed")
@@ -1359,7 +1361,7 @@ texture_focused = ExtResource("6_upeed")
 [node name="Area2D" type="Area2D" parent="DrawingBoard"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DrawingBoard/Area2D"]
-position = Vector2(146, 778.5)
+position = Vector2(194.5, 791)
 shape = SubResource("RectangleShape2D_cynv4")
 
 [node name="Dialogues" type="Control" parent="."]
@@ -1516,3 +1518,4 @@ libraries = {
 [connection signal="button_up" from="DrawingBoard/ClearButton" to="DrawingBoard" method="_on_clear_button_button_up"]
 [connection signal="mouse_entered" from="DrawingBoard/Area2D" to="DrawingBoard" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="DrawingBoard/Area2D" to="DrawingBoard" method="_on_area_2d_mouse_exited"]
+[connection signal="animation_finished" from="GlyphAnimations" to="." method="_on_glyph_animations_animation_finished"]

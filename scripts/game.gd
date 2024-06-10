@@ -7,6 +7,7 @@ var ingredient_scene = preload("res://scenes/ingredient.tscn")
 var dialogue_state = []
 var distill_counter = 0
 var first_potion = true
+var door_success = false
 
 var solution = []
 var rubric = {}
@@ -92,25 +93,17 @@ func check_solution(potion):
 	var potion_ing = potion.ingredients
 	potion_ing.sort()
 	
-	var success = solution == potion_ing
-	
-	if success:
-		$Door/Label.text = "WIN!"
-	else:
-		$Door/Label.text = "Try Again"
-		if not "Fail" in dialogue_state:
-			play_dialogue("Fail")
-			await get_tree().create_timer(10).timeout
-			hide_dialogue("Fail")
-	
-	await get_tree().create_timer(2).timeout
-	$Door/Label.text = ""
 	potion.queue_free()
+	
+	door_success = solution == potion_ing
+	
+	$GlyphAnimations.play("Glyph_Checking")
+	
 	hide_dialogue("Success")
-	if success:
-		## TODO: increment level
-		g.current_level = 2
-		get_tree().reload_current_scene()
+	if not "Fail" in dialogue_state:
+		play_dialogue("Fail")
+		await get_tree().create_timer(10).timeout
+		hide_dialogue("Fail")
 
 func fill_potion_shelf():
 	# Fill shelf until there's no more room
@@ -336,3 +329,24 @@ func hide_dialogue(type):
 	if g.current_level != 1:
 		return
 	get_node("Dialogues/" + type).hide()
+
+func reset_glyphs():
+	for glyph in $Door/Control.get_children():
+		glyph.modulate = Color.html("#484341")
+
+func _on_glyph_animations_animation_finished(anim_name):
+	if anim_name == 'Glyph_Checking':
+		if door_success:
+			$GlyphAnimations.play("Glyph_Correct")
+		else:
+			$GlyphAnimations.play("Glyph_Incorrect")
+			
+		# TODO: Play leave animation
+		await get_tree().create_timer(2).timeout
+		if door_success:
+			## TODO: increment level
+			g.current_level = 2
+			get_tree().reload_current_scene()
+	else:
+		await get_tree().create_timer(2).timeout
+		reset_glyphs()

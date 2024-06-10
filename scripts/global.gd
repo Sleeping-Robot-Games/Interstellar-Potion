@@ -90,18 +90,22 @@ func play_dialogue_sfx(parent, laugh = false):
 	sfx_player.volume_db = -5
 	sfx_player.stream = load("res://sfx/Dialogue/Dialogue - Villain Expo "+str(track_num)+".ogg")
 	if laugh:
-		sfx_player.finished.connect(play_dialogue_laugh_sfx.bind(sfx_player))
+		sfx_player.finished.connect(play_dialogue_laugh_sfx.bind(parent, sfx_player))
 	else:
 		sfx_player.finished.connect(sfx_player.queue_free)
 	parent.add_child(sfx_player)
 	sfx_player.play()
 	return sfx_player
 	
-func play_dialogue_laugh_sfx(sfx_player):
+func play_dialogue_laugh_sfx(parent, old_sfx_player):
+	old_sfx_player.queue_free()
+	await get_tree().create_timer(.5).timeout
 	randomize()
 	var track_num = randi_range(1, 2)
+	var sfx_player = AudioStreamPlayer.new()
 	sfx_player.volume_db = -5
 	sfx_player.stream = load("res://sfx/Dialogue/Dialogue - Villain Laugh "+str(track_num)+".ogg")
 	sfx_player.finished.connect(sfx_player.queue_free)
+	parent.add_child(sfx_player)
 	sfx_player.play()
 	
