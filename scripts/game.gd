@@ -218,9 +218,11 @@ func toggle_highlight(object: String, toggle: bool):
 	
 func show_potion_effect():
 		g.play_random_sfx(self, 'Potion Effect - Generic', 1)
-		await get_tree().create_timer(.5).timeout
+		$PotionEffectsAnimations.play(current_test_potion.effect)
 		$Player/Label.text = current_test_potion.effect
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(1).timeout
+		g.play_random_sfx(self, 'Potion Effect - Generic', 1)
+		await get_tree().create_timer(3).timeout
 		play_dialogue("StudyLaws")
 		await get_tree().create_timer(10).timeout
 		play_dialogue("Distill")
