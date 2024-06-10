@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bhi41o20jxopt"
+path="res://.godot/imported/Mouseover 2.ogg-c6c9e8b66e314b2d394c664d33ff0501.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Mouseover 2.ogg"
+dest_files=["res://.godot/imported/Mouseover 2.ogg-c6c9e8b66e314b2d394c664d33ff0501.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

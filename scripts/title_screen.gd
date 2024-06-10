@@ -3,6 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	g.play_bgm('Stage 2')
 	if OS.get_name() == "Windows":
 		# Set game window
 		var window = get_window()
