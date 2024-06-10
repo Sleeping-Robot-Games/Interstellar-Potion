@@ -236,6 +236,7 @@ func show_potion_effect():
 		play_dialogue("Distill")
 
 func add_potion_to_distiller(potion):
+	g.play_random_sfx(self, 'Distilling', 15)
 	var color = g.level_dict[g.current_level].potion_colors[potion.effect]
 	$Distiller/Fill.modulate = Color.html(color)
 	$Distiller/Fill.show()

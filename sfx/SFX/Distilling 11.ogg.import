@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cimvaf4rcd8i"
+path="res://.godot/imported/Distilling 11.ogg-b5f65a4e7cb6f1d38e3e01fa2d4334ce.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Distilling 11.ogg"
+dest_files=["res://.godot/imported/Distilling 11.ogg-b5f65a4e7cb6f1d38e3e01fa2d4334ce.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
