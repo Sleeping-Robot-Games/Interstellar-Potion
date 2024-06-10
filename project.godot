@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Interstellar Potion"
+config/name="Detention Distillery"
 run/main_scene="res://scenes/title_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://goat-boi.png"
