@@ -624,6 +624,7 @@ text = "You might want to take notes on [color=blue]Potions[/color], [color=dark
 show_arm = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
 autoplay = true
 
 [node name="IntercomMarker" type="Marker2D" parent="."]
