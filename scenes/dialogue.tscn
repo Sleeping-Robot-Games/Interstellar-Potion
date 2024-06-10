@@ -1,20 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1so7gfvlbhaa"]
+[gd_scene load_steps=7 format=3 uid="uid://ds5lfampnwlx5"]
 
 [ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_3xj2x"]
 [ext_resource type="Texture2D" uid="uid://cw1s2byy7v2kn" path="res://assets/DialogueTail.png" id="1_thdir"]
 [ext_resource type="Texture2D" uid="uid://b2ouuoyhi8tvi" path="res://assets/DialogueBG.png" id="2_vbxv6"]
 [ext_resource type="Texture2D" uid="uid://d1m07q6g03kjp" path="res://assets/DialogueArm.png" id="3_gj22n"]
-[ext_resource type="Theme" uid="uid://ded46rb34nh27" path="res://resources/bubble_theme.tres" id="4_n5qst"]
+[ext_resource type="Theme" path="res://resources/bubble_theme.tres" id="4_n5qst"]
 
 [sub_resource type="Curve" id="Curve_gkql6"]
 _data = [Vector2(0.0133588, 1), 0.0, -0.0636724, 0, 0, Vector2(0.150763, 0.851177), -1.28141, -1.28141, 0, 0, Vector2(0.398855, 0.411094), -1.51283, -1.51283, 0, 0, Vector2(0.921756, 0.199291), 0.0, 0.0, 0, 0, Vector2(1, 0.205579), -0.0732244, 0.0, 0, 0]
 point_count = 5
 
 [node name="Dialogue" type="Control"]
+custom_minimum_size = Vector2(500, 100)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 652.0
+offset_bottom = 130.0
 script = ExtResource("1_3xj2x")
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -29,27 +30,36 @@ end_cap_mode = 2
 antialiased = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_right = 336.0
-offset_bottom = 131.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_vbxv6")
 patch_margin_left = 50
 patch_margin_right = 50
+metadata/_edit_use_anchors_ = true
 
 [node name="Arm" type="TextureRect" parent="."]
-layout_mode = 0
+layout_mode = 1
 offset_left = -95.0
-offset_top = 109.0
+offset_top = 107.0
 offset_right = 47.0
-offset_bottom = 178.0
+offset_bottom = 176.0
 texture = ExtResource("3_gj22n")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 10.0
-offset_right = 312.0
-offset_bottom = 122.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 23.0
+offset_right = -50.03
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("4_n5qst")
 bbcode_enabled = true
 scroll_active = false

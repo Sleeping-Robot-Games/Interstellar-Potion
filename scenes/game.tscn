@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=85 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
@@ -42,7 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://bm15mqy46ggij" path="res://assets/BG/Plaque_Ingredients.png" id="25_cqgv0"]
 [ext_resource type="PackedScene" uid="uid://sp77tkksj53" path="res://scenes/potion_crate.tscn" id="25_s4b3b"]
 [ext_resource type="Texture2D" uid="uid://cqxk12ct6vx22" path="res://assets/BG/Plaque_Potions.png" id="26_qtlf4"]
-[ext_resource type="PackedScene" path="res://scenes/dialogue.tscn" id="34_vey8l"]
+[ext_resource type="PackedScene" uid="uid://ds5lfampnwlx5" path="res://scenes/dialogue.tscn" id="34_vey8l"]
 [ext_resource type="Texture2D" uid="uid://daqfbjj788ajd" path="res://assets/PotionEffects/Player_Invisible.png" id="41_r8ydc"]
 [ext_resource type="Texture2D" uid="uid://c12l7p00hq3ms" path="res://assets/PotionEffects/Player_Youthfulness.png" id="43_8b56t"]
 [ext_resource type="Texture2D" uid="uid://bnkpd6eprtyvd" path="res://assets/PotionEffects/Player_Strength.png" id="44_4ydee"]
@@ -83,6 +83,349 @@ size = Vector2(277, 547)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cynv4"]
 size = Vector2(224, 433)
+
+[sub_resource type="Animation" id="Animation_pxyr5"]
+resource_name = "Glyph1_Inactive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/Control/Color1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.28125, 0.262099, 0.253235, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h3h37"]
+resource_name = "Glyph2_Inactive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/Control/Color2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ns8a5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/Control/Color2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.191406, 0.169777, 0.161125, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Door/Control/Color3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.191406, 0.169777, 0.161125, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Door/Control/Color4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.191406, 0.169777, 0.161125, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Door/Control/Color5:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.191406, 0.169777, 0.161125, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Door/Control/Color1:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.191406, 0.169777, 0.161125, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8k4y7"]
+resource_name = "Glyph3_Inactive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/Control/Color3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_daffp"]
+resource_name = "Glyph4_Inactive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/Control/Color4:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_135kq"]
+resource_name = "Glyph5_Inactive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/Control/Color5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ifpqh"]
+resource_name = "Glyph_Checking"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/Control/Color1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.28125, 0.262099, 0.253235, 1), Color(0.675781, 0.65124, 0.629585, 1), Color(0.28125, 0.262099, 0.253235, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Door/Control/Color2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.282353, 0.262745, 0.254902, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Door/Control/Color3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.282353, 0.262745, 0.254902, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Door/Control/Color4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.282353, 0.262745, 0.254902, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Door/Control/Color5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.282353, 0.262745, 0.254902, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xyybi"]
+resource_name = "Glyph_Correct"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/Control/Color1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.28125, 0.262099, 0.253235, 1), Color(0.675781, 0.65124, 0.629585, 1), Color(0.188781, 0.333984, 0.0502281, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Door/Control/Color2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.188781, 0.333984, 0.0502281, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Door/Control/Color3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.188781, 0.333984, 0.0502281, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Door/Control/Color4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.188781, 0.333984, 0.0502281, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Door/Control/Color5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.188781, 0.333984, 0.0502281, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jirko"]
+resource_name = "Glyph_Incorrect"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/Control/Color1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.28125, 0.262099, 0.253235, 1), Color(0.675781, 0.65124, 0.629585, 1), Color(0.558594, 0.129829, 0.1851, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Door/Control/Color2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.558594, 0.129829, 0.1851, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Door/Control/Color3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.558594, 0.129829, 0.1851, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Door/Control/Color4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.558594, 0.129829, 0.1851, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Door/Control/Color5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.558594, 0.129829, 0.1851, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_21x23"]
+_data = {
+"Glyph1_Inactive": SubResource("Animation_pxyr5"),
+"Glyph2_Inactive": SubResource("Animation_h3h37"),
+"Glyph3_Inactive": SubResource("Animation_8k4y7"),
+"Glyph4_Inactive": SubResource("Animation_daffp"),
+"Glyph5_Inactive": SubResource("Animation_135kq"),
+"Glyph_Checking": SubResource("Animation_ifpqh"),
+"Glyph_Correct": SubResource("Animation_xyybi"),
+"Glyph_Incorrect": SubResource("Animation_jirko"),
+"RESET": SubResource("Animation_ns8a5")
+}
 
 [sub_resource type="Animation" id="Animation_d710k"]
 resource_name = "AstralProjection"
@@ -608,7 +951,7 @@ offset_right = -17.0
 offset_bottom = -128.0
 
 [node name="Color1" type="TextureRect" parent="Door/Control"]
-modulate = Color(1, 0.171875, 0.171875, 1)
+modulate = Color(0.191406, 0.169777, 0.161125, 1)
 material = ExtResource("6_xtvfh")
 layout_mode = 0
 offset_left = -51.0
@@ -618,7 +961,7 @@ offset_bottom = 63.0
 texture = ExtResource("6_kc8ea")
 
 [node name="Color2" type="TextureRect" parent="Door/Control"]
-modulate = Color(1, 0.171875, 0.171875, 1)
+modulate = Color(0.191406, 0.169777, 0.161125, 1)
 material = ExtResource("6_xtvfh")
 layout_mode = 0
 offset_left = -18.0
@@ -628,7 +971,7 @@ offset_bottom = 46.0
 texture = ExtResource("7_ujy7w")
 
 [node name="Color3" type="TextureRect" parent="Door/Control"]
-modulate = Color(1, 0.171875, 0.171875, 1)
+modulate = Color(0.191406, 0.169777, 0.161125, 1)
 material = ExtResource("6_xtvfh")
 layout_mode = 0
 offset_left = 32.0
@@ -638,7 +981,7 @@ offset_bottom = 30.0
 texture = ExtResource("8_y84gg")
 
 [node name="Color4" type="TextureRect" parent="Door/Control"]
-modulate = Color(1, 0.171875, 0.171875, 1)
+modulate = Color(0.191406, 0.169777, 0.161125, 1)
 material = ExtResource("6_xtvfh")
 layout_mode = 0
 offset_left = 84.0
@@ -648,7 +991,7 @@ offset_bottom = 54.0
 texture = ExtResource("9_ew8dv")
 
 [node name="Color5" type="TextureRect" parent="Door/Control"]
-modulate = Color(1, 0.171875, 0.171875, 1)
+modulate = Color(0.191406, 0.169777, 0.161125, 1)
 material = ExtResource("6_xtvfh")
 layout_mode = 0
 offset_left = 112.0
@@ -662,22 +1005,27 @@ position = Vector2(4, -202)
 metadata/_edit_use_anchors_ = true
 
 [node name="GlyphSolution1" type="Sprite2D" parent="Door/Requirements"]
+modulate = Color(0.863281, 0.818099, 0.698044, 1)
 position = Vector2(-83, 76)
 texture = ExtResource("14_vh83o")
 
 [node name="GlyphSolution2" type="Sprite2D" parent="Door/Requirements"]
+modulate = Color(0.863281, 0.818099, 0.698044, 1)
 position = Vector2(-45, 45)
 texture = ExtResource("15_igmga")
 
 [node name="GlyphSolution3" type="Sprite2D" parent="Door/Requirements"]
+modulate = Color(0.863281, 0.818099, 0.698044, 1)
 position = Vector2(3, 31)
 texture = ExtResource("16_is0mt")
 
 [node name="GlyphSolution4" type="Sprite2D" parent="Door/Requirements"]
+modulate = Color(0.863281, 0.818099, 0.698044, 1)
 position = Vector2(55, 49)
 texture = ExtResource("17_gn6qj")
 
 [node name="GlyphSolution5" type="Sprite2D" parent="Door/Requirements"]
+modulate = Color(0.863281, 0.818099, 0.698044, 1)
 position = Vector2(99, 80)
 texture = ExtResource("18_43a8c")
 
@@ -693,6 +1041,7 @@ position = Vector2(-7, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D"]
 position = Vector2(14, 26.875)
 shape = SubResource("RectangleShape2D_iehke")
+debug_color = Color(0, 0.595, 0.7, 0)
 
 [node name="Label" type="Label" parent="Door"]
 offset_left = -37.0
@@ -729,6 +1078,7 @@ theme_override_font_sizes/font_size = 48
 
 [node name="PlayerPivot" type="Node2D" parent="Player"]
 position = Vector2(0, 146)
+scale = Vector2(1.02576, 0.974242)
 
 [node name="Clone4" type="Sprite2D" parent="Player/PlayerPivot"]
 visible = false
@@ -1035,7 +1385,7 @@ offset_left = 1267.0
 offset_top = 271.0
 offset_right = 1307.0
 offset_bottom = 311.0
-text = "First you must drink a [color=blue]Potion[/color] from the supplies shelf to test it's effect.."
+text = "Drink a [color=blue]Potion[/color] to test its effect"
 show_arm = true
 
 [node name="StudyLaws" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -1045,7 +1395,7 @@ offset_left = 344.0
 offset_top = 78.0
 offset_right = 384.0
 offset_bottom = 118.0
-text = "Now study the [color=brown]Laws of Mixing[/color]. Pay attention to the [color=red]Glyphs[/color] required for such an effect"
+text = "Study the [color=brown]Laws of Mixing[/color]. Notice the [color=red]Glyphs[/color] required for each effect"
 show_arm = true
 
 [node name="Distill" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -1055,7 +1405,7 @@ offset_left = 710.0
 offset_top = 436.0
 offset_right = 750.0
 offset_bottom = 476.0
-text = "Next, place the potion in the [color=purple]Distilling[/color]  machine to isolate it's raw [color=darkgreen]Ingredients[/color]"
+text = "Place the potion in the [color=purple]Distilling[/color]  machine to isolate it's raw [color=darkgreen]Ingredients[/color]"
 show_arm = true
 
 [node name="Ingredients" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -1065,7 +1415,7 @@ offset_left = 993.0
 offset_top = 162.0
 offset_right = 1033.0
 offset_bottom = 202.0
-text = "If you studied the [color=brown]Laws of Mixing[/color] you can deduce which [color=red]Glyphs[/color] each [color=darkgreen]Ingredient[/color] possessess... hehehe..."
+text = "Deduce which [color=red]Glyphs[/color] is which [color=darkgreen]Ingredient[/color] possesses... hehehe..."
 show_arm = true
 laugh = true
 
@@ -1076,7 +1426,7 @@ offset_left = 1121.0
 offset_top = 639.0
 offset_right = 1161.0
 offset_bottom = 679.0
-text = "You can now create new [color=blue]Potions[/color] with the [color=darkgreen]Ingredients[/color] by placing them into the [color=darkorange]Cauldron[/color] ..."
+text = "Create new [color=blue]Potions[/color] with the [color=darkgreen]Ingredients[/color] by using the [color=darkorange]Cauldron[/color]"
 show_arm = true
 
 [node name="Brew" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -1147,7 +1497,13 @@ text = "You might want to take notes on [color=blue]Potions[/color], [color=dark
 show_arm = true
 
 [node name="IntercomMarker" type="Marker2D" parent="."]
-position = Vector2(1640, 135)
+position = Vector2(1609, 172)
+
+[node name="GlyphAnimations" type="AnimationPlayer" parent="."]
+root_node = NodePath("../PotionEffectsAnimations")
+libraries = {
+"": SubResource("AnimationLibrary_21x23")
+}
 
 [node name="PotionEffectsAnimations" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Player/PlayerPivot/AnimatedSprite2D")
