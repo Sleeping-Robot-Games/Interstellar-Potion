@@ -78,7 +78,7 @@ func _ready():
 	
 	await get_tree().create_timer(2).timeout
 	play_dialogue("Intro")
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(10.5).timeout
 	play_dialogue("DrinkPotion")
 	
 
@@ -99,10 +99,9 @@ func check_solution(potion):
 	
 	$GlyphAnimations.play("Glyph_Checking")
 	
-	hide_dialogue("Success")
 	if not "Fail" in dialogue_state:
 		play_dialogue("Fail")
-		await get_tree().create_timer(10).timeout
+		await get_tree().create_timer(8).timeout
 		hide_dialogue("Fail")
 
 func fill_potion_shelf():
@@ -183,7 +182,7 @@ func distill_potion():
 		play_dialogue("Notes")
 	if distill_counter == 5:
 		play_dialogue("Supplies")
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(10.5).timeout
 	play_dialogue("Cauldron")
 	
 func get_cauldron_state_pos(ingredient):
@@ -210,12 +209,12 @@ func toggle_highlight(object: String, toggle: bool):
 	get_node(object+"/"+"Highlight").visible = toggle
 	
 func show_potion_effect():
-		g.play_random_sfx(self, 'Potion Effect - Generic', 1)
 		$PotionEffectsAnimations.play(current_test_potion.effect)
 		$Player/Label.text = current_test_potion.effect
+		g.play_random_sfx(self, 'Potion Effect - Generic', 1)
 		await get_tree().create_timer(1).timeout
 		g.play_random_sfx(self, 'Potion Effect - Generic', 1)
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(2.5).timeout
 		play_dialogue("StudyLaws")
 		await get_tree().create_timer(10).timeout
 		play_dialogue("Distill")
@@ -305,7 +304,8 @@ func _on_Cauldron_button_up():
 	cauldron_state = []
 	
 	play_dialogue("Escape")
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(8).timeout
+	hide_dialogue("Success")
 	hide_dialogue("Escape")
 	
 	
@@ -338,8 +338,10 @@ func _on_glyph_animations_animation_finished(anim_name):
 	if anim_name == 'Glyph_Checking':
 		if door_success:
 			$GlyphAnimations.play("Glyph_Correct")
+			g.play_random_sfx(self, 'Correct Solution', 1)
 		else:
 			$GlyphAnimations.play("Glyph_Incorrect")
+			g.play_random_sfx(self, 'Wrong Solution', 2)
 			
 		# TODO: Play leave animation
 		await get_tree().create_timer(2).timeout

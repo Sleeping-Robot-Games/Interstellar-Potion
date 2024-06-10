@@ -1393,10 +1393,10 @@ show_arm = true
 [node name="StudyLaws" parent="Dialogues" instance=ExtResource("34_vey8l")]
 visible = false
 z_index = 2
-offset_left = 344.0
-offset_top = 78.0
-offset_right = 384.0
-offset_bottom = 118.0
+offset_left = 437.0
+offset_top = 65.0
+offset_right = 937.0
+offset_bottom = 205.0
 text = "Use the [color=brown]Laws of Mixing[/color] to deduce which [color=red]Glyphs[/color] equates to which [color=darkgreen]Ingredient[/color] hehehe..."
 show_arm = true
 
