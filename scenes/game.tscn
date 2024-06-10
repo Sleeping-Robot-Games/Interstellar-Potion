@@ -114,69 +114,6 @@ tracks/0/keys = {
 "values": [Color(0.282353, 0.262745, 0.254902, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_ns8a5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Door/Control/Color2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.191406, 0.169777, 0.161125, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Door/Control/Color3:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.191406, 0.169777, 0.161125, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Door/Control/Color4:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.191406, 0.169777, 0.161125, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Door/Control/Color5:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.191406, 0.169777, 0.161125, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Door/Control/Color1:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.191406, 0.169777, 0.161125, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_8k4y7"]
 resource_name = "Glyph3_Inactive"
 tracks/0/type = "value"
@@ -412,6 +349,69 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.282353, 0.262745, 0.254902, 1), Color(0.67451, 0.65098, 0.631373, 1), Color(0.558594, 0.129829, 0.1851, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ns8a5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/Control/Color2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.191406, 0.169777, 0.161125, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Door/Control/Color3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.191406, 0.169777, 0.161125, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Door/Control/Color4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.191406, 0.169777, 0.161125, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Door/Control/Color5:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.191406, 0.169777, 0.161125, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Door/Control/Color1:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.191406, 0.169777, 0.161125, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_21x23"]
@@ -1385,7 +1385,7 @@ offset_left = 1267.0
 offset_top = 271.0
 offset_right = 1307.0
 offset_bottom = 311.0
-text = "Drink a [color=blue]Potion[/color] to test its effect"
+text = "First, drink a [color=blue]Potion[/color] to test its effect"
 show_arm = true
 
 [node name="StudyLaws" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -1395,7 +1395,7 @@ offset_left = 344.0
 offset_top = 78.0
 offset_right = 384.0
 offset_bottom = 118.0
-text = "Study the [color=brown]Laws of Mixing[/color]. Notice the [color=red]Glyphs[/color] required for each effect"
+text = "Use the [color=brown]Laws of Mixing[/color] to deduce which [color=red]Glyphs[/color] equates to which [color=darkgreen]Ingredient[/color] hehehe..."
 show_arm = true
 
 [node name="Distill" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -1405,7 +1405,7 @@ offset_left = 710.0
 offset_top = 436.0
 offset_right = 750.0
 offset_bottom = 476.0
-text = "Place the potion in the [color=purple]Distilling[/color]  machine to isolate it's raw [color=darkgreen]Ingredients[/color]"
+text = "Now, place a potion in the [color=purple]Distilling[/color]  machine to isolate its raw [color=darkgreen]Ingredients[/color]"
 show_arm = true
 
 [node name="Ingredients" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -1415,7 +1415,7 @@ offset_left = 993.0
 offset_top = 162.0
 offset_right = 1033.0
 offset_bottom = 202.0
-text = "Deduce which [color=red]Glyphs[/color] is which [color=darkgreen]Ingredient[/color] possesses... hehehe..."
+text = "Use the [color=brown]Laws of Mixing[/color] to deduce which [color=red]Glyphs[/color] equates to which [color=darkgreen]Ingredient[/color], hehehe..."
 show_arm = true
 laugh = true
 
@@ -1465,7 +1465,7 @@ offset_left = 1414.0
 offset_top = 426.0
 offset_right = 1454.0
 offset_bottom = 466.0
-text = "Surprisingly, you've brewed the correct [color=blue]Potion[/color] , place it in the door to leave. Your next challenge awaits. hehehe.."
+text = "Surprisingly, you've brewed the correct [color=blue]Potion[/color] , place it in the door to leave. Your next challenge awaits. Hehehe.."
 laugh = true
 
 [node name="Fail" parent="Dialogues" instance=ExtResource("34_vey8l")]
@@ -1493,7 +1493,7 @@ offset_left = 344.0
 offset_top = 631.0
 offset_right = 384.0
 offset_bottom = 671.0
-text = "You might want to take notes on [color=blue]Potions[/color], [color=darkgreen]Ingredients[/color], and the [color=red]Glyphs[/color] they may hold..."
+text = "You can take notes on [color=blue]Potions[/color], [color=darkgreen]Ingredients[/color], and [color=red]Glyphs[/color]"
 show_arm = true
 
 [node name="IntercomMarker" type="Marker2D" parent="."]

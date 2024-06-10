@@ -20,7 +20,7 @@ func _process(delta):
 func animate_text():
 	var current_text = ''
 	var timer = Timer.new()
-	timer.wait_time = 0.05  # Adjust the time interval as needed
+	timer.wait_time = 0.02  # Adjust the time interval as needed
 	timer.one_shot = false
 	add_child(timer)
 	timer.start()
