@@ -60,7 +60,7 @@ func stop_bgm(fname):
 		
 func play_random_sfx(parent, fname, custom_range=2, db_override=0, ext='.ogg'):
 	var sfx_player = AudioStreamPlayer.new()
-	sfx_player.volume_db = db_override + volume_control
+	sfx_player.volume_db = db_override
 	print(sfx_player.volume_db)
 	randomize()
 	var track_num = randi_range(1, custom_range)
@@ -74,7 +74,7 @@ func play_dialogue_sfx(parent, laugh = false):
 	var sfx_player = AudioStreamPlayer.new()
 	randomize()
 	var track_num = randi_range(1, 10)
-	sfx_player.volume_db = -5 + volume_control
+	sfx_player.volume_db = -5
 	sfx_player.stream = load("res://sfx/Dialogue/Dialogue - Villain Expo "+str(track_num)+".ogg")
 	if laugh:
 		sfx_player.finished.connect(play_dialogue_laugh_sfx.bind(sfx_player))
@@ -87,7 +87,7 @@ func play_dialogue_sfx(parent, laugh = false):
 func play_dialogue_laugh_sfx(sfx_player):
 	randomize()
 	var track_num = randi_range(1, 2)
-	sfx_player.volume_db = -5 + volume_control
+	sfx_player.volume_db = -5
 	sfx_player.stream = load("res://sfx/Dialogue/Dialogue - Villain Laugh "+str(track_num)+".ogg")
 	sfx_player.finished.connect(sfx_player.queue_free)
 	sfx_player.play()
