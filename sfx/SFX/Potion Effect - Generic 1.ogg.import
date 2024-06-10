@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://btg8iu40db5n2"
+path="res://.godot/imported/Potion Effect - Generic 1.ogg-6179534c2f959195fbec641372463610.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Potion Effect - Generic 1.ogg"
+dest_files=["res://.godot/imported/Potion Effect - Generic 1.ogg-6179534c2f959195fbec641372463610.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

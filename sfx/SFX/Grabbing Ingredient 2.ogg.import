@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bf8mmsaovgc0w"
+path="res://.godot/imported/Grabbing Ingredient 2.ogg-bd7d5a3dcaf59afc779d0e032cd44605.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Grabbing Ingredient 2.ogg"
+dest_files=["res://.godot/imported/Grabbing Ingredient 2.ogg-bd7d5a3dcaf59afc779d0e032cd44605.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

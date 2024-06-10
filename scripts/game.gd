@@ -3,9 +3,6 @@ extends Node2D
 var rubric_row_scene = preload("res://scenes/rubric_row.tscn")
 var potion_scene = preload("res://scenes/potion.tscn")
 var ingredient_scene = preload("res://scenes/ingredient.tscn")
-var tutorial_music = preload("res://sfx/BGM/BGM - Tutorial.ogg")
-var stage_1_music = preload("res://sfx/BGM/BGM - Stage 1.ogg")
-var stage_2_music = preload("res://sfx/BGM/BGM - Stage 2.ogg")
 
 var dialogue_state = []
 var distill_counter = 0
@@ -29,13 +26,12 @@ var spoon_disabled = true
 
 func _ready():
 	# Music
-	var music
 	if g.current_level == 1:
-		music = tutorial_music
-	else:
-		music = stage_2_music
-	$AudioStreamPlayer.stream = music
-	$AudioStreamPlayer.play()
+		g.stop_bgm('Stage 2')
+		g.play_bgm('Tutorial')
+	elif g.bgm_is_playing() == 'Tutorial':
+		g.stop_bgm('Tutorial')
+		g.play_bgm('Stage 2')
 	
 	# Set Level
 	solution = g.level_dict[g.current_level].solution
@@ -79,12 +75,14 @@ func _ready():
 	# Set inital potions
 	fill_potion_shelf()
 	
+	await get_tree().create_timer(2).timeout
 	play_dialogue("Intro")
 	await get_tree().create_timer(10).timeout
 	play_dialogue("DrinkPotion")
 	
 
 func _process(delta):
+	## TODO: REMOVE before export
 	if Input.is_action_pressed("Escape"):
 		get_tree().quit()
 
@@ -219,8 +217,8 @@ func toggle_highlight(object: String, toggle: bool):
 	get_node(object+"/"+"Highlight").visible = toggle
 	
 func show_potion_effect():
-	if current_test_potion:
-		g.play_random_sfx(self, 'Drinking Potion', 6)
+		g.play_random_sfx(self, 'Potion Effect - Generic', 1)
+		await get_tree().create_timer(.5).timeout
 		$Player/Label.text = current_test_potion.effect
 		await get_tree().create_timer(2).timeout
 		play_dialogue("StudyLaws")

@@ -1140,10 +1140,6 @@ offset_bottom = 671.0
 text = "You might want to take notes on [color=blue]Potions[/color], [color=darkgreen]Ingredients[/color], and the [color=red]Glyphs[/color] they may hold..."
 show_arm = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -5.0
-autoplay = true
-
 [node name="IntercomMarker" type="Marker2D" parent="."]
 position = Vector2(1640, 135)
 

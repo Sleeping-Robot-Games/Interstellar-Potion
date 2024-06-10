@@ -40,6 +40,7 @@ func _input(event):
 			if mouse_over:
 				dragging = true
 				g.dragging_ingredient = self
+				g.play_random_sfx(self, 'Grabbing Ingredient', 5, -10)
 		else:
 			if dragging:
 				# Stop dragging when the mouse button is released
@@ -73,6 +74,8 @@ func _on_area_2d_mouse_entered():
 		if not g.dragging_potion:
 			game.toggle_highlight('Cauldron', true)
 			Input.set_custom_mouse_cursor(grabber)
+			if not dragging and not g.dragging_ingredient:
+				g.play_random_sfx(self, 'Mouseover', 4, -10)
 
 
 func _on_area_2d_mouse_exited():

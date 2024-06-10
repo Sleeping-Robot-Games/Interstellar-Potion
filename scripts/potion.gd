@@ -54,6 +54,8 @@ func _on_potion_drop_tween_finished():
 		game.add_potion_to_distiller(self)
 		
 	if drop_location == game.get_node("Player/PotionDropMarker").global_position:
+		g.play_random_sfx(self, 'Drinking Potion', 6)
+		await get_tree().create_timer(1).timeout
 		game.show_potion_effect()
 		game.first_potion = false
 		
@@ -74,6 +76,8 @@ func _on_area_2d_mouse_entered():
 				game.toggle_highlight('Player', true)
 				game.toggle_highlight('Distiller', true)
 		Input.set_custom_mouse_cursor(grabber)
+		if not dragging and not g.dragging_potion:
+			g.play_random_sfx(self, 'Mouseover', 4, -10)
 
 func _on_area_2d_mouse_exited():
 	mouse_over = false
