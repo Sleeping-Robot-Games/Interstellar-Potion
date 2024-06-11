@@ -1785,6 +1785,15 @@ offset_bottom = 671.0
 text = "You can take notes on [color=blue]Potions[/color], [color=darkgreen]Ingredients[/color], and [color=red]Glyphs[/color]"
 show_arm = true
 
+[node name="NewLevel" parent="Dialogues" instance=ExtResource("34_vey8l")]
+visible = false
+offset_left = 1050.0
+offset_top = 222.0
+offset_right = 1702.0
+offset_bottom = 386.0
+text = "Welcome to your new challenge! Good luck.. hehehe..."
+laugh = true
+
 [node name="IntercomMarker" type="Marker2D" parent="."]
 position = Vector2(1609, 172)
 
@@ -1805,6 +1814,13 @@ root_node = NodePath("../Player/PlayerPivot/AnimatedSprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_21odh")
 }
+
+[node name="Curtain" type="ColorRect" parent="."]
+visible = false
+z_index = 5
+offset_right = 1925.0
+offset_bottom = 1086.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="button_up" from="Spoon/Button" to="." method="_on_Cauldron_button_up"]
 [connection signal="button_up" from="PotionShelf/RefillButton" to="." method="_on_PotionRefill_button_up"]

@@ -357,9 +357,8 @@ func _on_glyph_animations_animation_finished(anim_name):
 		# TODO: Play leave animation
 		await get_tree().create_timer(2).timeout
 		if door_success:
-			## TODO: increment level
-			g.current_level = 2
-			get_tree().reload_current_scene()
+			$EnterExitAnimations.play('Exit')
+			$Player.hide()
 	else:
 		await get_tree().create_timer(2).timeout
 		reset_glyphs()
@@ -368,7 +367,14 @@ func _on_glyph_animations_animation_finished(anim_name):
 func _on_enter_exit_animations_animation_finished(anim_name):
 	if anim_name == 'Enter':
 		$Player.show()
+		
 		await get_tree().create_timer(1).timeout
 		play_dialogue("Intro")
 		await get_tree().create_timer(10.5).timeout
 		play_dialogue("DrinkPotion")
+	if anim_name == 'Exit':
+		## TODO: increment level
+		g.current_level = 2
+		$Curtain.show()
+		await get_tree().create_timer(.3).timeout
+		get_tree().reload_current_scene()
