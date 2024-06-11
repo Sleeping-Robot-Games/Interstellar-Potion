@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmgawaaii7p4e"
+path="res://.godot/imported/Correct Solution.ogg-f34bee28495125e59f0d2cdcbc7f47d5.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Correct Solution.ogg"
+dest_files=["res://.godot/imported/Correct Solution.ogg-f34bee28495125e59f0d2cdcbc7f47d5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

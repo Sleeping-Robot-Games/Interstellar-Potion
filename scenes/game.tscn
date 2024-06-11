@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bn141qbuaknda" path="res://assets/BG/Key_1.png" id="6_kc8ea"]
 [ext_resource type="Texture2D" uid="uid://dw1cexcy8qe43" path="res://assets/Rules/ClearButton.png" id="6_upeed"]
 [ext_resource type="Texture2D" uid="uid://v6ih0qv16i7k" path="res://assets/Player.png" id="6_ur01h"]
-[ext_resource type="Material" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
+[ext_resource type="Material" uid="uid://co6exputhnvsb" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
 [ext_resource type="Texture2D" uid="uid://b8dmnlixbdye4" path="res://assets/BG/DoorMask_Enter.png" id="7_mnfjr"]
 [ext_resource type="Texture2D" uid="uid://wtmr3pjhny0c" path="res://assets/BG/Key_2.png" id="7_ujy7w"]
 [ext_resource type="Texture2D" uid="uid://4gpnf4biwfps" path="res://assets/FilterMachine.png" id="8_fibk1"]
@@ -45,7 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://bm15mqy46ggij" path="res://assets/BG/Plaque_Ingredients.png" id="25_cqgv0"]
 [ext_resource type="PackedScene" uid="uid://sp77tkksj53" path="res://scenes/potion_crate.tscn" id="25_s4b3b"]
 [ext_resource type="Texture2D" uid="uid://cqxk12ct6vx22" path="res://assets/BG/Plaque_Potions.png" id="26_qtlf4"]
-[ext_resource type="PackedScene" uid="uid://ds5lfampnwlx5" path="res://scenes/dialogue.tscn" id="34_vey8l"]
+[ext_resource type="PackedScene" uid="uid://d1so7gfvlbhaa" path="res://scenes/dialogue.tscn" id="34_vey8l"]
 [ext_resource type="Texture2D" uid="uid://daqfbjj788ajd" path="res://assets/PotionEffects/Player_Invisible.png" id="41_r8ydc"]
 [ext_resource type="Texture2D" uid="uid://c12l7p00hq3ms" path="res://assets/PotionEffects/Player_Youthfulness.png" id="43_8b56t"]
 [ext_resource type="Texture2D" uid="uid://bnkpd6eprtyvd" path="res://assets/PotionEffects/Player_Strength.png" id="44_4ydee"]
@@ -496,6 +496,70 @@ tracks/4/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_yo3x6"]
+resource_name = "Exit"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Door/PlayerEnter:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Door/PlayerEnter:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-231, 260), Vector2(-35, 111), Vector2(316, 106)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Door/PlayerEnter:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_4alqg"), ExtResource("46_mprrm"), ExtResource("6_4alqg"), ExtResource("47_7lb6i"), ExtResource("6_4alqg"), ExtResource("46_mprrm"), ExtResource("6_4alqg"), ExtResource("47_7lb6i")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Door/OpenDoor:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Door/PlayerEnter:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_105jc"]
 length = 0.001
 tracks/0/type = "value"
@@ -617,70 +681,6 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_yo3x6"]
-resource_name = "Exit"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Door/PlayerEnter:flip_h")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Door/PlayerEnter:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-231, 260), Vector2(-35, 111), Vector2(316, 106)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Door/PlayerEnter:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_4alqg"), ExtResource("46_mprrm"), ExtResource("6_4alqg"), ExtResource("47_7lb6i"), ExtResource("6_4alqg"), ExtResource("46_mprrm"), ExtResource("6_4alqg"), ExtResource("47_7lb6i")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Door/OpenDoor:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Door/PlayerEnter:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uhhvn"]
