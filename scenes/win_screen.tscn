@@ -1,33 +1,141 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfwwtqd0cascv"]
+[gd_scene load_steps=4 format=3 uid="uid://bfwwtqd0cascv"]
 
+[ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_glo71"]
 [ext_resource type="Texture2D" uid="uid://bhx0l4dncjf3d" path="res://assets/Title/Slip.png" id="1_oictd"]
 [ext_resource type="FontFile" uid="uid://ui6iamkx5j3w" path="res://resources/conformity.normal.ttf" id="2_vxgkg"]
 
 [node name="WinScreen" type="Node2D"]
+script = ExtResource("1_glo71")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_oictd")
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="."]
-offset_left = -336.0
-offset_top = -106.0
-offset_right = -103.0
-offset_bottom = -43.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -345.0
+offset_top = -115.0
+offset_right = 345.0
+offset_bottom = 321.0
+theme_override_constants/separation = 15
+
+[node name="PotionsDrank" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Stat" type="Label" parent="VBoxContainer/PotionsDrank"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.164706, 0.113725, 0.0431373, 1)
 theme_override_fonts/font = ExtResource("2_vxgkg")
 theme_override_font_sizes/font_size = 44
-text = "Stat
-"
+text = "Potions Tested"
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Label"]
-layout_mode = 0
-offset_left = 162.0
-offset_top = 1.0
-offset_right = 395.0
-offset_bottom = 64.0
+[node name="Data" type="Label" parent="VBoxContainer/PotionsDrank"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.639216, 0.192157, 0.117647, 1)
 theme_override_fonts/font = ExtResource("2_vxgkg")
 theme_override_font_sizes/font_size = 44
 text = "StatDdata"
 vertical_alignment = 1
+
+[node name="IngredientsDistilled" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Stat" type="Label" parent="VBoxContainer/IngredientsDistilled"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.164706, 0.113725, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "Distilled Ingredients"
+vertical_alignment = 1
+
+[node name="Data" type="Label" parent="VBoxContainer/IngredientsDistilled"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.192157, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "StatDdata"
+vertical_alignment = 1
+
+[node name="PotionsCreated" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Stat" type="Label" parent="VBoxContainer/PotionsCreated"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.164706, 0.113725, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "Potions Created"
+vertical_alignment = 1
+
+[node name="Data" type="Label" parent="VBoxContainer/PotionsCreated"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.192157, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "StatDdata"
+vertical_alignment = 1
+
+[node name="FailedDoors" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Stat" type="Label" parent="VBoxContainer/FailedDoors"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.164706, 0.113725, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "Doors Combination Failures"
+vertical_alignment = 1
+
+[node name="Data" type="Label" parent="VBoxContainer/FailedDoors"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.192157, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "StatDdata"
+vertical_alignment = 1
+
+[node name="Refills" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Stat" type="Label" parent="VBoxContainer/Refills"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.164706, 0.113725, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "Refills of Supply Potions"
+vertical_alignment = 1
+
+[node name="Data" type="Label" parent="VBoxContainer/Refills"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.192157, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "StatDdata"
+vertical_alignment = 1
+
+[node name="FailedBrews" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Stat" type="Label" parent="VBoxContainer/FailedBrews"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.164706, 0.113725, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "Failed Potion Brew"
+vertical_alignment = 1
+
+[node name="Data" type="Label" parent="VBoxContainer/FailedBrews"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.192157, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "StatDdata"
+vertical_alignment = 1
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

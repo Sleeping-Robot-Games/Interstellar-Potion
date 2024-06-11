@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://c40o4d6evlptt"]
+[gd_scene load_steps=96 format=3 uid="uid://c40o4d6evlptt"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_5uhqb"]
 [ext_resource type="Texture2D" uid="uid://bi3u7iha8imf7" path="res://assets/BG/BG.png" id="2_3bwar"]
@@ -58,6 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://cvcm1q1xbhli6" path="res://assets/PotionEffects/Player_Elasticity.png" id="49_qr06k"]
 [ext_resource type="Texture2D" uid="uid://drlxfjiipknpd" path="res://assets/PotionEffects/Player_Combustion.png" id="50_gpv1m"]
 [ext_resource type="Texture2D" uid="uid://wdcwf7y8rifc" path="res://assets/PotionEffects/Player_AstralProjection.png" id="51_vompl"]
+[ext_resource type="PackedScene" uid="uid://bfwwtqd0cascv" path="res://scenes/win_screen.tscn" id="59_58jgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iehke"]
 size = Vector2(312, 507.75)
@@ -1830,6 +1831,18 @@ z_index = 5
 offset_right = 1925.0
 offset_bottom = 1086.0
 color = Color(0, 0, 0, 1)
+
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+z_index = 5
+offset_right = 1925.0
+offset_bottom = 1086.0
+color = Color(0, 0, 0, 0.321569)
+
+[node name="WinScreen" parent="." instance=ExtResource("59_58jgg")]
+visible = false
+z_index = 10
+position = Vector2(997, 536)
 
 [connection signal="button_up" from="Spoon/Button" to="." method="_on_Cauldron_button_up"]
 [connection signal="button_up" from="PotionShelf/RefillButton" to="." method="_on_PotionRefill_button_up"]

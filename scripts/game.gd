@@ -79,12 +79,9 @@ func _ready():
 	$Player.hide()
 	$EnterExitAnimations.play("Enter")
 
-	
-
 func _process(delta):
-	## TODO: REMOVE before export
 	if Input.is_action_pressed("Escape"):
-		get_tree().reload_current_scene()
+		get_tree().quit()
 
 func check_solution(potion):
 	var check_solution = solution
@@ -176,6 +173,7 @@ func distill_potion():
 		# Animation ingredient to shelf
 		var tween = create_tween()
 		tween.tween_property(new_ingredient, 'global_position', shelf_position, .5)
+		g.track_stat('IngredientsDistilled')
 		
 	distill_counter += 1
 	play_dialogue("Ingredients")
@@ -210,15 +208,16 @@ func toggle_highlight(object: String, toggle: bool):
 	get_node(object+"/"+"Highlight").visible = toggle
 	
 func show_potion_effect():
-		$PotionEffectsAnimations.play(current_test_potion.effect)
-		$Player/Label.text = current_test_potion.effect
-		g.play_random_sfx(self, 'Potion Effect - ' + current_test_potion.effect, 1)
-		await get_tree().create_timer(1).timeout
-		g.play_random_sfx(self, 'Potion Effect - Generic', 1)
-		await get_tree().create_timer(2.5).timeout
-		play_dialogue("StudyLaws")
-		await get_tree().create_timer(10).timeout
-		play_dialogue("Distill")
+	g.track_stat('PotionsDrank')
+	$PotionEffectsAnimations.play(current_test_potion.effect)
+	$Player/Label.text = current_test_potion.effect
+	g.play_random_sfx(self, 'Potion Effect - ' + current_test_potion.effect, 1)
+	await get_tree().create_timer(1).timeout
+	g.play_random_sfx(self, 'Potion Effect - Generic', 1)
+	await get_tree().create_timer(2.5).timeout
+	play_dialogue("StudyLaws")
+	await get_tree().create_timer(10).timeout
+	play_dialogue("Distill")
 
 func add_potion_to_distiller(potion):
 	g.play_random_sfx(self, 'Distilling', 15)
@@ -279,6 +278,7 @@ func _on_Cauldron_button_up():
 		# No potion can be created based on the ingredients, clear state
 		cauldron_state = []
 		play_dialogue("BadBrew")
+		g.track_stat('FailedBrews')
 		await get_tree().create_timer(10).timeout
 		hide_dialogue("BadBrew")
 		return
@@ -298,6 +298,7 @@ func _on_Cauldron_button_up():
 	new_potion.global_position = $Cauldron.global_position
 	
 	dragables_node.add_child(new_potion)
+	g.track_stat('PotionsCreated')
 	# Tween it to the top shelf
 	var tween = create_tween()
 	tween.tween_property(new_potion, 'global_position', new_potion.drop_location, 1)
@@ -316,6 +317,7 @@ func on_spoon_tween_finished():
 
 func _on_PotionRefill_button_up():
 	fill_potion_shelf()
+	g.track_stat('Refills')
 	hide_dialogue("Supplies")
 
 func play_dialogue(type):
@@ -339,12 +341,16 @@ func _on_glyph_animations_animation_finished(anim_name):
 	if anim_name == 'Glyph_Checking':
 		if door_success:
 			$GlyphAnimations.play("Glyph_Correct")
-			g.play_random_sfx(self, 'Correct Solution', 1)
+			if g.current_level == g.level_dict.keys().size():
+				g.play_random_sfx(self, 'Final Solution', 1)
+				await get_tree().create_timer(1).timeout
+			else:
+				g.play_random_sfx(self, 'Correct Solution', 1)
 		else:
 			$GlyphAnimations.play("Glyph_Incorrect")
 			g.play_random_sfx(self, 'Wrong Solution', 2)
+			g.track_stat('FailedDoors')
 			
-		# TODO: Play leave animation
 		await get_tree().create_timer(2).timeout
 		if door_success:
 			$EnterExitAnimations.play('Exit')
@@ -364,8 +370,12 @@ func _on_enter_exit_animations_animation_finished(anim_name):
 		await get_tree().create_timer(10.5).timeout
 		play_dialogue("DrinkPotion")
 	if anim_name == 'Exit':
-		## TODO: increment level
-		g.current_level = 2
-		$Curtain.show()
-		await get_tree().create_timer(.3).timeout
-		get_tree().reload_current_scene()
+		if g.current_level == g.level_dict.keys().size():
+			$Fade.show()
+			$WinScreen.show()
+			g.play_random_sfx(self, 'Winning Cheer', 1)
+		else:
+			g.current_level += 1
+			$Curtain.show()
+			await get_tree().create_timer(.3).timeout
+			get_tree().reload_current_scene()
