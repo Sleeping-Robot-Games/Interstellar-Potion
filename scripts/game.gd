@@ -82,10 +82,9 @@ func _ready():
 	# Set inital potions
 	fill_potion_shelf()
 	
-	await get_tree().create_timer(2).timeout
-	play_dialogue("Intro")
-	await get_tree().create_timer(10.5).timeout
-	play_dialogue("DrinkPotion")
+	$Player.hide()
+	$EnterExitAnimations.play("Enter")
+
 	
 
 func _process(delta):
@@ -364,3 +363,12 @@ func _on_glyph_animations_animation_finished(anim_name):
 	else:
 		await get_tree().create_timer(2).timeout
 		reset_glyphs()
+
+
+func _on_enter_exit_animations_animation_finished(anim_name):
+	if anim_name == 'Enter':
+		$Player.show()
+		await get_tree().create_timer(1).timeout
+		play_dialogue("Intro")
+		await get_tree().create_timer(10.5).timeout
+		play_dialogue("DrinkPotion")
