@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ey3vklvkha54"]
+[gd_scene load_steps=3 format=3 uid="uid://bfwwtqd0cascv"]
 
 [ext_resource type="Texture2D" uid="uid://bhx0l4dncjf3d" path="res://assets/Title/Slip.png" id="1_oictd"]
 [ext_resource type="FontFile" uid="uid://ui6iamkx5j3w" path="res://resources/conformity.normal.ttf" id="2_vxgkg"]
@@ -21,6 +21,7 @@ text = "Stat
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Label"]
+layout_mode = 0
 offset_left = 162.0
 offset_top = 1.0
 offset_right = 395.0

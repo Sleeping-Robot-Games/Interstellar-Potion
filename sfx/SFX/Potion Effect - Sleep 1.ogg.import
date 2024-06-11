@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cncjpko3hn0sd"
+path="res://.godot/imported/Potion Effect - Sleep 1.ogg-7c528bcf505600c523bb9ed6b5c333cb.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Potion Effect - Sleep 1.ogg"
+dest_files=["res://.godot/imported/Potion Effect - Sleep 1.ogg-7c528bcf505600c523bb9ed6b5c333cb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
