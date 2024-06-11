@@ -97,7 +97,9 @@ func check_solution(potion):
 	check_solution.sort()
 	var potion_ing = potion.ingredients
 	potion_ing.sort()
-	
+	var color = g.level_dict[g.current_level].potion_colors[potion.effect]
+	$Door/BasinFill.show()
+	$Door/BasinFill.modulate = Color.html(color)
 	potion.queue_free()
 	
 	door_success = solution == potion_ing
@@ -362,6 +364,7 @@ func _on_glyph_animations_animation_finished(anim_name):
 	else:
 		await get_tree().create_timer(2).timeout
 		reset_glyphs()
+		$Door/BasinFill.hide()
 
 
 func _on_enter_exit_animations_animation_finished(anim_name):
