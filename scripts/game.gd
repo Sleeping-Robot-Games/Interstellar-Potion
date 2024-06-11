@@ -79,10 +79,6 @@ func _ready():
 	$Player.hide()
 	$EnterExitAnimations.play("Enter")
 
-func _process(delta):
-	if Input.is_action_pressed("Escape"):
-		get_tree().quit()
-
 func check_solution(potion):
 	var check_solution = solution
 	check_solution.sort()
