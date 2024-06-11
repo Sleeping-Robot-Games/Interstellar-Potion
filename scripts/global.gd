@@ -62,7 +62,7 @@ var level_dict = {
 			'Invisible': [1, 5],
 			'Combustion': [3, 8],
 			'Cloning': [5, 8],
-			'solution': [1, 3, 5, 7, 8]
+			'solution': [1, 3, 5, 8, 8]
 		},
 		'potion_colors': {
 			'AstralProjection': "#426bc7",
