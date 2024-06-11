@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dp44e24fp2r1"
+path="res://.godot/imported/Potion Effect - Youthfulness.ogg-6b967d49dc0b33e46e43f405c307a869.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Potion Effect - Youthfulness.ogg"
+dest_files=["res://.godot/imported/Potion Effect - Youthfulness.ogg-6b967d49dc0b33e46e43f405c307a869.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

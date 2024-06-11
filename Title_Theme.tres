@@ -4,5 +4,5 @@
 
 [resource]
 default_font = ExtResource("1_nfbsi")
-default_font_size = 44
+default_font_size = 36
 Label/colors/font_color = Color(0.345703, 0.249107, 0.118835, 1)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://siasng017wv4"
+path="res://.godot/imported/Potion Effect - Combustion.ogg-c8f5a43e546e04c7bb8e7f96a4976d64.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Potion Effect - Combustion.ogg"
+dest_files=["res://.godot/imported/Potion Effect - Combustion.ogg-c8f5a43e546e04c7bb8e7f96a4976d64.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

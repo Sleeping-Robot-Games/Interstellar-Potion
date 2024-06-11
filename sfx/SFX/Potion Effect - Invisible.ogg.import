@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://sqfape6ber01"
+path="res://.godot/imported/Potion Effect - Invisible.ogg-e63776518dc0a19642c046365e4288bb.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Potion Effect - Invisible.ogg"
+dest_files=["res://.godot/imported/Potion Effect - Invisible.ogg-e63776518dc0a19642c046365e4288bb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

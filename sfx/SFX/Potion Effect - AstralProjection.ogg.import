@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cc2hivy6qa5h5"
+path="res://.godot/imported/Potion Effect - AstralProjection.ogg-6037b8368d906fc834815b035650ef6c.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Potion Effect - AstralProjection.ogg"
+dest_files=["res://.godot/imported/Potion Effect - AstralProjection.ogg-6037b8368d906fc834815b035650ef6c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

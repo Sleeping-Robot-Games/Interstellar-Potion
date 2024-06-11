@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://bpsik5n4n3db5" path="res://assets/BG/BG2.png" id="1_3aj6k"]
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_gmnwm"]
 [ext_resource type="Texture2D" uid="uid://bqcofw0p5r8e1" path="res://assets/Intercom.png" id="2_bmfyi"]
+[ext_resource type="FontFile" uid="uid://ui6iamkx5j3w" path="res://resources/conformity.normal.ttf" id="3_edvgd"]
 [ext_resource type="Texture2D" uid="uid://x1byl7v74bce" path="res://assets/BG/Door_Exit.png" id="3_pfu1p"]
 [ext_resource type="Texture2D" uid="uid://btmbk4rhgn5mm" path="res://assets/BG/Door_Entrance.png" id="4_hktlv"]
 [ext_resource type="Texture2D" uid="uid://dpnmrbw5ospx7" path="res://assets/Cauldron_Back.png" id="5_5ykqi"]
 [ext_resource type="Texture2D" uid="uid://bs4bc0ku43acd" path="res://assets/Cauldron_Front.png" id="6_o6o6e"]
 [ext_resource type="Texture2D" uid="uid://cc1n7kxf3r47w" path="res://assets/Title/Logo.png" id="7_3424b"]
-[ext_resource type="FontFile" uid="uid://bx3ujw7iramtn" path="res://assets/FreckleFace-Regular.ttf" id="7_j87i2"]
 [ext_resource type="Theme" uid="uid://ca4jmanhqj47d" path="res://Title_Theme.tres" id="8_ad2xs"]
 [ext_resource type="Texture2D" uid="uid://dd4rcyatxccbl" path="res://assets/Title/Button1.png" id="10_8wb0w"]
 [ext_resource type="Texture2D" uid="uid://ba7x36jiay4gr" path="res://assets/Title/Button2.png" id="12_k0ikl"]
@@ -32,6 +32,29 @@ metadata/_edit_use_anchors_ = true
 texture = ExtResource("1_3aj6k")
 offset = Vector2(960, 540)
 metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.501
+anchor_bottom = 0.5
+offset_left = 216.0
+offset_top = 280.0
+offset_right = 751.08
+offset_bottom = 501.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.94902, 0.87451, 0.690196, 1)
+theme_override_colors/font_outline_color = Color(0.345098, 0.282353, 0.145098, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_edvgd")
+theme_override_font_sizes/font_size = 36
+text = "VOLUME
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Intercom" type="Sprite2D" parent="."]
 position = Vector2(686, -410)
@@ -60,27 +83,6 @@ texture = ExtResource("7_3424b")
 z_index = 1
 position = Vector2(961, 894.5)
 texture = ExtResource("6_o6o6e")
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.501
-anchor_bottom = 0.5
-offset_left = 229.0
-offset_top = 269.0
-offset_right = 764.08
-offset_bottom = 490.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.94902, 0.87451, 0.690196, 1)
-theme_override_fonts/font = ExtResource("7_j87i2")
-theme_override_font_sizes/font_size = 45
-text = "VOLUME
-"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
 z_index = 2
@@ -132,7 +134,7 @@ anchor_bottom = 0.5
 offset_left = -236.0
 offset_top = 49.0
 offset_right = 236.0
-offset_bottom = 126.0
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("12_k0ikl")
@@ -148,10 +150,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 11.0
+offset_top = -3.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_ad2xs")
+theme_override_colors/font_color = Color(0.94902, 0.87451, 0.690196, 1)
 text = "SKIP TUTORIAL"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -170,6 +174,55 @@ min_value = -20.0
 max_value = 0.0
 step = 2.0
 value = -10.0
+
+[node name="Label3" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -194.0
+offset_right = 567.08
+offset_bottom = 27.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.94902, 0.87451, 0.690196, 1)
+theme_override_colors/font_outline_color = Color(0.368627, 0.294118, 0.14902, 1)
+theme_override_constants/outline_size = 17
+theme_override_fonts/font = ExtResource("3_edvgd")
+theme_override_font_sizes/font_size = 36
+text = "Bronsky
+Esphron
+Kotocca
+"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label3" type="Label" parent="Label3"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.54
+offset_top = -109.5
+offset_right = 429.54
+offset_bottom = 111.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.788235, 0.407843, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(0.258824, 0.192157, 0.0745098, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_edvgd")
+theme_override_font_sizes/font_size = 36
+text = "Programming
+Audio
+Art
+"
+vertical_alignment = 1
+uppercase = true
 
 [connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
 [connection signal="button_up" from="TextureButton2" to="." method="_on_texture_button_2_button_up"]

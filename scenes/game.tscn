@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bn141qbuaknda" path="res://assets/BG/Key_1.png" id="6_kc8ea"]
 [ext_resource type="Texture2D" uid="uid://dw1cexcy8qe43" path="res://assets/Rules/ClearButton.png" id="6_upeed"]
 [ext_resource type="Texture2D" uid="uid://v6ih0qv16i7k" path="res://assets/Player.png" id="6_ur01h"]
-[ext_resource type="Material" uid="uid://co6exputhnvsb" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
+[ext_resource type="Material" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
 [ext_resource type="Texture2D" uid="uid://b8dmnlixbdye4" path="res://assets/BG/DoorMask_Enter.png" id="7_mnfjr"]
 [ext_resource type="Texture2D" uid="uid://wtmr3pjhny0c" path="res://assets/BG/Key_2.png" id="7_ujy7w"]
 [ext_resource type="Texture2D" uid="uid://4gpnf4biwfps" path="res://assets/FilterMachine.png" id="8_fibk1"]
@@ -1338,11 +1338,67 @@ scale = Vector2(1.06166, 1)
 texture = ExtResource("4_x211b")
 
 [node name="Container" type="VBoxContainer" parent="Rubric"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
+layout_mode = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 50.0
 offset_top = 153.0
 offset_right = 338.0
 offset_bottom = 511.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+auto_translate = true
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 1
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
 theme_override_constants/separation = 36
+alignment = 0
+script = null
 
 [node name="Player" type="Node2D" parent="."]
 visible = false
@@ -1449,31 +1505,26 @@ texture = ExtResource("20_qg5qc")
 position = Vector2(10, -21)
 
 [node name="Rune1" type="Sprite2D" parent="Cauldron"]
-modulate = Color(1, 1, 1, 0)
 z_index = 1
 position = Vector2(-130, 31)
 texture = ExtResource("20_ildx6")
 
 [node name="Rune2" type="Sprite2D" parent="Cauldron"]
-modulate = Color(1, 1, 1, 0)
 z_index = 1
 position = Vector2(-67, 33)
 texture = ExtResource("20_ildx6")
 
 [node name="Rune3" type="Sprite2D" parent="Cauldron"]
-modulate = Color(1, 1, 1, 0)
 z_index = 1
 position = Vector2(0, 32)
 texture = ExtResource("20_ildx6")
 
 [node name="Rune4" type="Sprite2D" parent="Cauldron"]
-modulate = Color(1, 1, 1, 0)
 z_index = 1
 position = Vector2(62, 30)
 texture = ExtResource("20_ildx6")
 
 [node name="Rune5" type="Sprite2D" parent="Cauldron"]
-modulate = Color(1, 1, 1, 0)
 z_index = 1
 position = Vector2(124, 25)
 texture = ExtResource("20_ildx6")
@@ -1531,7 +1582,7 @@ texture = ExtResource("8_fibk1")
 
 [node name="Fill" type="Sprite2D" parent="Distiller"]
 visible = false
-position = Vector2(-18, -121)
+position = Vector2(-18, -66)
 texture = ExtResource("22_d1m1y")
 
 [node name="PotionDropMarker" type="Marker2D" parent="Distiller"]
