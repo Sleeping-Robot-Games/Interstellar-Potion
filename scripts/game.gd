@@ -52,7 +52,7 @@ func _ready():
 		$Rubric/Container.add_child(row_instance)
 		
 	# Set and randomize ingredient sprites based on glyphs
-	var glyphs = [1, 2, 3, 4]
+	var glyphs = g.level_dict[g.current_level].glyphs
 	var rune_sprite_pairs = [
 		{'rune': 'res://assets/Ingredient_Glyph_Crystal.png', 'sprite': 'res://assets/Draggables/Ingredient_Crystal.png'},
 		{'rune': 'res://assets/Ingredient_Glyph_Sack.png', 'sprite': 'res://assets/Draggables/Ingredient_Sack.png'},

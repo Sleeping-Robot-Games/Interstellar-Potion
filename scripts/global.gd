@@ -33,7 +33,8 @@ var level_dict = {
 			'Combustion': "#2d9789",
 			'Shapeshifting': "#a1ca48",
 			'solution': "#a867b2"
-		}
+		},
+		'glyphs': [1, 2, 3, 4]
 	},
 	2: {
 		'solution': [5, 6, 7, 8, 8],
@@ -50,15 +51,16 @@ var level_dict = {
 			'Cloning': "#ffd21d",
 			'Glowing': "#f28e3d",
 			'solution': "#ed4d41"
-		}
+		},
+		'glyphs': [5, 6, 7, 8]
 	},
 	3: {
-		'solution': [1, 3, 5, 7, 8],
+		'solution': [1, 3, 5, 8, 8],
 		'rubric': {
 			'AstralProjection': [8, 8],
-			'Youthfulness': [3, 7],
+			'Youthfulness': [3, 5],
 			'Invisible': [1, 5],
-			'Combustion': [5, 7],
+			'Combustion': [3, 8],
 			'Cloning': [5, 8],
 			'solution': [1, 3, 5, 7, 8]
 		},
@@ -69,7 +71,8 @@ var level_dict = {
 			'Combustion': "#6fb143",
 			'Cloning': "#343d46",
 			'solution': "#9ea08d"
-		}
+		},
+		'glyphs': [1, 3, 5, 8]
 	}
 }
 
