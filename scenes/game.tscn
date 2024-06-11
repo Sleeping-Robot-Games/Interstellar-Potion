@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bn141qbuaknda" path="res://assets/BG/Key_1.png" id="6_kc8ea"]
 [ext_resource type="Texture2D" uid="uid://dw1cexcy8qe43" path="res://assets/Rules/ClearButton.png" id="6_upeed"]
 [ext_resource type="Texture2D" uid="uid://v6ih0qv16i7k" path="res://assets/Player.png" id="6_ur01h"]
-[ext_resource type="Material" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
+[ext_resource type="Material" uid="uid://co6exputhnvsb" path="res://resources/add_canvas_item_material.tres" id="6_xtvfh"]
 [ext_resource type="Texture2D" uid="uid://b8dmnlixbdye4" path="res://assets/BG/DoorMask_Enter.png" id="7_mnfjr"]
 [ext_resource type="Texture2D" uid="uid://wtmr3pjhny0c" path="res://assets/BG/Key_2.png" id="7_ujy7w"]
 [ext_resource type="Texture2D" uid="uid://4gpnf4biwfps" path="res://assets/FilterMachine.png" id="8_fibk1"]
@@ -1270,6 +1270,7 @@ position = Vector2(13, -151)
 texture = ExtResource("11_872v5")
 
 [node name="BasinFill" type="Sprite2D" parent="Door"]
+visible = false
 position = Vector2(-5, 97)
 rotation = 3.14159
 scale = Vector2(1, -1)
