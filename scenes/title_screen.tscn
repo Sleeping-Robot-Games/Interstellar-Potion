@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2lcqp6tr6rk6"]
+[gd_scene load_steps=15 format=3 uid="uid://b2lcqp6tr6rk6"]
 
 [ext_resource type="Texture2D" uid="uid://bpsik5n4n3db5" path="res://assets/BG/BG2.png" id="1_3aj6k"]
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_gmnwm"]
@@ -7,9 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://btmbk4rhgn5mm" path="res://assets/BG/Door_Entrance.png" id="4_hktlv"]
 [ext_resource type="Texture2D" uid="uid://dpnmrbw5ospx7" path="res://assets/Cauldron_Back.png" id="5_5ykqi"]
 [ext_resource type="Texture2D" uid="uid://bs4bc0ku43acd" path="res://assets/Cauldron_Front.png" id="6_o6o6e"]
+[ext_resource type="Texture2D" uid="uid://cc1n7kxf3r47w" path="res://assets/Title/Logo.png" id="7_3424b"]
 [ext_resource type="FontFile" uid="uid://bx3ujw7iramtn" path="res://assets/FreckleFace-Regular.ttf" id="7_j87i2"]
-[ext_resource type="Texture2D" uid="uid://b2ouuoyhi8tvi" path="res://assets/DialogueBG.png" id="7_rddva"]
 [ext_resource type="Theme" uid="uid://ca4jmanhqj47d" path="res://Title_Theme.tres" id="8_ad2xs"]
+[ext_resource type="Texture2D" uid="uid://dd4rcyatxccbl" path="res://assets/Title/Button1.png" id="10_8wb0w"]
+[ext_resource type="Texture2D" uid="uid://ba7x36jiay4gr" path="res://assets/Title/Button2.png" id="12_k0ikl"]
+[ext_resource type="Texture2D" uid="uid://casa4fg8s5clg" path="res://assets/Title/Knob.png" id="13_8vivi"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6nvkt"]
+color = Color(0.788235, 0.407843, 0.239216, 1)
+thickness = 13
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -43,31 +50,16 @@ texture = ExtResource("4_hktlv")
 position = Vector2(961, 869)
 texture = ExtResource("5_5ykqi")
 
+[node name="Logo" type="Sprite2D" parent="."]
+modulate = Color(0.078125, 0.0516103, 0.0169373, 0.568627)
+z_index = 1
+position = Vector2(955, 283)
+texture = ExtResource("7_3424b")
+
 [node name="CauldronFront" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(961, 894.5)
 texture = ExtResource("6_o6o6e")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.501
-anchor_bottom = 0.5
-offset_left = -267.0
-offset_top = -368.0
-offset_right = 268.08
-offset_bottom = -173.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.94902, 0.87451, 0.690196, 1)
-theme_override_fonts/font = ExtResource("7_j87i2")
-theme_override_font_sizes/font_size = 88
-text = "DETENTION
-DISTILLERY"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
@@ -76,16 +68,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.501
 anchor_bottom = 0.5
-offset_left = 310.0
-offset_top = 235.0
-offset_right = 845.08
-offset_bottom = 456.0
+offset_left = 229.0
+offset_top = 269.0
+offset_right = 764.08
+offset_bottom = 490.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.94902, 0.87451, 0.690196, 1)
 theme_override_fonts/font = ExtResource("7_j87i2")
-theme_override_font_sizes/font_size = 88
-text = "Volume"
+theme_override_font_sizes/font_size = 45
+text = "VOLUME
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -97,13 +90,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -188.0
-offset_top = -101.0
-offset_right = 188.0
-offset_bottom = 2.0
+offset_left = -236.0
+offset_top = -58.0
+offset_right = 236.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("7_rddva")
+texture_normal = ExtResource("10_8wb0w")
+texture_pressed = ExtResource("10_8wb0w")
+texture_hover = ExtResource("10_8wb0w")
+texture_disabled = ExtResource("10_8wb0w")
+texture_focused = ExtResource("10_8wb0w")
+ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="TextureButton"]
@@ -111,11 +109,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 11.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_ad2xs")
-text = "Play"
+text = "PLAY
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -127,13 +129,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -188.0
-offset_top = 41.0
-offset_right = 188.0
-offset_bottom = 144.0
+offset_left = -236.0
+offset_top = 49.0
+offset_right = 236.0
+offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("7_rddva")
+texture_normal = ExtResource("12_k0ikl")
+texture_pressed = ExtResource("12_k0ikl")
+texture_hover = ExtResource("12_k0ikl")
+texture_disabled = ExtResource("12_k0ikl")
+texture_focused = ExtResource("12_k0ikl")
+ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="TextureButton2"]
@@ -145,17 +152,20 @@ offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_ad2xs")
-text = "Skip Tutorial"
+text = "SKIP TUTORIAL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 1389.0
-offset_top = 916.0
-offset_right = 1651.0
-offset_bottom = 969.0
-scale = Vector2(1.1496, 2.19651)
+offset_left = 1387.0
+offset_top = 945.0
+offset_right = 1649.0
+offset_bottom = 998.0
+theme_override_icons/grabber = ExtResource("13_8vivi")
+theme_override_icons/grabber_highlight = ExtResource("13_8vivi")
+theme_override_icons/grabber_disabled = ExtResource("13_8vivi")
+theme_override_styles/slider = SubResource("StyleBoxLine_6nvkt")
 min_value = -20.0
 max_value = 0.0
 step = 2.0
