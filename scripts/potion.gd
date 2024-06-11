@@ -58,6 +58,7 @@ func _on_potion_drop_tween_finished():
 		await get_tree().create_timer(.5).timeout
 		game.show_potion_effect()
 		game.first_potion = false
+		game.toggle_highlight('Player', false)
 		
 	if drop_location == game.get_node("Door/PotionDropMarker").global_position:
 		game.toggle_highlight('Door', false)
@@ -73,7 +74,8 @@ func _on_area_2d_mouse_entered():
 			if game.first_potion and g.current_level == 1:
 				game.toggle_highlight('Player', true)
 			else:
-				game.toggle_highlight('Player', true)
+				if game.current_test_potion == null:
+					game.toggle_highlight('Player', true)
 				game.toggle_highlight('Distiller', true)
 		Input.set_custom_mouse_cursor(grabber)
 		if not dragging and not g.dragging_potion:

@@ -4,6 +4,12 @@ var rubric_row_scene = preload("res://scenes/rubric_row.tscn")
 var potion_scene = preload("res://scenes/potion.tscn")
 var ingredient_scene = preload("res://scenes/ingredient.tscn")
 
+var potion_sxfs = [
+	'AstralProjection',
+	'Cloning',
+	'Combustion',
+]
+
 var dialogue_state = []
 var distill_counter = 0
 var first_potion = true
@@ -211,7 +217,13 @@ func toggle_highlight(object: String, toggle: bool):
 func show_potion_effect():
 		$PotionEffectsAnimations.play(current_test_potion.effect)
 		$Player/Label.text = current_test_potion.effect
-		g.play_random_sfx(self, 'Potion Effect - Generic', 1)
+		var potion_sxf
+		var effect_idx = potion_sxfs.find(current_test_potion.effect)
+		if effect_idx != -1:
+			potion_sxf = potion_sxfs[effect_idx]
+		else:
+			potion_sxf = 'Generic'
+		g.play_random_sfx(self, 'Potion Effect - ' + potion_sxf, 1)
 		await get_tree().create_timer(1).timeout
 		g.play_random_sfx(self, 'Potion Effect - Generic', 1)
 		await get_tree().create_timer(2.5).timeout
