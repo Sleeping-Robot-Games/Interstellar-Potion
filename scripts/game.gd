@@ -90,7 +90,7 @@ func _ready():
 func _process(delta):
 	## TODO: REMOVE before export
 	if Input.is_action_pressed("Escape"):
-		get_tree().quit()
+		get_tree().reload_current_scene()
 
 func check_solution(potion):
 	var check_solution = solution

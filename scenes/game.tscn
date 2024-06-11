@@ -644,7 +644,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -656,7 +656,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -1287,6 +1287,7 @@ theme_override_fonts/font = ExtResource("20_6glyu")
 theme_override_font_sizes/font_size = 48
 
 [node name="OpenDoor" type="Sprite2D" parent="Door"]
+visible = false
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("5_fvg4o")
@@ -1307,6 +1308,7 @@ position = Vector2(353, 511)
 texture = ExtResource("3_6lcuj")
 
 [node name="OpenDoor" type="Sprite2D" parent="EnterDoor"]
+visible = false
 texture = ExtResource("5_fvg4o")
 
 [node name="PlayerEnter" type="Sprite2D" parent="EnterDoor"]
