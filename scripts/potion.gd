@@ -40,6 +40,7 @@ func _input(event):
 				if mouse_over:
 					dragging = true
 					g.dragging_potion = true
+					g.play_random_sfx(self, 'Grabbing Potion', 2, -10)
 			else:
 				if dragging:
 					# Stop dragging when the mouse button is released

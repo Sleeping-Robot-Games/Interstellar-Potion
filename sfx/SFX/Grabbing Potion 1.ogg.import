@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://gh6mora7qrnh"
+path="res://.godot/imported/Grabbing Potion 1.ogg-d6210c0dbdc5a7f193277aa1398503ef.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Grabbing Potion 1.ogg"
+dest_files=["res://.godot/imported/Grabbing Potion 1.ogg-d6210c0dbdc5a7f193277aa1398503ef.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

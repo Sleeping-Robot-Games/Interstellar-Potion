@@ -97,7 +97,7 @@ func check_solution(potion):
 	potion.queue_free()
 	
 	door_success = solution == potion_ing
-	
+	g.play_random_sfx(self, 'Placing Potion in Door', 2, -10)
 	$GlyphAnimations.play("Glyph_Checking")
 	
 	if not "Fail" in dialogue_state:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://n7q5da15cpmx"
+path="res://.godot/imported/Placing Potion in Door 2.ogg-767a81659d6ffe82a66cb0d9b0a2dd90.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Placing Potion in Door 2.ogg"
+dest_files=["res://.godot/imported/Placing Potion in Door 2.ogg-767a81659d6ffe82a66cb0d9b0a2dd90.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
