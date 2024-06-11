@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3gxr0skkk4v6"
+path="res://.godot/imported/Potion Effect - Shapeshifting 1.ogg-fd04f071cecb93f4dad8ae63e59f64e7.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/SFX/Potion Effect - Shapeshifting 1.ogg"
+dest_files=["res://.godot/imported/Potion Effect - Shapeshifting 1.ogg-fd04f071cecb93f4dad8ae63e59f64e7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

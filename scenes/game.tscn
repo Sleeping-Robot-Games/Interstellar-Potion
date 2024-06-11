@@ -1505,28 +1505,33 @@ texture = ExtResource("20_qg5qc")
 position = Vector2(10, -21)
 
 [node name="Rune1" type="Sprite2D" parent="Cauldron"]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
-position = Vector2(-130, 31)
+position = Vector2(-117, 27)
 texture = ExtResource("20_ildx6")
 
 [node name="Rune2" type="Sprite2D" parent="Cauldron"]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
-position = Vector2(-67, 33)
+position = Vector2(-60, 27)
 texture = ExtResource("20_ildx6")
 
 [node name="Rune3" type="Sprite2D" parent="Cauldron"]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
-position = Vector2(0, 32)
+position = Vector2(-2, 27)
 texture = ExtResource("20_ildx6")
 
 [node name="Rune4" type="Sprite2D" parent="Cauldron"]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
-position = Vector2(62, 30)
+position = Vector2(56, 27)
 texture = ExtResource("20_ildx6")
 
 [node name="Rune5" type="Sprite2D" parent="Cauldron"]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
-position = Vector2(124, 25)
+position = Vector2(115, 27)
 texture = ExtResource("20_ildx6")
 
 [node name="Area2D" type="Area2D" parent="Cauldron"]
