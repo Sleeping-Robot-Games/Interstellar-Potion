@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://ey3vklvkha54"]
+
+[ext_resource type="Texture2D" uid="uid://bhx0l4dncjf3d" path="res://assets/Title/Slip.png" id="1_oictd"]
+[ext_resource type="FontFile" uid="uid://ui6iamkx5j3w" path="res://resources/conformity.normal.ttf" id="2_vxgkg"]
+
+[node name="WinScreen" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oictd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -336.0
+offset_top = -106.0
+offset_right = -103.0
+offset_bottom = -43.0
+theme_override_colors/font_color = Color(0.164706, 0.113725, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "Stat
+"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Label"]
+offset_left = 162.0
+offset_top = 1.0
+offset_right = 395.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.639216, 0.192157, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_vxgkg")
+theme_override_font_sizes/font_size = 44
+text = "StatDdata"
+vertical_alignment = 1
